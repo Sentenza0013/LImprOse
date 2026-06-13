@@ -52,3 +52,20 @@ footer {
     padding: 15px;
     margin-top: 20px;
 }
+.hero-logo {
+    text-align: center;
+}
+
+.hero-logo img {
+    max-width: 300px;
+    height: auto;
+}
+footer img{
+    width: 100px;
+    height: auto;
+}
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
