@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="fr" id="html">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="icon" href="visuels/favicon.ico">
+	<title id="titre">Écran public - Improjector v1.3.1</title>
+	<link id="ref_css" rel="stylesheet" href="panneau_controle.css?v1.3.1" charset="UTF-8">
+	<link rel="stylesheet" href="web-fonts-with-css/css/fontawesome-all.css">
+	<script src="javascript/controle.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/apercu.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/afficheur.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+		
+</head>
+<body id="body" style="font-family: Aero;">
+
+<div id="accueil" style="background-color: black; position: absolute; top: 0; left: 0; z-index: 200; height: 100%; width: 100%;">
+<br>
+<br>
+<div style="width: 97%; margin: 0 auto; padding: 0 0 40px;" class="centré">
+<img src="visuels/logoIJ.jpg">
+<br>
+<span style="color: #12534b;">Version : 1.3.1</span>
+<br>
+<h2 style="color: #24a493;">Système d'affichage par vidéo-projection des scores et infos de matchs d'improvisation</h2>
+<span style="color: #12534b;">Conçu par Cyril Gauthier et Thomas Melchiorri, élèves des ateliers de la <a class="lientexte" href="https://ligue-impro-touraine.fr" target="_blank">Ligue d'Improvisation de Touraine</a>
+<br>Autres contributeurs (merci à eux !) : Emmanuel Lazard de la <a class="lientexte" href="http://www.libap.org" target="_blank">LIBAP</a>
+</span>
+<br>
+<br>
+<h3>Bienvenue !</h3>
+<br>
+<div style="border: 1px solid; width: 70%; margin: auto;">
+<h2 style="color: red;"><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;Important ! À lire impérativement avant de commencer :</h2>
+</p>
+<div class="left" style="width: 95%; margin: auto; font-family: sans-serif;"><b>•&nbsp;Lorsque vous cliquerez sur "Go" ci-dessous, une nouvelle fenêtre va normalement s'ouvrir.</b> Il s'agit du panneau de contrôle, qui permet de commander le système.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>- Si rien ne se passe après avoir cliqué sur "Go"</b> : votre navigateur a peut-être affiché ci-dessus une notification expliquant qu'il a bloqué une fenêtre pop-up : vous devrez autoriser son affichage pour qu'Improjector marche. Si tout marchait bien il y a quelques minutes, vérifiez également que vous n'avez pas laissé ouvert le panneau de contrôle de votre précédente session.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>- Si la fenêtre de contrôle est bien apparue mais que vous continuez à voir ce texte</b>, c'est que votre navigateur n'est pas compatible, ou a rencontré un problème. Navigateurs conseillés : <a class="lientexte" href="https://www.mozilla.org/fr/" target="_blank"><strong>Firefox</strong></a>, <a class="lientexte" href="https://www.google.fr/chrome/" target="_blank"><strong>Chrome</strong></a> (tous deux sont gratuits). <b>Déconseillés</b> : Internet Explorer, Edge, Safari.
+<br>
+<br>
+•&nbsp;Passez la souris sur les pastilles info oranges que vous rencontrerez. Exemple : <span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Les pastilles info sont là pour vous aider, elles contiennent souvent des informations utiles pour utiliser efficacement Improjector !</div></span>
+<br>
+<br>
+•&nbsp;Pour faire vos premiers pas avec Improjector, vous pouvez consulter notre guide : <a class="lientexte" href="aide/Guide_Improjector.pdf" target="_blank">Guide_Improjector.pdf</a>
+<br><br>
+•&nbsp;Une question, un problème ? écrivez à team@improjector.fr, ou consultez le site officiel : <a class="lientexte" href="http://www.improjector.fr" target="_blank">www.improjector.fr</a>
+<br><br>
+</div></div>
+<br><br>
+<div class="centré">
+<a href="#" onclick="popup();"> <button type="submit" style="font-size: 2em;" ><i class="fas fa-play-circle"></i> Go !</button></a>
+<br><br><br>
+<a href="#" onclick="popup('oui');"> <button type="submit" style="font-size: 1em;" ><i class="fas fa-sync"></i> Redémarrage d'urgence</button></a>&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Utilisez cette option si vous avez quitté Improjector par erreur et que vous souhaitez reprendre avec les derniers paramètres connus. Pour des raisons techniques, vos diaporamas ne sont pas compris dans cette sauvegarde automatique.</div></span>
+</div>
+<br><br><HR>
+<div style="font-size: 0.8em; color: grey;" class="centré">
+<img src="visuels/CC-BY-NC-SA.png" style="vertical-align: middle;">&nbsp;&nbsp;Si vous souhaitez modifier et/ou diffuser Improjector, c'est possible à certaines conditions. Rendez-vous sur <a class="lientexte" href="http://www.improjector.fr" target="_blank">www.improjector.fr</a> (rubrique <i>Présentation - Diffusion/modification</i>).
+</div>
+</div>
+</div>
+
+<span id="hide" style="display: none";>
+
+<div id="bandeau_apercu" style="display: none;">Aperçu</div>
+
+<div id="diapo" class="diapo_off"></div>
+
+<div id="ecranPublic" class="allume">
+
+
+<div id="af_BG" class="fond">
+<video autoplay loop id="bgvid" class="fondvideo" style="filter: brightness(40%); display: none;">
+  <source src="visuels/01.mp4" type="video/mp4">
+</video>
+</div>
+
+<div id="conteneur">
+
+<div id="degradeSup" class="fondheader">
+  <div class="AA" id="header">
+	<div class="maincartonG" id="af_main_carton_G"><img class="maingauche" src='visuels/main.png'><div id="af_carton_G" class="cartonG"></div></div>
+	
+	
+	
+	<div class="cadre_equipe fond_equipe_G" id ="af_fond_equipe_de_gauche">
+		<div class="nom_equipe" id="af_nom_equipe_de_gauche"></div>
+		</div>
+		<div class="maillotG"><div id="af_maillot_gauche" class="maillot_gauche"></div></div>
+		
+		<a id="vscadre" href="#" onclick="pleinecran();" title="Activer/Désactiver le plein écran"><div class="vs infoCoul" id="vs">vs</div><div id="fullscreen"></div></a>
+	
+	<div class="maillotD"><div id="af_maillot_droite" class="maillot_droite"></div></div>
+	
+	<div class="cadre_equipe fond_equipe_D" id ="af_fond_equipe_de_droite">
+		<div class="nom_equipe" id="af_nom_equipe_de_droite"></div></div>
+	
+	<div class="maincartonD" id="af_main_carton_D"><img class="maindroite" src='visuels/main.png'><div id="af_carton_D" class="cartonD"></div></div>
+	
+	</div>
+  </div>
+
+<div id="zone-logos-timer" class="BB">
+
+
+<div class="logos">
+<div class="logoG">
+<img id="af_logo_gauche" src="" class="imgG" alt="">
+<div id="af_text_persoG"></div>
+</div>
+<div class="timerz">
+	<div id="caucus" class="caucus progress" data-label="Caucus">
+		<span id="caucusBar" class="value" style="width:100%;"></span>
+	</div>
+<div id="timer-impro-on-off" class="timer-impro-cadre"><div id="af_big_timer">05:00</div></div>
+<div id="timer-periode-on-off" class="timer-période"><div id="af_timer_periode" class="time-per">Période n°1:<div style="display: inline;" id="brperiode"></div> 45:00</div></div>
+</div>
+<div class="logoD">
+<img id="af_logo_droite" src="" class="imgD" alt="">
+<div id="af_text_persoD"></div>
+</div>
+</div>
+  
+  
+
+  
+  
+<div id="zone-scores-impro" class="CC">
+  
+	<div id="scoreG" class="scoreG"><div id="fondscoreG" class="fondscore"><span id="af_score_G">0</span></div><div class="conteneur-penalités"><div id="af_peno1G" class="peno"></div><div id="af_peno2G" class="peno"></div><div id="af_peno3G" class="peno"></div></div></div>
+		<div id="content-impro" class="impro">
+			<div id="bandeauinfosimpro" class="bandeauinfosimpro">
+			<div id="mix-comp" class="mixcomp infoCoul"><span id="af_mix_comp"></span></div><div id="duree-imp" class="duréefix"><span id="af_durée_impro"></span></div>
+			<div class="titreimpro"><div id="af_titre_impro"></div><div id="af_texte_accueil"></div></div>
+			<div id="categ" class="categorie infoCoul"><span id="af_cat_impro"></span></div>
+			</div>
+			<div id="wait" style="display:none;">
+			<img id="logowait" src="visuels/patoche.png" class="imgWaitRotation" alt="" style="width: 27vmin;"><br><br>
+			<div id="txtwait"></div>
+			</div>
+		</div>
+	<div id="scoreD" class="scoreD"><div id="fondscoreD" class="fondscore"><span id="af_score_D">0</span></div><div class="conteneur-penalités"><div id="af_peno1D" class="peno"></div><div id="af_peno2D" class="peno"></div><div id="af_peno3D" class="peno"></div></div></div>
+
+	
+</div>
+</div>
+</div>		
+
+<div id="effet-flash">
+
+</div>
+</div>
+
+</span>
+
+<script id="selfdestruction" type="text/javascript" charset="UTF-8">  
+  
+  var CP;
+  var restore;//par défaut le démarrage se fait sans restauration des paramètres
+
+      function popup(paramrestore) {//fonction d'ouverture de la popup (panneau de contrôle)
+
+	  if (navigator.userAgent.indexOf('Edge') >= 0){alert('Votre navigateur est Microsoft Edge. Improjector peut marcher avec ce navigateur mais le rendu visuel et certaines fonctionnalités sont altérés. Préférez un des navigateur conseillés (Firefox ou Chrome)...');}
+	  
+	  //if (!PC||PC.closed||PC===undefined) {alert('test');}
+	  if (CP!==undefined) {alert('Le panneau de contrôle semble être encore ouvert. Veuillez tout fermer avant de redémarrer Improjector');}
+      
+	  if (paramrestore=='oui'){document.getElementById('titre').innerHTML="Restore"}//on met change le titre de la fenêtre, cela sera testé après...
+	  	  
+	  /*on va ouvrir une popup sans référence de document à lire (contrairement à la version 1.2, qui ouvrait dans cette popup le fichier "panneau_controle.htm").
+	  Pourquoi ? Sinon Chrome estimerait que les 2 fenêtres (afficheur - panneau de contrôle) n'appartienent pas au même domaine et interdirait la communication entre les deux fenêtres...
+	  C'est ce qui rendait la version locale d'Improjector 1.2 incompatible avec Chrome. */
+	  CP=window.open("","cp","toolbar=no,location=no,directories=no,menubar=no,scrollbars=yes,status=no,resizable=1,width=900,height=900");
+	  
+	  /*Puis on charge dans la popup le contenu html du panneau de contrôle, stocké ici, dans une div non affichée qui se cache ci-dessous... 
+	  La div en question commence sur une balise de commentaire, dont la fonction est de neutraliser les scripts qu'elle contient (pour éviter qu'ils ne soient lus à l'ouverture du présent document).
+	  On charge donc le contenu tout en retirant la balise de commentaire  */
+	  
+	  //CP.document.write(document.getElementById('contenuPanneauControle').innerHTML.replace('<!--', ''));
+	  CP.document.write(document.getElementById('contenuPanneauControle').innerHTML.replace(/<!--|-->/g, ''));
+
+		document.onkeydown=disableF5;//on active le blocage de l'actualisation pour l'afficheur	
+
+	  
+	  }
+	  
+	  
+	  
+	  
+</script>
+    
+
+
+
+
+
+
+<div id="contenuPanneauControle" style="display: none;">
+<!--
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="icon" href="visuels/favicon.ico">
+	<meta name="robots" content="noindex, nofollow">
+	<title id="titre">Panneau de contrôle - Improjector v1.3.1</title>
+	<link id="ref_css_controle" rel="stylesheet" href="panneau_controle.css?v1.3.1" charset="UTF-8">
+	<link rel="stylesheet" href="web-fonts-with-css/css/fontawesome-all.css" charset="UTF-8">
+	<link rel="stylesheet" href="css/dragula.css" charset="UTF-8">
+
+	
+	
+	
+</head>
+
+<body style="font-family: Aero;">
+
+    <div style="width: 97%; margin: 0 auto; padding: 0 0 40px;">
+	<button id="masquage" class="boutonOnOffScreen" style="background-color: red;" onclick="ecranOnOff();" type="submit"><i class="fas fa-power-off"></i>&nbsp;&nbsp;Éteindre écran de match</button>
+	<h2 style="display: inline-block;">Improjector - <i>Panneau de contrôle</i>&nbsp;&nbsp;</h2><span id="infoBulOnOff" class="infoBulActif"><a style="color:inherit;" href="#" onclick="aide_On_Off();"><i class="fas fa-info-circle"></i></a><div id="txtinfobullespecial" class="infobullespecial">Vous êtes un expert d'Improjector ? Cliquez ici pour masquer les pictos de l'aide.</div></span>
+	&nbsp;&nbsp;&nbsp;<button id="mode_reg" type="submit" onclick="changemodeMR();" style="margin-bottom: 0.4em; display: none;"><i class="fas fa-cog"></i>&nbsp;&nbsp;Retour aux réglages</button>
+	<br><br>
+		
+        <ul class="tabs" data-persist="true">
+            <li id="onglet-avant-match" class="selected reglage"><a onclick="onglet('avant-match');" href="#"><i class="far fa-id-card"></i>&nbsp;&nbsp;Réglages&nbsp;du&nbsp;Match</a></li>
+            <li id="onglet-match" class=""><a onclick="onglet('match');" href="#"><i class="fas fa-stopwatch"></i>&nbsp;&nbsp;Contrôle&nbsp;du&nbsp;Match</a></li>
+            <li id="onglet-sliders" class=""><a onclick="onglet('sliders');" href="#"><i class="far fa-images"></i>&nbsp;&nbsp;Diaporamas</a></li>
+			<li id="onglet-design" class="reglage"><a onclick="onglet('design');" href="#"><i class="fas fa-sliders-h"></i>&nbsp;&nbsp;Options&nbsp;&&nbsp;design</a></li>
+			<li id="onglet-sauvegarde" class="reglage"><a onclick="onglet('sauvegarde');" href="#"><i class="fas fa-save"></i>&nbsp;&nbsp;Sauvegarde</a></li>
+			<li id="onglet-journal" class=""><a onclick="onglet('journal');" href="#"><i class="far fa-newspaper"></i>&nbsp;&nbsp;Journal</a></li>
+        </ul>
+        <div class="tabcontents">
+		
+
+
+
+		
+		
+		
+  <div id="avant-match" style="display: block;">
+			
+			 <br><br>
+			<div class="centré reglage"><input id="mode_CP_1" type="checkbox" onchange="changemode();" style="margin-bottom: 0.4em;">&nbsp;&nbsp;Mode simple&nbsp;&nbsp;<i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;<span class="info reglage"><i class="fas fa-info-circle"></i><div class="infobulle">Le mode simple cache ou désactive certaines fonctionnalités de personnalisation. Vous gagnez en rapidité de réglage, mais perdez en possibilités, à vous de voir !</div></span></div>			 
+			 <br><br>
+			 <div class="centré"><button type="submit" onclick="inversEquipes();">Intervertir les équipes (gauche <i class="fas fa-exchange-alt"></i> droite)</button>&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Les scores et pénalités seront intervertis en même temps que les équipes, vous pouvez donc utiliser cette fonctionnalité pour opérer un changement de côté à la mi-temps.</div></span></div> 
+			 <br> 
+				<table class="tableau_avant-match">
+   <tbody><tr>
+						
+       <td>
+	   <h2><i class="fas fa-users"></i>&nbsp;&nbsp;Équipe de gauche</h2>
+	   <div class="petitcadre">
+	   <span class="zone">- Zone bandeau d'équipe -</span>
+	   <br><br>
+	   Nom de l'équipe : <input id="nom_equipe_G" size="60" class="champ-nom-equipe" value="Ligue d'Impro Intergalactique" onchange="majInfosMatch();" type="text">
+	   <br><br>
+	   <div class="v-align-m"> Couleur de fond du bandeau : <input id="couleur_fond_equipe_gauche" class="colorpicker v-align-m" value="#8a0808" onchange="majInfosMatch();" type="color">
+	   <br><br>
+	   Couleur du texte du nom d'équipe : <input id="couleur_texte_equipe_gauche" class="colorpicker v-align-m" value="#ffffff" onchange="majInfosMatch();" type="color"></div>
+	   <div class="complexe">
+	   <br>
+	   <div class="v-align-m"> Taille du nom d'équipe :
+	   <input class="v-align-m" id="taille_texte_equipe_gauche" value="4" min="1" max="10" step="0.5" onchange="majInfosMatch();" title="4" type="range">
+	   <input value="Valeur standard" onclick="document.getElementById('taille_texte_equipe_gauche').value='4'; majInfosMatch();" type="button">
+	   <br></div></div><br>
+	   <div class="v-align-m"><input id="affichCartons" checked="checked" onchange="majInfosMatch();" type="checkbox"><span class="commentaire"> Afficher les cartons de vote</span><br>Couleur du carton de gauche :
+	   <input id="couleur_carton_equipe_gauche" class="colorpicker v-align-m" value="#df0101" onchange="majInfosMatch();" type="color"></div>
+	   <br>
+	   <div class="v-align-m"><input id="affichMaillots" checked="checked" onchange="majInfosMatch();" type="checkbox"><span class="commentaire"> Afficher les maillots</span><br>Couleur maillot de gauche :
+	   <input id="couleur_maillot_equipe_gauche" class="colorpicker v-align-m" value="#8a0808" onchange="majInfosMatch();" type="color"></div>
+	   
+	   
+	   
+	   
+	   </div>
+	   <div class="petitcadre">
+	   <span class="zone">- Zone logo de l'équipe -</span>
+	   <br><br>
+	   Choix d'une image :
+	   <input id="logo_equipe_gauche" type="file" onchange="loadLogoGauche();" accept=".png,.jpg,.jpeg,.bmp,.gif,.svg,.tiff"/><br><img id="CPlogoEquipeG_RM" src="" style="max-height: 3em; margin: 0.5em;"><br>
+	   <input value="Retirer" onclick="killLogoGauche();" type="button"><br>
+	   <div class="complexe">
+	   <span class="commentaire" style="color: red; font-weight: normal;">Logo : fichier de 2 Mo maximum</span>
+	   <br><br>
+	   <div class="v-align-m"> Taille de l'image :
+	   <input class="v-align-m" id="taille_image_logo_equipe_gauche" value="25" min="15" max="35" step="1" onchange="majInfosMatch();" title="25" type="range"><span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Attention, ne modifier la taille de l'image que si c'est indispensable (risque de "casser" la mise en page du tableau des scores).</div></span>
+	   <input value="Valeur standard" onclick="document.getElementById('taille_image_logo_equipe_gauche').value='25'; majInfosMatch();" type="button">
+	   </div>
+	   <br><br>
+	   Couleur de fond du conteneur de l'image :
+	   <select id="couleur_fond_image_logo_equipe_gauche" size="1" onchange="majInfosMatch();"><option selected="selected" value="transparent">transparent (défaut)</option><option value="black">noir</option><option value="white">blanc</option></select>
+	   <br><br>
+	   <div class="séparateur50"></div>
+	   <br>
+	   Texte additionnel : <span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Ce texte apparaîtra sous l'image choisie pour l'équipe, ou à sa place si aucune image n'a été choisie.<br>Pour faire figurer par exemple : composition des équipes avec numéros des maillots, nom des joueurs, nom du coach, slogan, etc.<br><b>Astuce :</b> la balise &lt;br&gt; vous permet d'aller à la ligne.</div></span><br>
+	   <textarea id="texte_ajouté_equipe_gauche" cols="60" rows="3" placeholder="Texte personnalisé" class="champtexteajouté" onchange="majInfosMatch();" title="Astuce : la balise &lt;br&gt; vous permet d'aller à la ligne."></textarea>
+	   <br><br>
+	   Couleur du texte additionnel : <input id="couleur_texte_ajouté_equipe_gauche" class="colorpicker v-align-m" value="#ffffff" onchange="majInfosMatch();" type="color">
+	   <br><br>
+	   <div class="v-align-m">Taille du texte additionnel : <input class="v-align-m" id="taille_texte_ajouté_equipe_gauche" value="3" min="1" max="10" step="0.5" onchange="majInfosMatch();" title="3" type="range">
+	   <input value="Valeur standard" onclick="document.getElementById('taille_texte_ajouté_equipe_gauche').value='3'; majInfosMatch();" type="button"></div>
+	   </div>
+	   </div>
+	   
+	   
+	   </td><td>
+	   
+	   <h2>Équipe de droite&nbsp;&nbsp;<i class="fas fa-users"></i></h2>
+	   <div class="petitcadre">
+	   <span class="zone">- Zone bandeau d'équipe -</span>
+	   <br><br>
+	   Nom de l'équipe : <input id="nom_equipe_D" size="60" class="champ-nom-equipe" value="Club Impro de Brin-sur-Seuges" onchange="majInfosMatch();" type="text">
+	   <br><br>
+	   <div class="v-align-m"> Couleur de fond du bandeau : <input id="couleur_fond_equipe_droite" class="colorpicker v-align-m" value="#8258fa" onchange="majInfosMatch();" type="color">
+	   <br><br>
+	   Couleur du texte du nom d'équipe : <input id="couleur_texte_equipe_droite" class="colorpicker v-align-m" value="#ffffff" onchange="majInfosMatch();" type="color"></div>
+	   <div class="complexe">
+	   <br>
+	   <div class="v-align-m"> Taille du nom d'équipe :
+	   <input class="v-align-m" id="taille_texte_equipe_droite" value="4" min="1" max="10" step="0.5" onchange="majInfosMatch();" title="4" type="range">
+	   <input value="Valeur standard" onclick="document.getElementById('taille_texte_equipe_droite').value='4'; majInfosMatch();" type="button">
+	   <br></div></div><br>
+	   <div class="v-align-m"><br>Couleur du carton de droite :
+	   <input id="couleur_carton_equipe_droite" class="colorpicker v-align-m" value="#ffffff" onchange="majInfosMatch();" type="color"></div>
+	   <br>
+	   <div class="v-align-m"><br>Couleur maillot de droite :
+	   <input id="couleur_maillot_equipe_droite" class="colorpicker v-align-m" value="#ff8000" onchange="majInfosMatch();" type="color"></div>
+	   </div>
+	   <div class="petitcadre">
+	   <span class="zone">- Zone logo de l'équipe -</span>
+	   <br><br>
+	   Choix d'une image :
+	   <input id="logo_equipe_droite" type="file" accept=".png,.jpg,.jpeg,.bmp,.gif,.svg,.tiff" onchange="loadLogoDroite();" /><br><img id="CPlogoEquipeD_RM" src="" style="max-height: 3em; margin: 0.5em;"><br>
+	   <input value="Retirer" onclick="killLogoDroite();" type="button"><br>
+	   <div class="complexe">
+	   <span class="commentaire" style="color: red; font-weight: normal;">Logo : fichier de 2 Mo maximum</span>
+	   <br><br>
+	   <div class="v-align-m"> Taille de l'image :
+	   <input class="v-align-m" id="taille_image_logo_equipe_droite" value="25" min="15" max="35" step="1" onchange="majInfosMatch();" title="25" type="range"><span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Attention, ne modifier la taille de l'image que si c'est indispensable (risque de "casser" la mise en page du tableau des scores).</div></span>
+	   <input value="Valeur standard" onclick="document.getElementById('taille_image_logo_equipe_droite').value='25'; majInfosMatch();" type="button">
+	   </div>
+	   <br><br>
+	   Couleur de fond du conteneur de l'image :
+	   <select id="couleur_fond_image_logo_equipe_droite" size="1" onchange="majInfosMatch();"><option selected="selected" value="transparent">transparent (défaut)</option><option value="black">noir</option><option value="white">blanc</option></select>
+	   <br><br>
+	   <div class="séparateur50"></div>
+	   <br>
+	   Texte additionnel : <span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Ce texte apparaîtra sous l'image choisie pour l'équipe, ou à sa place si aucune image n'a été choisie.<br>Pour faire figurer par exemple : composition des équipes avec numéros des maillots, nom des joueurs, nom du coach, slogan, etc.<br><b>Astuce :</b> la balise &lt;br&gt; vous permet d'aller à la ligne.</div></span><br>
+	   <textarea id="texte_ajouté_equipe_droite" cols="60" rows="3" placeholder="Texte personnalisé" class="champtexteajouté" onchange="majInfosMatch();" title="Astuce : la balise &lt;br&gt; vous permet d'aller à la ligne."></textarea>
+	   <br><br>
+	   Couleur du texte additionnel : <input id="couleur_texte_ajouté_equipe_droite" class="colorpicker v-align-m" value="#ffffff" onchange="majInfosMatch();" type="color">
+	   <br><br>
+	   <div class="v-align-m">Taille du texte additionnel : <input class="v-align-m" id="taille_texte_ajouté_equipe_droite" value="3" min="1" max="10" step="0.5" onchange="majInfosMatch();" title="3" type="range">
+	   <input value="Valeur standard" onclick="document.getElementById('taille_texte_ajouté_equipe_droite').value='3'; majInfosMatch();" type="button"></div></div>
+	   
+	   </div></td>
+
+   </tr>
+</tbody></table>
+
+		<div class="complexe petitcadre centré fondgris">
+		<i class="fas fa-microchip"></i>&nbsp;&nbsp;Mémorisation des réglages de match dans le navigateur <span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">La sauvegarde ne sera pas faite dans un fichier, mais dans le cache de votre navigateur (si celui-ci accepte le "LocalStorage"). En principe ces réglages restent en mémoire après la fermeture de votre navigateur, si votre dossier Improjector n'a pas changé d'emplacement entre-temps. Pratique pour faire quelques essais rapides et revenir en arrière, mais peu fiable. Pour une sauvegarde durable, préférez les fonctions de sauvegarde dans un fichier.</div></span> :<br><br>
+<button type="submit" onclick="sauver();"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Mémoriser les réglages du match</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" onclick="charger();"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Charger derniers réglages mémorisés</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" onclick="effacerInfosMatch();"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;Effacer réglages mémorisés</button>
+		
+		</div>
+		<div class="petitcadre centré fondgris">
+			Sauvegarde des réglages du match dans un fichier <span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Cette fonctionnalité sauvegarde dans un fichier tous vos réglages de match (y compris les logos d'équipe). Ce fichier pourra ensuite être ré-importé ici-même (ou sur un autre ordinateur équipé d'<i>Improjector</i>).</div></span> :<br><br>
+			<span class="commentaire">Exporter dans un fichier : </span><button type="submit" onclick="exportMatch();"><i class="fas fa-upload"></i>&nbsp;&nbsp;Exporter réglages du match</button>
+			<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Suivant les réglages de votre navigateur, soit vous pourrez choisir l'emplacement du fichier, soit il sera placé dans le dossier par défaut des téléchargements, avec un nom de type "Reglages_du_match_equipe1_vs_equipe2.imp".</div></span><br>
+			<br>
+		<i class="fas fa-download"></i><span class="commentaire">&nbsp;&nbsp;Importer des réglages de match depuis un fichier : </span><input type="file" onchange="importMatch(this);" accept=".imp"/>
+		<br>
+		</div>
+		<div class="complexe centré">
+		<br>Option développeur : <input value="Charger valeurs de test" onclick="valeursDeTest();" type="button">
+		</div>
+<br>
+
+	
+</div>
+
+
+
+
+
+
+            <div id="match" style="display: none;">
+<div id="mode_match_div" class="reglage" style="text-align: center; margin-left: 5%; margin-right: 5%; display: none;"><br><button id="mode_match" type="submit" onclick="changemodeMR();" style="margin-bottom: 0.4em;"><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Réglages terminés, prêt pour le match !</button>&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Masquez toutes les options dont vous n'avez pas besoin en cours de match.<br>Vous pourrez revenir au mode réglage en cliquant sur le bouton <span style="white-space: nowrap;">"<i class="fas fa-cog"></i>&nbsp;Retour&nbsp;aux&nbsp;réglages"</span> qui sera visible en haut du panneau de contrôle.</div></span></div>		
+	<div id="cp-time-per">
+	<div class="centré flexsb">
+			<div class="left v-align-m">Timer impro : <span id="af_big_timer"></span><div class="left v-align-m"><input disabled="true" id="timerStop" style="background-color: #F79F81;" value="STOP" onclick="stopTimerPeriode();" type="button">&nbsp;&nbsp;Timer période : <span id="af_timer_periode"></span></div></div>
+			<div id="def_periode" style="text-align: right;">Période n°<input class="champ_num" id="numperiod" value="1" type="number"> Durée&nbsp;<input class="champ_num" id="durperiod" value="45" type="number"> min.&nbsp;<input value="&nbsp;GO !&nbsp;" class="boutongo" onclick="startTimerPeriode();" type="button"></div></div>
+			</div>
+				
+				<div class="controlematch">
+					
+					<div class="colonnegauche">
+					<img id="CPlogoEquipeG" src="" style="height: 3em;">
+					<div id="CPcouleurFondEquipeG" class="CPcouleurFondEquipe"><div style="min-height: 8em;"><h2><span id="nom_equipe_gauche">Équipe de gauche</span></h2></div>
+						
+						<div class="big green"><span id="CPcartonG"><i class="fas fa-square" title="Couleur des cartons de vote"></i></span>&nbsp;&nbsp;Score</div><br>
+						<input class="boutonscore" value="+" onclick="scoreIncrG();" type="button">
+						<div id="af_scoreGaucheCP" class="scoreCP">0</div>
+						<input class="boutonscoremin" value="-" onclick="scoreDecrG();" type="button"><br>
+					<br>
+					
+					<h3 style="color: red;">Pénalités :</h3>
+					<div style="white-space: nowrap;"><input class="penocheck" id="peno_1_gauche" onclick="penoG();" name="" value="" type="checkbox"><input class="penocheck" id="peno_2_gauche" onclick="penoG();" name="" value="" type="checkbox"><input class="penocheck" onclick="penoG();" id="peno_3_gauche" name="" value="" type="checkbox"></div>
+					<br>
+					<input id="basculeG" class="bascule" value="Convertir" onclick="PenoGconvert();" disabled="disabled" type="button">&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Ce bouton devient cliquable après 3 pénalités cumulées. Il réinitialise les pénalités et ajoute 1 point à l'équipe adverse.</div></span><br><br>
+					</div></div>
+					
+					
+					
+					
+					<div class="colonnecentre">
+					
+					<div class="centré"><button type="submit" onclick="wait();" class="boutoninit"><i class="fa fa-spinner"></i>&nbsp;&nbsp;Écran d'attente post-impro</button>&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Impro terminée, on efface tout, prêt pour la suivante !<br><b>En comparée, après le passage de la 1ère équipe, ne cliquez pas ici.</b> Re-validez (bouton orange) et relancez le compte-à-rebours pour la 2ème équipe (bouton vert).</div></span>					<div id="chaussonMatch" style="display:none;"><br>
+					Valeur du compteur : 
+					<input id="nbchaussons" onkeypress="validNbChaussons(event);" value="0" type="number" style="width: 3em; text-align: center; font-weight: bold; -moz-appearance: textfield;">&nbsp;
+					<button type="submit" onclick="chaussonsIncr();majTxtWait();"><b>&nbsp;+&nbsp;1&nbsp;</b></button>&nbsp;
+					<button type="submit" onclick="chaussonsIncrRand();majTxtWait();"><b>&nbsp;+&nbsp;?&nbsp;</b></button>&nbsp;&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Compteur de chaussons - Tapez un chiffre puis la touche "Entrée" pour modifier le compte, ou utilisez les boutons (" + 1 " ajoute 1, " + ? " ajoute un nombre aléatoire compris entre 2 et 6).</div></span>
+					
+					</div>
+					</div>
+					<div class="petitcadre barre rad">
+					<h3>Improvisation :</h3>
+					<div class="big">
+					  <input class="caché" id="radiomixte" name="mixcomp" value="mixte" type="radio"><label for="radiomixte">&nbsp;Mixte&nbsp;</label>&nbsp;&nbsp;
+					  <input class="caché" id="radiocomp" name="mixcomp" value="comp" type="radio"><label for="radiocomp">&nbsp;Comparée&nbsp;</label>
+					</div>
+					<br><br>
+					<span class="intitulémini">Titre :</span><br>
+					<div class="c_champ_titre"><textarea id="improtitre" cols="40" rows="2" class="centré champ_titre"></textarea></div>
+					<br><br>
+					<span class="info-ortho"><i class="fas fa-language"></i><div class="info-orthobulle">Mémo orthographique pour les noms propres : Samuel <b>Beckett</b>, Bertold <b>Brecht</b>, Lewis <b>Carroll</b>, Federico <b>Fellini</b>, Alfred <b>Hitchcock</b>, Eugène <b>Ionesco</b>, Franz <b>Kafka</b>, Emir <b>Kusturica</b>, Hayao <b>Miyazaki</b>, Steven <b>Spielberg</b>, Anton <b>Tchekhov</b>, William <b>Shakespeare</b>, Tennessee <b>Williams</b></div></span>&nbsp;&nbsp;<span class="intitulémini">Catégorie et/ou contraintes :</span><br>
+					<span class="commentaire">(affichera "libre" si laissé vide)</span>
+					<div class="c_champ_categorie"><input id="cat_impro" size="40" class="centré champ_categorie" type="text"></div>
+					<br>
+					<br>
+					<span class="intitulémini">Durée :</span><br>
+					<div class="c_champ_durée"><div class="v-align-m">
+					<div class="block_boutons">
+						<input class="timer_boutons" value="+" onclick="incr_impro_min();" type="button"><br>
+						<input class="timer_boutons" value="-" onclick="decr_impro_min()" type="button">
+					</div>
+					<input id="durée_impro_min" class="centré champ_durée" onclick="this.select();" type="number"> : <input id="durée_impro_sec" class="centré champ_durée" onclick="this.select();" type="number">
+					<div class="block_boutons">
+						<input class="timer_boutons" value="+" onclick="incr_impro_sec()" type="button"><br>
+						<input class="timer_boutons" value="-" onclick="decr_impro_sec()" type="button">
+					</div>
+					</div></div>
+					<div class="v-align-m">
+					<br>
+					</div>
+					
+					<br>
+					
+					<div class="flex"><div class="centré flex1 v-align-m">
+					<button type="submit" onclick="improrefresh();caucus.startCaucus();" class="boutonvalid"><i class="fas fa-check"></i>&nbsp;Valider</button><br>
+					<span class="commentaire">(affiche au tableau les infos de l'impro)</span></div>
+					<div class="centré flex1 v-align-m">
+					<button type="submit" id="boutonImproGo" disabled="disabled" onclick="caucus.endCaucus();startTimerImpro();" class="boutongo"><i class="fas fa-stopwatch"></i>&nbsp;Lancer l'impro</button><br>
+					<span class="commentaire">(démarrage du timer si visible)</span></div>
+					</div>
+					
+					</div>
+					</div>
+					
+					<div class="colonnedroite">
+					<img id="CPlogoEquipeD" src="" style="height: 3em;">
+					<div id="CPcouleurFondEquipeD" class="CPcouleurFondEquipe"><div style="min-height: 8em;"><h2><span id="nom_equipe_droite">Équipe de droite</span></h2></div>
+						<div class="big green"><span id="CPcartonD"><i class="fas fa-square" title="Couleur des cartons de vote"></i></span>&nbsp;&nbsp;Score</div><br>
+						<input class="boutonscore" value="+" onclick="scoreIncrD();" type="button">
+						<div id="af_scoreDroiteCP" class="scoreCP">0</div>
+						<input class="boutonscoremin" value="-" onclick="scoreDecrD();" type="button"><br>
+					<br>
+					<h3 style="color: red;">Pénalités :</h3>
+					<div style="white-space: nowrap;"><input class="penocheck" id="peno_1_droite" onclick="penoD();" name="" value="" type="checkbox"><input class="penocheck" id="peno_2_droite" onclick="penoD();" name="" value="" type="checkbox"><input class="penocheck" id="peno_3_droite" onclick="penoD();" name="" value="" type="checkbox"></div>
+					<br>
+					<input id="basculeD" class="bascule" value="Convertir" onclick="PenoDconvert();" disabled="disabled" type="button">&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Ce bouton devient cliquable après 3 pénalités cumulées. Il réinitialise les pénalités et ajoute 1 point à l'équipe adverse.</div></span><br><br>
+					</div></div>
+				
+				
+				</div>
+			
+				
+								
+            </div>
+
+			
+			
+			
+			
+			
+			
+ <div id="sliders" style="display: none;">
+ 
+				
+<br><br>
+<div style="width: 100%;">
+<center><button id="diapo_on_off" onclick="diapoOnOff();" type="submit"><i class="fas fa-eye"></i>&nbsp;&nbsp;Afficher le diaporama</button>&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle" style="text-align: center;"><b>Afficher/Masquer le diaporama</b><br><br><b>Afficher :</b> l'écran de match s'éteint pour faire place à vos diapos.<br><b>Masquer :</b> aucun affichage, écran noir. Vous pourrez ensuite soit réafficher le diaporama, soit revenir à l'écran de match à l'aide du bouton principal situé en haut à droite.<br></div></span></center>
+</div>
+<div style="color: #ffdefc;">
+<br><br><center><i class="fas fa-step-backward"></i>&nbsp;&nbsp;<i class="fas fa-step-forward"></i>&nbsp;&nbsp;DIAPORAMA MANUEL :</center>
+<div class="petitcadre">
+<span class="info"><i style="position: relative; left: 10px; top: 10px;" class="fas fa-info-circle"></i><div class="infobulle" style="text-align: center;">Une fois les images ajoutées, vous pouvez les réorganiser avec la souris : maintenez le clic sur la poignée <i class="fas fa-arrows-alt-h"></i> et faites glisser. Pour choisir l'image qui s'affichera à l'écran, cliquez dessus ou utilisez les boutons "Image précédente / suivante"</div></span>
+<center>
+<div id="diapo_manu_control" style="display: none;"><button id="diapo_1" type="submit" onclick="diapo1();"><i class="fas fa-fast-backward"></i>&nbsp;&nbsp;Remettre au début</button> - <button id="diapo_prev" type="submit" onclick="diapoPrev();">Image précédente&nbsp;&nbsp;<i class="fas fa-step-backward"></i></button> - <button id="diapo_next" type="submit" onclick="diapoNext();"><i class="fas fa-step-forward"></i>&nbsp;&nbsp;Image suivante</button><br><br><br></div>
+<div class="reglage"><i class="far fa-images"></i>&nbsp;&nbsp;Ajouter des images : <input type="file" accept=".png,.jpg,.jpeg,.bmp,.gif,.svg,.tiff" id="files" name="files[]" multiple /> <button id="supprDiapo" style="display: none;" type="submit" onclick="killDiapoManu();"><i class="far fa-trash-alt"></i>&nbsp;&nbsp;Retirer toutes les images</button></div>
+<br>
+<div id="spoilerDiapoManu" style="display: none;">
+    
+<a href="#" style="display: none;" id="conteneur-miniatures-voir" class="showLink" onclick="showHide('conteneur-miniatures');return false;"><i class="fa fa-chevron-circle-down"></i>&nbsp;&nbsp;Voir les miniatures</a><a href="#" id="conteneur-miniatures-hide" class="hideLink" onclick="showHide('conteneur-miniatures');return false;"><i class="fa fa-chevron-circle-up"></i>&nbsp;&nbsp;Replier les miniatures</a>
+    <br><div id="conteneur-miniatures" style="display: block;" class="more">
+<div id="miniatures"></div>
+    </div>
+</div>
+<span class="commentaire">Le diaporama manuel comporte <span id="affNbDiap">0</span> images.</span>
+<br>
+</center>
+</div>
+</div>
+<center>
+<div style="color: #dafff9;">
+<br><i class="fas fa-play-circle"></i>&nbsp;&nbsp;DIAPORAMA AUTOMATIQUE :<div class="petitcadre">
+<div id="diapo_auto_control" style="display: none;">Durée d'affichage de chaque image :  <input id="duree_diapo" type="number" value="10" class="champ_durée_diapo" onchange="diapoVal();"> secondes <span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Important : les décimales éventuelles doivent être séparées par une virgule (ex. 1,8s).<br><b>Durée minimum : 0,5s !</b></div></span>
+<br>
+<br>
+<button type="submit" onclick="diapoAuto();" id="boutonRunDiapoAuto"><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Démarrer diaporama automatique</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="boutonStopDiapoAuto" disabled="true" type="submit" onclick="stopDiapo();"><i class="fas fa-stop"></i>&nbsp;&nbsp;Stopper diaporama automatique</button>
+<br>
+</div>
+<div class="reglage">
+<br>
+<i class="far fa-images"></i>&nbsp;&nbsp;Ajouter des images : <input type="file" accept=".png,.jpg,.jpeg,.bmp,.gif,.svg,.tiff" id="autofiles" name="autofiles[]" multiple /> <button id="autosupprDiapo" style="display: none;" type="submit" onclick="killDiapoAuto();"><i class="far fa-trash-alt"></i>&nbsp;&nbsp;Retirer toutes les images</button>
+<br>
+</div>
+<br>
+<div id="spoilerDiapoAuto" style="display: none;">
+    
+<a href="#" style="display: none;" id="conteneur-miniatures-auto-voir" class="showLink" onclick="showHide('conteneur-miniatures-auto');return false;"><i class="fa fa-chevron-circle-down"></i>&nbsp;&nbsp;Voir les miniatures</a><a href="#" id="conteneur-miniatures-auto-hide" class="hideLink" onclick="showHide('conteneur-miniatures-auto');return false;"><i class="fa fa-chevron-circle-up"></i>&nbsp;&nbsp;Replier les miniatures</a>
+    <br><div id="conteneur-miniatures-auto" style="display: block;" class="more">
+<div id="autominiatures"></div>
+</div>
+</div><span class="commentaire">Le diaporama automatique comporte <span id="autoaffNbDiap">0</span> images.</span><br>
+</div>
+</center>
+<br><br>
+<div class="petitcadre centré fondgris reglage">
+Sauvegarde des diaporamas dans un fichier <span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Cette fonctionnalité sauvegarde vos diaporamas dans un fichier. Ce fichier pourra ensuite être ré-importé ici-même (ou sur un autre ordinateur équipé d'<i>Improjector</i>).</div></span> :<br><br>
+<span id="diapoexport"><span class="commentaire">Exporter dans un fichier : </span><button type="submit" onclick="exportDiapowait();"><i class="fas fa-upload"></i>&nbsp;&nbsp;Exporter les diaporamas</button>&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Suivant les réglages de votre navigateur, soit vous pourrez choisir l'emplacement du fichier, soit il sera placé dans le dossier par défaut des téléchargements, avec un nom de type "Diapos_improjector.imp".<br>La création du fichier peut prendre quelques minutes si vos diaporamas comportent de nombreuses images ou des images volumineuses.</div></span></span>
+<div id="diapoexportwait" style="display: none;"><span style="color: red;"><i class="fas fa-spinner"></i>&nbsp;&nbsp;Veuillez patienter sans cliquer, la création du fichier peut prendre du temps si vos diaporamas comportent de nombreuses images ou des images volumineuses...</span></div>
+<br>
+<br>
+<i class="fas fa-download"></i><span class="commentaire">&nbsp;&nbsp;Importer des diaporamas depuis un fichier : </span><input type="file" onchange="importDiapo(this);" accept=".imp"/>
+</div>
+</div>
+</div>		
+
+
+
+
+
+
+   <div id="design" style="display: none;">
+<br>
+<br><div class="centré reglage"><input id="mode_CP_2" type="checkbox" onchange="changemode();" style="margin-bottom: 0.4em;">&nbsp;&nbsp;Mode simple&nbsp;&nbsp;<i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;<span class="info reglage"><i class="fas fa-info-circle"></i><div class="infobulle">Le mode simple cache ou désactive certaines fonctionnalités de personnalisation. Vous gagnez en rapidité de réglage, mais perdez en possibilités, à vous de voir !</div></span></div>
+	<br><div class="complexe petitcadre centré">
+	<button type="submit" onclick="openapercu();"><i class="fas fa-window-restore"></i>&nbsp;&nbsp;Aperçu en live</button>&nbsp;&nbsp;Proportions : 10%<input id="taille_apercu" class="v-align-m" value="0.3" min="0.1" max="1" step="0.05" onchange="setApRatio();" title="30%" type="range">100%
+	<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Ouvre une fenêtre d'aperçu qui reproduit (approximativement !) le contenu projeté au public sur le grand écran. Gardez l'aperçu ouvert pendant le match si vous avez besoin de contrôler visuellement ce qui se passe sur l'écran public (dans le cas où il serait placé derrière vous par exemple).<br><br>La jauge vous permet de regler la taille de cet aperçu tout en conservant les proportions (hauteur/largeur) de l'écran affiché au public (afin d'avoir une restitution la plus fidèle possible).<br><br><b>Attention : </b>l'option aperçu est gourmande en ressources, à éviter si votre ordinateur est peu puissant ou "rame" !</div></span>
+	<br>
+	</div>
+	
+
+
+<div class="centré">
+<br><i class="far fa-list-alt"></i>&nbsp;&nbsp;Préconfigurations de design : <select id="preconf_design" onchange="Design(this.value);">
+<option selected="selected" value="standard">Improjector (réglages standards)</option>
+<option value="theatre">Théâtre</option>
+<option value="abyss">Abysses</option>
+<option value="metalique">Métalique</option>
+<option value="camping">Camping</option>
+<option value="inferno">Inferno</option>
+<option value="sport">Sport</option>
+<option value="toxiczombie">Toxic Zombie</option>
+<option value="casino">Casino</option>
+</select>
+<br><span class="commentaire">Si vous n'avez pas envie de passer des plombes à régler le design !</span>
+<br>
+<br>
+<br>
+<br>
+PERSONNALISER LE DESIGN :</div>	
+<div class="petitcadre centré">
+
+<div class="petitcadre">
+Affichage des compte-à-rebours :<br><br><i class="fas fa-stopwatch"></i>&nbsp;&nbsp;Compte à rebours de l'improvisation jouée : <select id="affichTimerImpro" size="1" onchange="majDesign();">
+<option selected="selected" value="block">Afficher (pendant l'impro)</option>
+<option value="none">Jamais</option>
+</select>
+<br>
+<br><i class="fas fa-stopwatch"></i>&nbsp;&nbsp;Compte à rebours de la période en cours : <select id="affichTimerPeriode" size="1" onchange="majDesign();">
+<option value="block">Afficher pendant tout le match</option>
+<option selected="selected" value="block">Afficher seulement entre les impros</option>
+<option value="none">Jamais</option>
+</select>
+<br>
+</div>
+<div class="complexe petitcadre">
+Annonce au public :&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Message d'accueil avant le début du match, ou pour afficher une info au public en cours de match.<br><b>Attention :</b> Si elles sont actuellement affichées, les infos de l'impro en cours seront remplacées par votre texte !<br><b>Astuce :</b> la balise &lt;br&gt; vous permet d'aller à la ligne</div></span><br>
+<textarea id="texte_accueil" cols="60" rows="3" class="champtexteajouté" title="Astuce : la balise &lt;br&gt; vous permet d'aller à la ligne.">Bienvenue dans IMPROJECTOR !</textarea>
+<br>
+<input value="Afficher" onclick="affichTxtAccueil();" type="button"><br>
+</div>
+<div class="petitcadre">
+Afficher les libellés de l'impro en cours : <select id="affich_intitules" size="1" onchange="majDesign();">
+<option selected="selected" value="Oui">Oui</option>
+<option value="Non">Non</option>
+</select>&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">OUI :<br><span class="commentaire"><b>Improvisation</b> Mixte - <b>Durée</b> : 3:00 / <b>Catégorie</b> : Libre</span><br><br>NON :<br><span class="commentaire">Mixte - 3:00 - Libre</div></span>
+&nbsp;&nbsp;&nbsp;<input value="Tester le rendu (impro factice)" onclick="testImpro();" type="button">
+<br>
+</div>
+<div class="petitcadre">
+Couleur des infos : <input id="couleur_infos" class="colorpicker v-align-m" value="#FFA500" onchange="majDesign();" type="color">&nbsp;<input value="Reset" onclick="document.getElementById('couleur_infos').value='#FFA500'; majDesign();" type="button">&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Il s'agit de la couleur du compte-à-rebours de période, des infos catégorie et durée impro, etc.</div></span>
+<br>
+</div>
+<div class="petitcadre">
+Police de caractères principale : <select id="font" size="1" onchange="majDesign();">
+<option selected="selected" value="Aero">Aero Matics regular (défaut)</option>
+<option value="coolvetica">Coolvetica regular</option>
+<option value="georgiabelle">Georgia Belle</option>
+<option value="blueh">Blue Highway regular</option>
+<option value="raleway">Raleway medium</option>
+<option value="fjalla">FjallaOne regular</option>
+<option value="crete">Crete Round regular</option>
+<option value="georgia">Georgia</option>
+<option value="biko">Biko</option>
+<option value="alte">Alte Haas Grotesk</option>
+<option value="Sans-serif">Police de votre navigateur</option>
+Sans-serif
+</select>
+
+</div>
+<div class="complexe petitcadre">
+Feuille de style (présentation générale) : <select id="switcher_Css" size="1" onchange="majDesign();">
+<option selected="selected" value="_dynamique.css">Dynamique (défaut)
+</option><option value="_sobre.css">Sobre
+</option><option value="_perso.css">Votre feuille de style (perso.css)
+</option></select>&nbsp;&nbsp;<button type="submit" onclick="cssReload();"><i class="fas fa-sync" aria-hidden="true"></i>&nbsp;&nbsp;Actualiser</button>
+&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle"><b>Pour les experts :</b> si vous maîtrisez le langage CSS, vous pouvez modifier le fichier "_perso.css" situé dans le dossier "systeme" d'Improjector, et personnaliser encore davantage l'apparence de l'écran d'affichage.<br>Cliquez sur "Actualiser" pour prendre en compte des modifications faites dans le fichier css si elles ne sont pas visibles.<br><b>Attention :</b> La compatibilité de votre fichier css avec d'autres versions d'Improjector n'est pas garantie !</div></span>
+</div>
+<div class="complexe petitcadre">
+Afficher "VS" : <select id="VS_visible" size="1" onchange="majDesign();">
+<option selected="selected" value="visible">Oui (défaut)</option>
+<option value="hidden">Non</option>
+</select>
+</div>
+<div class="complexe petitcadre">
+Afficher la barre de caucus avant le démarrage de l'impro : <select id="caucus_visible" size="1" onchange="majDesign();">
+<option selected="selected" value="block">Oui (défaut)</option>
+<option value="none">Non</option>
+</select>
+</div>
+<div class="complexe petitcadre">
+Style des scores : <select id="style_Scores" size="1" onchange="majDesign();">
+<option selected="selected" value="">Oblique (défaut)</option>
+<option value="vertical">Vertical</option>
+</select>
+</div>
+<div class="petitcadre">
+Choix du type de fond d'écran :&nbsp;
+<select id="fond_ecran" size="1" onchange="majDesign();">
+<option selected="selected" value="video">Vidéo (défaut)</option>
+<option value="img">Image</option>
+<option value="statique">Couleur unie</option>
+<option value="html">Dégradé personnalisé (ou code html, pour les geeks !)</option>
+</select>
+<br><br>
+<div id="optionsVideo">
+Vidéo : <select id="fond_video" size="1" onchange="majDesign();">
+<option selected="selected" value="01.mp4">Bleu-Vert (défaut)</option>
+<option value="00.mp4">Bleu</option>
+<option value="001.mp4">Rouge</option>
+<option value="002.mp4">Rouge-Jaune</option>
+<option value="003.mp4">Bleu clair</option>
+</select>
+<br><br>
+Luminosité de la vidéo<input class="v-align-m" id="lumin_video" value="40" min="0" max="100" step="1" onchange="majDesign();" title="40%" type="range"><input value="Reset" onclick="document.getElementById('lumin_video').value=40; majDesign();" type="button"></div>
+<div id="optionsFondCouleur" style="display: none;"><br>Couleur du fond uni : <input id="couleur_fond_ecran" class="colorpicker v-align-m" value="#064f4d" onchange="majDesign();" type="color"></div>
+<div id="optionsHtml" style="display: none;">Générateur de dégradé :<br><br>
+Couleur 1 : <input type="color" value="#00343e" id="coul_deg_1" onchange="genDeg();">&nbsp;&nbsp;Couleur 2 : <input type="color" value="#00949f" id="coul_deg_2" onchange="genDeg();">
+<br>
+<br>
+Type de dégradé : <select id="type_deg" onchange="genDeg();">
+  <option value="linear-gradient(to bottom, " selected>Vertical</option>
+  <option value="linear-gradient(to right, ">Horizontal</option>
+  <option value="linear-gradient(to top right, ">/ Transversal /</option>
+  <option value="linear-gradient(to bottom right, ">\ Transversal \</option>
+  <option value="radial-gradient(closest-corner ellipse at center, ">Radial (centré)</option>
+  <option value="radial-gradient(ellipse at top left, ">Radial (depuis coin supérieur gauche)</option>
+  <option value="radial-gradient(ellipse at top right, ">Radial (depuis coin supérieur droit)</option>
+  <option value="radial-gradient(ellipse at bottom left, ">Radial (depuis coin inférieur gauche)</option>
+  <option value="radial-gradient(ellipse at bottom right, ">Radial (depuis coin inférieur droit)</option>
+</select>
+<br>
+<br>
+Aperçu :
+<div id="aper_deg" style="background: linear-gradient(to bottom, #00343e, #00949f); margin: auto; width: 20vmin; height: 13vmin;">
+</div>
+<br>
+<input type="button" id="gen_deg" value="Générer le code html correspondant" onclick="genDeg(); majDesign();">
+<br>
+<br>
+<br>
+Code html personnalisé :
+<br>
+<textarea id="html_fond_perso" cols="60" rows="5" onchange="majDesign();" class="champtexteajouté">background: linear-gradient(to bottom, #00343e, #00949f);</textarea><br><input value="Voir" onclick="majDesign();" type="button">
+<br>
+
+</div>
+<div id="optionsImg" style="display: none;">
+Choix de l'image : <select id="type_fond_image" size="1" onchange="def_img_fond(); majDesign();">
+<option selected="selected" value="fondImgPerso">Image personnalisée</option>
+<option value="visuels/fond01.jpg">Halos gris</option>
+<option value="visuels/fond02.jpg">Halo bleu-vert</option>
+<option value="visuels/fond03.jpg">Lumière rouge</option>
+<option value="visuels/fond04.jpg">Lumière bleue</option>
+<option value="visuels/fond05.jpg">Spots</option>
+<option value="visuels/fond06.jpg">Halo rouge</option>
+<option value="visuels/fond07.jpg">Mur de briques</option>
+<option value="visuels/fond08.jpg">Rideau de scène</option>
+<option value="visuels/fond09.jpg">Parchemin</option>
+</select>
+<br><br>Image personnalisée : <input id="imagefond" type="file" onchange="getElementById('type_fond_image').value='fondImgPerso'; def_img_fond();" accept=".png,.jpg,.jpeg,.bmp,.gif,.svg,.tiff"/>
+	   <input value="Retirer" onclick="killImgBckgd();" type="button"><br>
+	   <span class="commentaire" style="color: red; font-weight: normal;">Image personnalisée : fichier de 2 Mo maximum</span>
+<br><br>
+Luminosité de l'image<input class="v-align-m" id="lumin_image_fond" value="1" min="0" max="2" step="0.1" onchange="majDesign();" title="1" type="range"><input value="Reset" onclick="document.getElementById('lumin_image_fond').value=1; majDesign();" type="button">	   
+</div></div>
+<div class="complexe petitcadre">
+	   Écran d'attente entre les impros :&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Déterminez ici ce qui s'affichera lorsque vous cliquerez sur "Écran d'attente post-impro" dans l'onglet "Contrôle du Match".</div></span><br>
+	   <img id="CPlogoWait" src="visuels/patoche.png" style="max-height: 5em; margin: 0.5em;"><br>
+	   Choix de l'image :&nbsp;&nbsp;
+	   <input id="logo_wait" type="file" onchange="loadLogoWait();" accept=".png,.jpg,.jpeg,.bmp,.gif,.svg,.tiff"/>&nbsp;&nbsp;
+	   <input value="Retirer (aucune)" onclick="killLogoWait();" type="button">&nbsp;&nbsp;<input value="Logo par défaut" onclick="DefautLogoWait();" type="button">
+	   <br><br>
+	   <div class="v-align-m"> Taille de l'image :
+	   <input class="v-align-m" id="taille_logo_wait" value="27" min="5" max="80" step="1" onchange="majDesign();" title="27" type="range">
+	   <input value="Valeur standard" onclick="document.getElementById('taille_logo_wait').value='27'; majDesign();" type="button">
+	   <br><br>
+	   Rotation 3D de l'image : <select id="logo_wait_rotation" onchange="majDesign();"><option value="imgWaitRotation" selected>Oui</option><option value="imgWaitNoRotation">Non</option></select>
+	   <br>
+	   <br>
+	   Texte à afficher (optionnel) :&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Message qui s'affichera entre les impros lors de l'affichage de l'écran d'attente.<br>Astuce :</b> la balise &lt;br&gt; vous permet d'aller à la ligne</div></span><br>
+<textarea onchange="majTxtWait();" id="texte_wait" cols="60" rows="2" class="champtexteajouté" title="Astuce : la balise &lt;br&gt; vous permet d'aller à la ligne.">Place au vote !</textarea>
+	<br><br>
+	   Ajouter un compteur de chaussons :
+	   <select id="compteur_chaussons_actif" onchange="majParamDesign();majTxtWait();majCPchaussons();"><option value="oui">Oui</option><option value="non" selected>Non</option></select>&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Attention, option débile qui ajoute à la suite de votre texte personnalisé un compteur des chaussons (ou "caoutchoucs" au Quebec) lancés par le public.<br>Vous pourrez faire évoluer ce compteur à l'aide des boutons qui s'affichent dans l'onglet "Contrôle du match" lorsque cette option est activée.</div></span>
+	   <div id="chaussonDesign" style="display: none;">
+	   <br><br>Texte : <input id="texte_compteur_avant" size="20" type="text" value="Compteur : " style="text-align:right;" onchange="majParamDesign();majTxtWait();"><input size="1" type="text" value="X" readonly><input id="texte_compteur_apres" size="20" type="text" value=" chaussons lancés..." onchange="majParamDesign();majTxtWait();">
+	   <br><br>
+	   <input value="Logo spécial compteur" onclick="LogoChausson();" type="button">
+	   </div><br><br><input value="Tester le rendu" onclick="majDesign();wait();" type="button">
+	   </div>
+</div>
+<div class="complexe petitcadre">
+Vidéo-projection de l'afficheur : <select id="reverse_proj" size="1" onchange="majDesign();" title="Selectionnez ''Projection par l'arrière'' si votre projecteur est placé derrière l'écran et que l'image a besoin d'être inversée sur l'axe gauche-droite.">
+<option selected="selected" value="front">Projection par l'avant (défaut)</option>
+<option value="back">Projection par l'arrière (retourner l'image)</option>
+</select>&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Cette option est pratique si votre video-projecteur n'a pas de mode "projection par l'arrière", mais peut s'avérer gourmande en ressources. Faites de préférence le réglage directement sur le video-projecteur s'il le permet.</div></span>
+</div>
+<div class="complexe petitcadre">
+Zone de projection :&nbsp;&nbsp;<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Ces options peuvent permettre de s'adapter à des conditions de projection difficile si vous n'avez pas pu placer votre vidéoprojecteur de façon optimale, mais peuvent être gourmandes en ressources. Évitez si possible de les utiliser en combinaison avec l'aperçu. Dans tous les cas, utilisez en priorité les réglages proposés par votre vidéoprojecteur.</div></span><br><br>
+Réduire la taille globale de la projection ("dézoomer") : 30%<input class="v-align-m" id="zoom" value="1" min="0.3" max="1" step="0.05" onchange="majDesign();" type="range">100%<br>
+Réduire seulement l'écran de match : 30%<input class="v-align-m" id="echelle" value="1" min="0.3" max="1" step="0.05" onchange="majDesign();" type="range">100%<br>
+Centrage vertical : &nbsp;<input class="v-align-m" id="margesup" value="0" min="-50" max="50" step="2" onchange="majDesign();" type="range"><span id="centrageVertical">0</span>
+<br>
+<br><button type="submit" onclick="resetZooms();">Réglages standard</button>
+</div>
+</div>
+<div class="complexe petitcadre centré fondgris">
+<i class="fas fa-microchip"></i>&nbsp;&nbsp;Mémorisation des réglages du design dans le navigateur <span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">La sauvegarde ne sera pas faite dans un fichier, mais dans le cache de votre navigateur (si celui-ci accepte le "LocalStorage"). En principe ces réglages restent en mémoire après la fermeture de votre navigateur, si votre dossier Improjector n'a pas changé d'emplacement entre-temps. Pratique pour faire quelques essais rapides et revenir en arrière, mais peu fiable. Pour une sauvegarde durable, préférez les fonctions de sauvegarde dans un fichier.</div></span> :<br><br>
+<button type="submit" onclick="sauvDesign();"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Mémoriser les réglages du design</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" onclick="loadDesign();"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Charger derniers réglages mémorisés</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" onclick="effacerInfosDesign();"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;Effacer réglages mémorisés</button>
+
+</div>
+<div class="petitcadre centré fondgris">
+Sauvegarde des réglages du design dans un fichier <span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Cette fonctionnalité sauvegarde dans un fichier tous vos réglages de design (y compris l'image de fond personnalisée). Ce fichier pourra ensuite être ré-importé ici-même (ou sur un autre ordinateur équipé d'<i>Improjector</i>).</div></span> :<br><br>
+<span class="commentaire">Exporter dans un fichier : </span><button type="submit" onclick="exportDesign();"><i class="fas fa-upload"></i>&nbsp;&nbsp;Exporter réglages du design</button>
+<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Suivant les réglages de votre navigateur, soit vous pourrez choisir l'emplacement du fichier, soit il sera placé dans le dossier par défaut des téléchargements, avec un nom de type "Design_improjector.imp".</div></span><br>
+<br>
+<i class="fas fa-download"></i><span class="commentaire">&nbsp;&nbsp;Importer un design depuis un fichier : </span><input type="file" onchange="importDesign(this);" accept=".imp"/>
+</div>
+</div>
+
+
+
+
+
+
+<div id="sauvegarde" style="display: none;">
+<br>
+<div class="petitcadre centré fondgris">
+Sauvegarde complète (réglages match + design + diaporama <span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Cette fonctionnalité sauvegarde dans un fichier tous vos réglages de match, vos choix de design (y compris les logos d'équipe et l'image de fond personnalisée) et vos diaporamas. Ce fichier pourra ensuite être ré-importé ici-même (ou sur un autre ordinateur équipé d'<i>Improjector</i>).<br><br>Idéal pour préparer un match en amont !<br><br><b>Attention :</b> Si vos diaporamas comportent de nombreuses images ou des images volumineuses, la création du fichier pourra prendre un peu de temps.</div></span> ) dans un fichier :<br><br>
+<span id="globalexport"><span class="commentaire">Exporter tous les paramètres dans un fichier : </span><button type="submit" onclick="exportToutwait();"><i class="fas fa-upload"></i>&nbsp;&nbsp;Exporter tout</button>
+<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Suivant les réglages de votre navigateur, soit vous pourrez choisir l'emplacement du fichier, soit il sera placé dans le dossier par défaut des téléchargements, avec un nom de type "Reglages_complets_improjector.imp".</div></span><br></span>
+<div id="globalexportwait" style="display: none;"><span style="color: red;"><i class="fas fa-spinner"></i>&nbsp;&nbsp;Veuillez patienter sans cliquer, la création du fichier peut prendre du temps si vos diaporamas comportent de nombreuses images ou des images volumineuses...</span><br></div>
+<br>
+<i class="fas fa-download"></i><span class="commentaire">&nbsp;&nbsp;Importer tout type de réglage depuis un fichier : </span><input type="file" onchange="importTout(this);" accept=".imp"/>
+</div>
+<br>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="journal" style="display: none;">
+<br>
+<div class="centré"><h3><i class="far fa-newspaper"></i>&nbsp;&nbsp;&nbsp;&nbsp;Journal du match :</h3>
+<span class="info"><i class="fas fa-info-circle"></i><div class="infobulle">Ci-dessous un compte-rendu chronologique des faits de match, qui se mettra à jour automatiquement à chaque nouvel évènement</div></span><br><br><br>
+<button type="submit" onclick="JournalMatchExport();"><i class="fas fa-upload"></i>&nbsp;&nbsp;Exporter le journal du match</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" onclick="effacerJournalMatch();"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;Effacer le journal du match</button>
+<br>
+<br>
+</div>
+<div class="petitcadre journalmatch">
+<div class="centré"><h3><strong><span id="journal_nom_equipeG"></span></strong>&nbsp;&nbsp;- vs -&nbsp;&nbsp;<strong><span id="journal_nom_equipeD"></span></strong></h3><br>
+Journal du match :</div>
+<div id="journal_match">
+
+
+
+</div>
+</div>
+
+
+</div>
+
+
+
+
+
+	   
+   </div>			
+			
+			
+        </div>
+
+
+	
+
+
+<script type="text/javascript" charset="UTF-8">  	
+	
+	var CP=document;
+	var afficheur=window.opener.document;
+	
+</script>
+	
+	<script src="javascript/timer.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/apercu.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/controle.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/variables_globales.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/diapos.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/impro_en_cours.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/scores.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/reglages_match.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/param_defaut_et_tests.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/sauvegarde_interne.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/sauvegarde_externe.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/logos_equipes.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/design.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/journal_match.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/modeCP.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/dragula.js" type="text/javascript" charset="UTF-8"></script>
+	<script src="javascript/CP.js?v1.3.1" type="text/javascript" charset="UTF-8"></script>
+	
+	
+<script type="text/javascript" charset="UTF-8"> 
+	
+
+	ouverture_controle();
+ 
+      	function ouverture_controle() { //appel des fonctions qui s'exécutent dès l'ouverture du panneau de controle (une fois celle-ci chargée)
+		
+		
+
+		
+		if (navigator.userAgent.indexOf('Edge') >= 0){ouvertureclassique();return;}//avec Edge, on n'essaye pas de restaurer !
+		
+		
+		if (afficheur.getElementById('titre').innerHTML=="Restore")
+		{flashRestore();rundragula();runindex();autorunindex();nettoyage();afficheur.getElementById('titre').innerHTML="Écran public - Improjector";}
+		else {
+		ouvertureclassique();
+		}
+								
+		}	
+
+		
+		function ouvertureclassique(){
+				
+				majInfosMatch();
+				majDesign();
+				AffCPInfosMatch();
+				affichTxtAccueil();
+				rundragula();runindex();autorunindex();
+				nettoyage();
+				
+		
+				
+				}
+		
+</script>
+
+
+
+
+</body>
+
+
+</html>
+
+<script type="text/javascript" charset="UTF-8">
+
+
+	
+window.stop();  //empêche Firefox de faire je-ne-sais-pas-quoi qui fait que la fenêtre semble ne jamais finir de se charger... À éclaircir !
+
+
+
+//pour une raison encore non identifiée, Chrome ne prend pas en compte le css si on ne le recharge pas à la fin...
+CP.getElementById('ref_css_controle').href = "panneau_controle.css?v1.3.1";
+
+
+
+
+
+</script>
+
+
+-->
+
+
+</div>
+
+
+
+
+
+
+
+	
+	
+	
+  
+</body>
+
+
+
+</html>

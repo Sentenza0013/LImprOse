@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thèmes</title>
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="icon" type="image/png" href="./asset/images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+    <img src="./asset/images/banniere2.png"
+         alt="L'ImprOse"
+         height="50">
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./impro.html">Qu'est-ce que l'impro ?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./bienfaits.html">Les bienfaits</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="./troupes.html">Trouver une troupe</a>
+        </li><li class="nav-item">
+          <a class="nav-link active"
+   aria-current="page"
+   href="./themes.html">
+   Thèmes
+</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="./categories.html">Catégories</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="./exercices.html">Exercices</a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="./contact.html">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button"
+   data-bs-toggle="dropdown" aria-expanded="false">
+   Outils
+</a>
+          <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Générateur de thèmes</a></li>
+    <li><a class="dropdown-item" href="#">Générateur de catégories</a></li>
+    <li><a class="dropdown-item" href="#">Chronomètre</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Tableau de match</a></li>
+</ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="themes">
+    <h1>Thèmes d'improvisation</h1>
+    <p>Découvrez quelques thèmes d'improvisation pour stimuler votre imagination.</p>
+    <table>
+        <caption>Exemples de thèmes d'improvisation</caption>
+        <tr>
+            <th>Catégorie</th>
+            <th>Thème</th>
+            <th>Niveau</th>
+        </tr>
+        <tr>
+            <td>Science-fiction</td>
+            <td>Mission sur Mars</td>
+            <td>Débutant</td>
+        </tr>
+        <tr>
+            <td>Absurde</td>
+            <td>Le fromage président</td>
+            <td>Confirmé</td>
+        </tr>
+        <tr>
+            <td>Drame</td>
+            <td>Réunion de famille tendue</td>
+            <td>Intermédiaire</td>
+        </tr>
+        <tr>
+            <td>Comédie</td>
+            <td>Le restaurant qui sert des plats invisibles</td>
+            <td>Débutant</td>
+        </tr>
+        <tr>
+            <td>Fantastique</td>
+            <td>Le village où il pleut des bonbons</td>
+            <td>Intermédiaire</td>
+        </tr>
+    </table>
+<h2>Générer des thèmes aléatoires</h2>
+
+<p>
+Pour renouveler les exercices et les matchs d'improvisation, il existe des outils permettant de générer aléatoirement des thèmes, des catégories, des durées ou des contraintes de jeu. Ces générateurs offrent des milliers de combinaisons possibles et permettent de créer rapidement de nouvelles situations d'improvisation.
+</p>
+
+<p>
+Les thèmes aléatoires sont particulièrement utiles lors des ateliers, des entraînements ou pour préparer des matchs d'improvisation.
+</p>
+<h2>Générateur de thème</h2>
+
+<button onclick="genererTheme()">
+    Générer un thème
+</button>
+
+<p id="theme">
+    Cliquez sur le bouton pour obtenir un thème.
+</p>
+<h2>Les grands univers de l'improvisation</h2>
+
+<div class="themes-grid">
+
+    <div class="theme-card">
+        <h3>🚀 Science-fiction</h3>
+        <p>
+            Voyages spatiaux, extraterrestres,
+            technologies futuristes et mondes inconnus.
+        </p>
+    </div>
+
+    <div class="theme-card">
+        <h3>🏰 Fantastique</h3>
+        <p>
+            Dragons, magie, royaumes oubliés
+            et créatures légendaires.
+        </p>
+    </div>
+
+    <div class="theme-card">
+        <h3>😂 Comédie</h3>
+        <p>
+            Situations absurdes, quiproquos
+            et personnages décalés.
+        </p>
+    </div>
+
+    <div class="theme-card">
+        <h3>🕵️ Enquête</h3>
+        <p>
+            Mystères, détectives
+            et affaires à résoudre.
+        </p>
+    </div>
+
+    <div class="theme-card">
+        <h3>❤️ Romance</h3>
+        <p>
+            Histoires d'amour,
+            rencontres inattendues et émotions.
+        </p>
+    </div>
+
+    <div class="theme-card">
+        <h3>👻 Horreur</h3>
+        <p>
+            Maisons hantées,
+            phénomènes étranges et suspense.
+        </p>
+    </div>
+
+</div>    
+</section>
+<footer>
+            <img src="./asset/images/logo.png" alt="Logo de L'ImprOse">
+    <p>L'ImprOse - Votre cerveau aux commandes</p>
+    <p>&copy; 2024 L'ImprOse. Tous droits réservés.</p>
+</footer>
+<a href="#" class="retour-haut">⬆ Retour en haut</a>
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

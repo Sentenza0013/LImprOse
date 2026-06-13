@@ -1,0 +1,15 @@
+Version 1.3.1 d'Improjector - 29/03/2019
+
+
+Les nouveautés de cette version ont été apportées par Emmanuel Lazard de la LIBAP
+(Ligue d'Improvisation du Barreau de Paris) - www.libap.org
+
+Un grand merci à lui pour sa contribution !
+
+
+Améliorations et nouveautés :
+
+- Ajout d'une fonctionnalité "Barre de Caucus" qui apparaît avant le lancement de l'impro
+- Ajout de boutons permettant de définir le temps de l'impro en quelques clics
+- Correction d'un bug concernant la compatibilité avec Google Chrome sur Mac !
+

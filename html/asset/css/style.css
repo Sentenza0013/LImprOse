@@ -1,0 +1,54 @@
+body {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+section {
+    background-color: rgba(0,0,0,0.7);
+    border: 2px solid #7C3AED;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+h1 {
+    color: #7C3AED;
+}
+
+h2,
+h3 {
+    color: #F97316;
+}
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #7C3AED;
+    padding: 10px;
+}
+
+th {
+    background-color: #7C3AED;
+    color: white;
+}
+a {
+    color: #fbde6c;
+}
+
+a:hover {
+    color: #F97316;
+}
+footer {
+    text-align: center;
+    background-color: #fbde6c;
+    color: black;
+    padding: 15px;
+    margin-top: 20px;
+}

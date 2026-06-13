@@ -1,0 +1,13 @@
+color = couleur du texte
+
+background-color = couleur du fond
+
+font-size = taille du texte
+
+margin = espace extérieur
+
+padding = espace intérieur
+
+border = bordure
+
+text-align = alignement du texte
