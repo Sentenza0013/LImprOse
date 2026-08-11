@@ -1,132 +1,512 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qu'est-ce que l'impro ?</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./asset/css/style.css">
-    <link rel="icon" type="image/png" href="./asset/images/favicon.png">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>L'ImprOse - L'improvisation théâtrale</title>
+
+    <link
+        rel="stylesheet"
+        href="./asset/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./asset/css/impro.css"
+    >
+
 </head>
+
+
 <body>
-<main>
-     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
-    <img src="./asset/images/banniere2.png"
-         alt="L'ImprOse"
-         height="50">
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="./index.html">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active"
-   aria-current="page"
-   href="./impro.html">
-   Qu'est-ce que l'impro ?
-</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./bienfaits.html">Les bienfaits</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./troupes.html">Trouver une troupe</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./themes.html">Thèmes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./categories.html">Catégories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./exercices.html">Exercices</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./contact.html">Contact</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button"
-   data-bs-toggle="dropdown" aria-expanded="false">
-   Outils
-</a>
-          <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Générateur de thèmes</a></li>
-    <li><a class="dropdown-item" href="#">Générateur de catégories</a></li>
-    <li><a class="dropdown-item" href="#">Chronomètre</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Tableau de match</a></li>
-</ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    <section class="impro">
-    <h1>Qu'est-ce que l'improvisation ?</h1>
-    <p>Le théâtre d'improvisation est une forme de spectacle vivant où les comédiens créent des histoires sans texte préparé à l'avance. À partir d'un thème, d'un mot ou d'une situation proposée par le public ou un arbitre ou maître de cérémonie, ils imaginent des personnages, des dialogues et des scénarios en temps réel. L'improvisation repose sur l'écoute, la créativité, l'acceptation des idées des partenaires de jeu et l'esprit d'équipe. Chaque représentation est unique, car rien n'est écrit et tout se construit sur le moment.
-    </p>
-    <h2>Les origines de l'improvisation</h2>
-  <p>L'improvisation théâtrale ne date pas d'aujourd'hui. Dès l'Antiquité, les comédiens improvisaient déjà certaines scènes devant le public. Plus tard, au XVIᵉ siècle, la Commedia dell'arte italienne popularise cette pratique grâce à des personnages emblématiques et des scénarios laissant une grande liberté de jeu aux acteurs.
 
-Au XXᵉ siècle, l'improvisation moderne connaît un nouvel essor grâce aux travaux de Viola Spolin, qui développe des exercices favorisant l'écoute, la créativité et la spontanéité. En 1977, les Québécois Robert Gravel et Yvon Leduc créent le premier match d'improvisation, un concept inspiré du hockey sur glace qui contribuera à faire connaître cette discipline dans de nombreux pays.
 
-Aujourd'hui, le théâtre d'improvisation est pratiqué aussi bien comme loisir que comme spectacle. Il est également utilisé dans les domaines de la formation, de l'entreprise et du développement personnel pour améliorer la communication, la confiance en soi et le travail en équipe.</p>
-    <h2>Pourquoi pratiquer l'improvisation ?</h2>
-    <p>L'improvisation théâtrale est accessible à tous, quel que soit l'âge ou l'expérience. Il n'est pas nécessaire d'avoir déjà pratiqué le théâtre pour commencer. Les exercices sont généralement adaptés au niveau des participants et permettent de progresser à son rythme.
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
-Pratiquer l'improvisation aide à développer la confiance en soi, la prise de parole en public, l'écoute, la créativité, la gestion du stress et la capacité à travailler en équipe. Elle apprend également à s'adapter rapidement aux situations imprévues et à accepter les idées des autres pour construire une histoire ensemble.
+    <header class="site-header">
 
-Au-delà de l'aspect artistique, l'improvisation est avant tout une activité conviviale qui favorise les rencontres, le partage et le plaisir de jouer. C'est pour cette raison qu'elle est aujourd'hui pratiquée aussi bien dans les loisirs que dans les écoles, les entreprises ou les formations professionnelles.</p>
-    <h2>Les principes de base</h2>
-<p>Le théâtre d'improvisation repose sur quelques principes essentiels qui permettent aux joueurs de créer des scènes cohérentes et agréables à jouer. Ces règles ne sont pas des contraintes, mais des repères qui favorisent l'écoute, la coopération et la créativité au sein du groupe.</p>
-<ul>
-    <li>Écouter ses partenaires.</li>
-    <li>Accepter les propositions.</li>
-    <li>Construire ensemble une histoire.</li>
-    <li>Oser prendre des initiatives.</li>
-    <li>S'amuser tout en respectant le groupe.</li>
-</ul>
-<h2>Le match d'improvisation</h2>
-<p>Le match d'improvisation est la forme la plus populaire de l'improvisation théâtrale. Créé au Québec en 1977 par Robert Gravel et Yvon Leduc, il s'inspire de l'univers du hockey sur glace, aussi bien dans son déroulement que dans son ambiance. Deux équipes de comédiens s'affrontent sur une patinoire imaginaire appelée « patinoire d'impro », sous le regard d'un arbitre et du public.
+        <a
+            href="./index.html"
+            class="site-logo"
+        >
 
-Chaque improvisation débute par l'annonce d'un thème, d'une catégorie, d'une durée et du nombre de joueurs qui participeront à la scène. Les équipes disposent de quelques secondes pour se préparer avant de créer une histoire entièrement improvisée. Selon les consignes, elles peuvent jouer séparément ou ensemble dans une improvisation dite « mixte ».
+            <img
+                src="./asset/images/banniereoff.png"
+                alt="Logo de L'ImprOse"
+            >
 
-À la fin de chaque improvisation, le public vote pour la prestation qu'il a préférée. Les équipes marquent des points au fil du match, tandis que l'arbitre veille au respect des règles. Au-delà de la compétition, le véritable objectif reste de raconter des histoires captivantes et de partager un moment de créativité avec les spectateurs.</p>
-<h2>Le rôle de l'arbitre</h2>
-<p>L'arbitre occupe une place essentielle lors d'un match d'improvisation. Son rôle est de veiller au bon déroulement de la rencontre et au respect des règles par les deux équipes. Il n'intervient pas dans les histoires créées par les joueurs, mais s'assure que chaque improvisation se déroule dans de bonnes conditions.
+        </a>
 
-Avant chaque improvisation, il annonce le thème, la catégorie, la durée et le nombre de joueurs concernés. Pendant le match, il observe attentivement les prestations et peut sanctionner certaines fautes, comme un manque d'écoute, une sortie de thème ou un non-respect des règles.
 
-Bien que son personnage soit parfois volontairement autoritaire ou théâtral, l'arbitre reste avant tout le garant de l'équité et du bon esprit du match. Son objectif est de permettre aux joueurs d'exprimer leur créativité dans un cadre clair et respecté.</p>
-<h2>Les catégories d'improvisation</h2>
-<p>Les catégories d'improvisation permettent de varier les défis proposés aux comédiens. Elles imposent une manière particulière de jouer ou de raconter une histoire. Certaines demandent de chanter, d'autres de s'exprimer sans paroles, de parler en rimes ou encore de respecter un style précis, comme le cinéma, le conte ou le film policier.
+        <nav class="site-nav">
 
-Ces contraintes stimulent la créativité des joueurs et rendent chaque improvisation différente. Elles invitent les comédiens à s'adapter rapidement tout en construisant une histoire cohérente avec leurs partenaires.
+            <a href="./index.html">
+                Accueil
+            </a>
 
-Il existe de très nombreuses catégories, utilisées aussi bien lors des entraînements que pendant les matchs. Pour les découvrir plus en détail, consultez notre page dédiée aux catégories d'improvisation.</p>
-<h2>Le rôle du public</h2>
-<p>Dans le théâtre d'improvisation, le public occupe une place essentielle. Contrairement à de nombreuses formes de théâtre, les spectateurs participent activement à la vie du spectacle. Selon les formats, ils peuvent proposer des thèmes, inspirer certaines improvisations et, lors des matchs, voter pour l'équipe qu'ils ont préférée.
+            <a
+                href="./impro.html"
+                class="active"
+                aria-current="page"
+            >
+                L'impro
+            </a>
 
-Les réactions du public, qu'il s'agisse des rires, des applaudissements ou des encouragements, influencent également l'énergie des comédiens. Cette interaction permanente rend chaque représentation unique et crée une véritable complicité entre les joueurs et les spectateurs.
+            <a href="./bienfaits.html">
+                Bienfaits
+            </a>
 
-Plus qu'un simple observateur, le public participe pleinement à l'expérience de l'improvisation. Sa présence, son imagination et son enthousiasme contribuent à faire de chaque spectacle un moment vivant, spontané et inoubliable.</p>
-</section>
-<p>L'improvisation est une discipline accessible à tous, où la créativité, l'écoute et le plaisir de jouer occupent une place centrale. Que ce soit pour monter sur scène, gagner en confiance ou simplement partager un bon moment, chacun peut y trouver sa place. N'hésitez pas à explorer les autres rubriques de L'ImprOse pour découvrir les catégories, les exercices et les nombreux outils mis à votre disposition.</p>
+            <a href="./troupes.html">
+                Troupes
+            </a>
 
-</main> 
-<footer>
-            <img src="./asset/images/logo-vectoriel.png" alt="Logo de L'ImprOse">
-    <p>L'ImprOse - Votre cerveau aux commandes</p>
-    <p>&copy; 2024 L'ImprOse. Tous droits réservés.</p>
-</footer>
-<a href="#" class="retour-haut">⬆ Retour en haut</a>  
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>  
+            <a href="./themes.html">
+                Thèmes
+            </a>
+
+            <a href="./categories.html">
+                Catégories
+            </a>
+
+            <a href="./exercices.html">
+                Exercices
+            </a>
+
+            <a href="./outils.html">
+                Outils
+            </a>
+
+            <a href="./contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="impro-hero">
+
+
+            <!-- IMAGE TROUPE -->
+
+            <div class="impro-hero-scenes">
+
+                <img
+                    src="./asset/images/troupe-sur-scene.jpg"
+                    alt="Troupe de théâtre en répétition sur scène"
+                >
+
+            </div>
+
+
+
+            <!-- IMAGE HOMME -->
+
+            <div class="impro-hero-person">
+
+                <img
+                    src="./asset/images/hommetire-moustache.jpg"
+                    alt="Comédien faisant semblant d'écouter"
+                >
+
+            </div>
+
+
+
+            <!-- CONTENU -->
+
+            <div class="impro-hero-content">
+
+                <p class="impro-kicker">
+                    THÉÂTRE D'IMPROVISATION
+                </p>
+
+
+                <h1>
+
+                    QU'EST-CE QUE<br>
+
+                    <span>L'IMPRO ?</span>
+
+                </h1>
+
+
+                <p class="impro-hero-text">
+
+                    L'improvisation théâtrale est une forme de théâtre
+                    spontanée dans laquelle les comédiens créent une
+                    histoire, des personnages et des dialogues sans
+                    texte préparé à l'avance.
+
+                </p>
+
+
+                
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             PRINCIPES
+        ========================== -->
+
+        <section
+            class="principes"
+            id="principes"
+        >
+
+            <div class="section-heading">
+
+                <p>
+                    LES BASES
+                </p>
+
+                <h2>
+                    LES PRINCIPES FONDAMENTAUX
+                </h2>
+
+            </div>
+
+
+            <div class="principes-grid">
+
+
+                <article class="principe-card">
+
+                    <div class="principe-icon">
+                        +
+                    </div>
+
+                    <h3>
+                        L'ACCEPTATION
+                    </h3>
+
+                    <p>
+                        Accueillir les propositions de ses partenaires
+                        et construire ensemble plutôt que bloquer une idée.
+                    </p>
+
+                </article>
+
+
+                <article class="principe-card">
+
+                    <div class="principe-icon">
+                        ◉
+                    </div>
+
+                    <h3>
+                        L'ÉCOUTE
+                    </h3>
+
+                    <p>
+                        Être attentif à ses partenaires pour rebondir
+                        naturellement et faire évoluer la scène.
+                    </p>
+
+                </article>
+
+
+                <article class="principe-card">
+
+                    <div class="principe-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        LA SPONTANÉITÉ
+                    </h3>
+
+                    <p>
+                        Faire confiance à son instinct et accepter
+                        de ne pas toujours savoir ce qui va arriver.
+                    </p>
+
+                </article>
+
+
+                <article class="principe-card">
+
+                    <div class="principe-icon">
+                        ∞
+                    </div>
+
+                    <h3>
+                        LA CONSTRUCTION
+                    </h3>
+
+                    <p>
+                        Créer collectivement une histoire en faisant
+                        avancer la scène avec ses partenaires.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             BIENFAITS
+        ========================== -->
+
+        <section class="bienfaits">
+
+            <div class="section-heading">
+
+                <p>
+                    POURQUOI PRATIQUER ?
+                </p>
+
+                <h2>
+                    LES BIENFAITS DE L'IMPRO
+                </h2>
+
+            </div>
+
+
+            <div class="bienfaits-grid">
+
+
+                <article class="bienfait">
+
+                    <div class="bienfait-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        CRÉATIVITÉ
+                    </h3>
+
+                    <p>
+                        Développez votre imagination et votre capacité
+                        à trouver rapidement de nouvelles idées.
+                    </p>
+
+                </article>
+
+
+                <article class="bienfait">
+
+                    <div class="bienfait-icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        CONFIANCE
+                    </h3>
+
+                    <p>
+                        Osez prendre la parole et exprimez-vous
+                        plus librement devant les autres.
+                    </p>
+
+                </article>
+
+
+                <article class="bienfait">
+
+                    <div class="bienfait-icon">
+                        ◎
+                    </div>
+
+                    <h3>
+                        ÉCOUTE
+                    </h3>
+
+                    <p>
+                        Apprenez à être réellement attentif aux autres
+                        et à leurs propositions.
+                    </p>
+
+                </article>
+
+
+                <article class="bienfait">
+
+                    <div class="bienfait-icon">
+                        ♧
+                    </div>
+
+                    <h3>
+                        ESPRIT D'ÉQUIPE
+                    </h3>
+
+                    <p>
+                        Construisez ensemble et apprenez à faire
+                        confiance à vos partenaires.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             COMPRENDRE
+        ========================== -->
+
+        <section class="comprendre">
+
+            <div class="comprendre-content">
+
+
+                <div>
+
+                    <p class="small-title">
+                        POUR ALLER PLUS LOIN
+                    </p>
+
+
+                    <h2>
+
+                        L'improvisation,
+                        <span>bien plus qu'un jeu.</span>
+
+                    </h2>
+
+
+                    <p>
+                        L'improvisation théâtrale permet de créer des
+                        histoires uniques à partir de quelques éléments.
+                        Les comédiens construisent ensemble personnages,
+                        situations et dialogues en temps réel.
+                    </p>
+
+
+                    <p>
+                        Elle peut se pratiquer sous de nombreuses formes :
+                        exercices, spectacles, matchs d'improvisation,
+                        ateliers ou encore formats courts.
+                    </p>
+
+                </div>
+
+
+
+                <div class="comprendre-links">
+
+                    <a href="./categories.html">
+
+                        Découvrir les catégories
+
+                        <span>→</span>
+
+                    </a>
+
+
+                    <a href="./themes.html">
+
+                        Explorer les thèmes
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CTA
+        ========================== -->
+
+        <section class="impro-cta">
+
+            <div>
+
+                <p>
+                    PRÊT À VOUS LANCER ?
+                </p>
+
+                <h2>
+                    Il ne reste plus qu'à improviser.
+                </h2>
+
+            </div>
+
+
+            <a href="./exercices.html">
+                Découvrir les exercices
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <img
+            src="./asset/images/logo-vectoriel.png"
+            alt="Logo de L'ImprOse"
+        >
+
+
+        <div class="footer-content">
+
+            <h2>
+                L'ImprOse - Votre cerveau aux commandes
+            </h2>
+
+            <p>
+                Développez votre créativité, votre écoute et votre
+                confiance grâce au théâtre d'improvisation.
+            </p>
+
+            <p class="copyright">
+                &copy; 2026 L'ImprOse. Tous droits réservés.
+            </p>
+
+            <a href="./index.html">
+                Retour à l'accueil
+            </a>
+
+        </div>
+
+    </footer>
+
+
 </body>
 
 </html>

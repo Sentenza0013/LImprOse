@@ -1,0 +1,510 @@
+/* =========================================================
+   L'IMPROSE — PAGE L'IMPRO
+   Styles propres à impro.html
+========================================================= */
+
+/* Base */
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: #fff;
+    color: #17121f;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+main section { box-sizing: border-box; }
+
+/* Header */
+.site-header {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 68px;
+    padding: 12px 7%;
+    background: #08080c;
+}
+
+.site-logo {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+}
+
+.site-logo img {
+    display: block;
+    width: 112px;
+    height: auto;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 1.7vw, 27px);
+    margin-left: auto;
+}
+
+.site-nav a {
+    position: relative;
+    padding: 9px 0;
+    color: #d7d4dc;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color .2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active { color: #fff; }
+
+.site-nav a.active::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #f97316;
+    content: "";
+}
+
+/* Hero */
+.impro-hero {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+    background: #08080c;
+}
+
+.impro-hero-scenes,
+.impro-hero-person {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.impro-hero-scenes { z-index: 0; }
+
+.impro-hero-scenes img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 66%;
+}
+
+/* Le dégradé sombre donne du contraste au texte sans créer de cadre. */
+.impro-hero-scenes::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+        rgba(5, 5, 10, .97) 0%,
+        rgba(5, 5, 10, .88) 29%,
+        rgba(5, 5, 10, .54) 51%,
+        rgba(5, 5, 10, .16) 72%,
+        rgba(5, 5, 10, .06) 100%);
+    content: "";
+}
+
+/* L'image verticale est plus large que le recadrage : le visage reste lisible. */
+.impro-hero-person {
+    right: 0;
+    left: auto;
+    z-index: 1;
+    width: clamp(360px, 42vw, 650px);
+    height: 100%;
+    -webkit-mask-image: linear-gradient(90deg,
+        transparent 0%, rgba(0, 0, 0, .3) 12%, #000 30%, #000 100%);
+    mask-image: linear-gradient(90deg,
+        transparent 0%, rgba(0, 0, 0, .3) 12%, #000 30%, #000 100%);
+}
+
+.impro-hero-person img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 46% 48%;
+}
+
+/* Liaison légère entre les photos, volontairement limitée pour préserver le visage. */
+.impro-hero-person::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8, 8, 12, .34) 0%, transparent 25%);
+    content: "";
+    pointer-events: none;
+}
+
+.impro-hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(440px, 43%);
+    margin-left: 8%;
+    padding: 96px 0 64px;
+}
+
+.impro-kicker {
+    margin: 0 0 12px;
+    color: #c084fc;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .13em;
+}
+
+.impro-hero-content h1 {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: clamp(42px, 4.4vw, 64px);
+    font-weight: 800;
+    line-height: .98;
+    letter-spacing: -.04em;
+}
+
+.impro-hero-content h1 span { color: #8b3df2; }
+
+.impro-hero-text {
+    max-width: 395px;
+    margin: 0;
+    color: #f1eef4;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+/* Titres communs */
+.section-heading {
+    width: 100%;
+    margin: 0 0 32px;
+    text-align: center;
+}
+
+.section-heading p {
+    margin: 0 0 7px;
+    color: #7c3aed;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .14em;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: #24152f;
+    font-size: clamp(23px, 2.3vw, 30px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+/* Principes */
+.principes {
+    width: 100%;
+    padding: 64px 7%;
+    background: #fff;
+}
+
+.principes-grid,
+.bienfaits-grid {
+    display: grid;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.principes-grid { gap: 18px; }
+
+.principe-card {
+    min-height: 184px;
+    padding: 24px 17px;
+    background: #fff;
+    border: 1px solid #e7e2eb;
+    border-radius: 9px;
+    text-align: center;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.principe-card:hover {
+    box-shadow: 0 12px 26px rgba(35, 20, 50, .09);
+    transform: translateY(-4px);
+}
+
+.principe-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto 13px;
+    color: #630dc7;
+    background: #f5effd;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.principe-card h3,
+.bienfait h3 {
+    margin: 0 0 9px;
+    color: #2a1938;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.principe-card p,
+.bienfait p {
+    margin: 0;
+    color: #666;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* Bienfaits */
+.bienfaits {
+    width: 100%;
+    padding: 58px 7% 70px;
+    background: #fafafa;
+}
+
+.bienfaits-grid { gap: 34px; }
+
+.bienfait { text-align: center; }
+
+.bienfait-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 13px;
+    color: #630dc7;
+    border: 1px solid #eadcff;
+    border-radius: 50%;
+    font-size: 25px;
+}
+
+.bienfait p {
+    max-width: 190px;
+    margin: 0 auto;
+}
+
+/* Comprendre */
+.comprendre {
+    width: 100%;
+    padding: 74px 8%;
+    background: #fff;
+}
+
+.comprendre-content {
+    display: grid;
+    align-items: center;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    gap: clamp(42px, 7vw, 90px);
+    grid-template-columns: minmax(0, 1.4fr) minmax(260px, .8fr);
+}
+
+.small-title {
+    margin: 0 0 10px;
+    color: #f97316;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .13em;
+}
+
+.comprendre h2 {
+    margin: 0 0 20px;
+    color: #24152f;
+    font-size: clamp(29px, 3vw, 36px);
+    line-height: 1.15;
+}
+
+.comprendre h2 span { color: #630dc7; }
+
+.comprendre p {
+    max-width: 600px;
+    margin: 0 0 15px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.comprendre-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comprendre-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 17px;
+    color: #3c2350;
+    background: #faf8fd;
+    border: 1px solid #eee7f5;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.comprendre-links a span { color: #630dc7; font-size: 16px; }
+.comprendre-links a:hover { background: #f3eafd; transform: translateX(3px); }
+
+/* CTA */
+.impro-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(86%, 1080px);
+    margin: 0 auto 70px;
+    padding: 28px 35px;
+    gap: 30px;
+    background: linear-gradient(120deg, #4c0a91, #7b23d7);
+    border-radius: 10px;
+}
+
+.impro-cta p {
+    margin: 0 0 5px;
+    color: #dcccf0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .13em;
+}
+
+.impro-cta h2 { margin: 0; color: #fff; font-size: 22px; }
+
+.impro-cta a {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    min-width: 185px;
+    min-height: 42px;
+    padding: 0 18px;
+    color: #fff;
+    background: #f97316;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.impro-cta a:hover { background: #ea580c; transform: translateY(-2px); }
+
+/* Footer */
+body > footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 36px 7%;
+    gap: 30px;
+    background: #0c0c10;
+}
+
+body > footer > img { width: 110px; flex: 0 0 auto; }
+.footer-content { text-align: left; }
+.footer-content h2 { margin: 0 0 7px; color: #fff; font-size: 16px; }
+.footer-content p { margin: 0 0 8px; color: #aaa; font-size: 10px; }
+.footer-content .copyright { color: #666; font-size: 9px; }
+.footer-content a { display: inline-block; margin-top: 7px; color: #c084fc; font-size: 10px; font-weight: 700; text-decoration: none; }
+
+/* Tablette */
+@media (max-width: 1050px) {
+    .site-header { padding-right: 4%; padding-left: 4%; }
+    .site-nav { gap: 13px; }
+    .site-nav a { font-size: 10px; }
+    .impro-hero { min-height: 480px; }
+    .impro-hero-content { width: 46%; margin-left: 6%; padding-top: 82px; }
+    .impro-hero-person { width: clamp(330px, 49vw, 530px); }
+    .principes-grid, .bienfaits-grid { gap: 12px; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .site-header {
+        align-items: flex-start;
+        min-height: 0;
+        padding: 12px 20px 8px;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .site-logo img { width: 100px; }
+
+    .site-nav {
+        width: 100%;
+        margin: 0;
+        padding: 0 0 6px;
+        overflow-x: auto;
+        gap: 18px;
+        scrollbar-width: thin;
+    }
+
+    .site-nav a { flex: 0 0 auto; font-size: 10px; }
+    .impro-hero { min-height: 620px; }
+    .impro-hero-scenes img { object-position: center 70%; }
+    .impro-hero-scenes::after { background: linear-gradient(180deg, rgba(5,5,10,.94) 0%, rgba(5,5,10,.72) 43%, rgba(5,5,10,.2) 100%); }
+
+    .impro-hero-person {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 52%;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.46) 18%, #000 40%);
+        mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.46) 18%, #000 40%);
+    }
+
+    .impro-hero-person img { object-position: 50% 42%; }
+    .impro-hero-person::after { background: linear-gradient(180deg, rgba(8,8,12,.27) 0%, transparent 30%); }
+
+    .impro-hero-content {
+        width: min(100% - 40px, 470px);
+        margin: 0 auto;
+        padding: 52px 0 0;
+        text-align: center;
+    }
+
+    .impro-kicker { font-size: 11px; }
+    .impro-hero-content h1 { font-size: clamp(36px, 10vw, 48px); }
+    .impro-hero-text { margin: 0 auto; font-size: 13px; }
+    .principes, .bienfaits { padding-right: 20px; padding-left: 20px; }
+    .principes-grid, .bienfaits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .principes-grid { gap: 12px; }
+    .bienfaits-grid { row-gap: 34px; }
+    .comprendre { padding: 55px 25px; }
+    .comprendre-content { gap: 30px; grid-template-columns: 1fr; }
+    .impro-cta { width: calc(100% - 40px); margin-bottom: 55px; padding: 25px 20px; flex-direction: column; gap: 20px; text-align: center; }
+    body > footer { padding: 35px 20px; flex-direction: column; text-align: center; }
+    .footer-content { text-align: center; }
+}
+
+@media (max-width: 480px) {
+    .impro-hero { min-height: 590px; }
+    .impro-hero-content { width: min(100% - 32px, 430px); padding-top: 43px; }
+    .impro-hero-person { height: 50%; }
+    .section-heading h2 { font-size: 22px; }
+    .principe-card { min-height: 164px; padding: 18px 10px; }
+    .principe-card h3, .bienfait h3 { font-size: 10px; }
+    .principe-card p, .bienfait p { font-size: 9px; }
+    .comprendre h2 { font-size: 27px; }
+    .impro-cta h2 { font-size: 19px; }
+}

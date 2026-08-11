@@ -1,473 +1,602 @@
+/* =========================================================
+   L'IMPROSE
+   CSS GLOBAL DU SITE
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --violet: #630dc7;
+    --violet-clair: #7c3aed;
+    --orange: #f97316;
+
+    --noir: #08080c;
+    --noir-2: #111111;
+
+    --blanc: #ffffff;
+    --gris: #666666;
+    --gris-clair: #f5f5f7;
+}
+
+
+/* =========================================================
+   RESET / BASE
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
+    padding: 0;
+
     font-family: 'Poppins', sans-serif;
+
+    background-color: var(--blanc);
+    color: #222;
+
+    overflow-x: hidden;
 }
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   PAGE D'ACCUEIL
+========================================================= */
+
 .hero {
-    height: 435px;
     width: 100%;
+    min-height: 435px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 100px;
 
-    background-image: url('../images/troupes-sur-scenes.png');
+    gap: 70px;
+
+    padding: 40px 7%;
+
+    box-sizing: border-box;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 8, 12, 0.45),
+            rgba(8, 8, 12, 0.25)
+        ),
+        url("../images/troupes-sur-scenes.png");
+
     background-size: cover;
     background-position: center;
+
+    overflow: hidden;
 }
-.hero-texte h1 {
-    font-size: 46px;
-    margin: 0;
-    width: 430px;
-    font-weight: 800;
-    line-height: 55.2px;
+
+
+/* =========================================================
+   LOGO DU HERO
+========================================================= */
+
+.hero-logo {
+    width: 42%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateX(-30px);
 }
-.hero-texte h2 {
-    font-size: 18px;
-    margin: 0;
-    color: #630DC7;
-    font-weight: bold;
-}
-.hero-texte p {
-    font-size: 15px;
-    width: 430px;
-    margin: 10px 0;
-}
+
 .hero-logo img {
-    width: 600px;
+    display: block;
+
+    width: 300px;
     height: auto;
+
     object-fit: contain;
 }
+
+
+/* =========================================================
+   TEXTE DU HERO
+========================================================= */
+
 .hero-texte {
-    color: white;
+    width: 430px;
+    max-width: 45%;
+
+    color: var(--blanc);
+
     text-align: left;
-    margin-left: 0;
-    transform: translateX(80px);
+
+    transform: translateX(30px);
 }
-.hero-logo {
-    transform: translateX(-50px);
+
+.hero-texte h2 {
+    margin: 0 0 8px;
+
+    color: var(--violet-clair);
+
+    font-size: 18px;
+    font-weight: 700;
+
+    line-height: 1.2;
 }
+
+.hero-texte h1 {
+    width: 430px;
+    max-width: 100%;
+
+    margin: 0;
+
+    color: var(--blanc);
+
+    font-size: 46px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+.hero-texte p {
+    width: 430px;
+    max-width: 100%;
+
+    margin: 12px 0;
+
+    color: var(--blanc);
+
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   BOUTON PRINCIPAL
+========================================================= */
+
 .bouton {
     display: flex;
-    height: 50px;
-    width: 300px;
-    background-color: #ff6600;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    justify-content: center;
-    border-radius: 5px;
+
     align-items: center;
-    font-size: 20px;
-    font-weight: bold;
+    justify-content: center;
+
+    width: 300px;
+    height: 50px;
+
+    margin-top: 20px;
+
+    background-color: var(--orange);
+    color: var(--blanc);
+
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
+
 .bouton:hover {
     background-color: #e65c00;
+
+    transform: translateY(-2px);
 }
+
+
+/* =========================================================
+   ACCÈS RAPIDES
+========================================================= */
+
 .acces-rapide {
-    display: flex;
     width: 100%;
+
+    display: flex;
+
+    background-color: var(--blanc);
 }
+
+
+/* =========================================================
+   CARTES D'ACCÈS
+========================================================= */
 
 .acces-carte {
-    flex: 1;
-    text-align: center;
-    padding: 20px;
     position: relative;
+
+    flex: 1;
+
+    padding: 24px 20px;
+
+    text-align: center;
+
+    background-color: var(--blanc);
 }
+
 .acces-carte:not(:last-child)::after {
     content: "";
+
     position: absolute;
+
+    top: 20%;
     right: 0;
-    top: 25%;
-    height: 50%;
+
     width: 1px;
-    background-color: #ddd;
+    height: 60%;
+
+    background-color: #dddddd;
 }
-.acces-carte:last-child {
-    border-right: none;
-}
+
+
+/* =========================================================
+   ICÔNE DES CARTES
+========================================================= */
+
 .acces-carte h3 {
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-.acces-carte h4 {
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-.acces-carte p {
-    font-size: 10px;
-}
-.acces-carte a {
-    font-size: 11px;
-    font-weight: bold;
-    color: #630DC7;
-}
-#intro-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    z-index: 9999;
+    margin: 0 0 8px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    color: var(--violet);
 
-#intro-player {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 45% center;
-}
-
-
-/* BOUTON LANCER */
-
-#intro-start {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    padding: 16px 32px;
-    border: none;
-    border-radius: 50px;
-
-    background: linear-gradient(135deg, #630DC7, #ff6600);
-    color: white;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#intro-start span {
-    margin-right: 8px;
-}
-
-#intro-start:hover {
-    transform: translate(-50%, -50%) scale(1.05);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
-}
-
-
-/* BOUTON PASSER */
-
-#intro-skip {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-
-    padding: 10px 18px;
-
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 25px;
-
-    background: rgba(0, 0, 0, 0.35);
-    color: white;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-
-    cursor: pointer;
-
-    backdrop-filter: blur(5px);
-
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-#intro-skip:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-}
-#intro-close {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-
-    width: 45px;
-    height: 45px;
-
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-
-    font-family: Arial, sans-serif;
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1;
-
-    cursor: pointer;
-
-    backdrop-filter: blur(6px);
-
-    transition: opacity 0.3s ease,
-                transform 0.3s ease,
-                background 0.3s ease;
 }
 
-#intro-close:hover {
-    background: rgba(0, 0, 0, 0.7);
-    transform: scale(1.1);
-}
-#revoir-intro {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
 
-    padding: 9px 18px;
+/* =========================================================
+   TITRE DES CARTES
+========================================================= */
 
-    border: 1px solid #630DC7;
-    border-radius: 25px;
+.acces-carte h4 {
+    margin: 0 0 8px;
 
-    color: #630DC7;
-    background-color: transparent;
+    color: #222;
 
-    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
 
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-
-    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
-#revoir-intro::before {
-    content: "▶";
+
+/* =========================================================
+   TEXTE DES CARTES
+========================================================= */
+
+.acces-carte p {
+    max-width: 180px;
+
+    margin: 0 auto 10px;
+
+    color: #777;
+
     font-size: 10px;
+    line-height: 1.5;
 }
 
-#revoir-intro:hover {
-    color: white;
-    background-color: #630DC7;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(99, 13, 199, 0.25);
+
+/* =========================================================
+   LIEN DES CARTES
+========================================================= */
+
+.acces-carte a {
+    color: var(--violet);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    transition: color 0.2s ease;
 }
+
+.acces-carte a:hover {
+    color: var(--orange);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
 footer {
+    width: 100%;
+
     display: flex;
     align-items: center;
+
     gap: 50px;
+
     padding: 40px 10%;
-    background-color: #111;
-    color: white;
+
+    background-color: var(--noir-2);
+    color: var(--blanc);
 }
 
 footer img {
+    display: block;
+
     width: 160px;
     height: auto;
-    margin-bottom: 0;
+
+    flex-shrink: 0;
 }
 
 footer h2 {
-    font-size: 20px;
     margin: 0 0 10px;
+
+    color: var(--blanc);
+
+    font-size: 20px;
     font-weight: 600;
 }
 
 footer p {
-    font-size: 13px;
     margin: 0 0 15px;
+
+    color: var(--blanc);
+
+    font-size: 13px;
+
     opacity: 0.75;
 }
 
-.copyright {
-    font-size: 11px;
-    opacity: 0.5;
+footer .copyright {
     margin-top: 20px;
+
+    font-size: 11px;
+
+    opacity: 0.5;
 }
+
+
+/* =========================================================
+   BOUTON "REVOIR L'INTRODUCTION"
+========================================================= */
 
 #revoir-intro {
     display: inline-flex;
+
     align-items: center;
+
     gap: 8px;
 
     padding: 9px 18px;
 
-    border: 1px solid #630DC7;
+    border: 1px solid var(--violet);
     border-radius: 25px;
 
-    color: #630DC7;
     background-color: transparent;
+    color: var(--violet);
 
-    text-decoration: none;
-
-    font-family: 'Poppins', sans-serif;
     font-size: 13px;
     font-weight: 600;
 
-    transition: all 0.3s ease;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
+
+#revoir-intro::before {
+    content: "▶";
+
+    font-size: 10px;
+}
+
+#revoir-intro:hover {
+    background-color: var(--violet);
+    color: var(--blanc);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(99, 13, 199, 0.25);
+}
+
+
+/* =========================================================
+   BOUTON RETOUR EN HAUT
+   Utilisé par certaines anciennes pages
+========================================================= */
+
 .retour-haut {
     display: inline-flex;
+
     align-items: center;
+
     gap: 6px;
 
     margin-top: 20px;
+
     padding: 8px 16px;
 
-    color: #630DC7;
     background-color: transparent;
+    color: var(--violet);
 
-    border: 1px solid #630DC7;
+    border: 1px solid var(--violet);
     border-radius: 20px;
-
-    text-decoration: none;
 
     font-size: 12px;
     font-weight: 600;
 
-    transition: all 0.3s ease;
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
-/* =========================
+
+.retour-haut:hover {
+    background-color: var(--violet);
+    color: var(--blanc);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
    RESPONSIVE MOBILE
-   ========================= */
+========================================================= */
 
 @media (max-width: 768px) {
 
-    /* HERO */
+    /* -----------------------------------------------------
+       HERO
+    ----------------------------------------------------- */
 
     .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         min-height: auto;
-        height: auto;
-        padding: 40px 20px;
+
+        flex-direction: column;
+
         gap: 30px;
+
+        padding: 40px 20px;
     }
 
     .hero-logo {
         width: 100%;
+
         transform: none;
-        display: flex;
-        justify-content: center;
     }
 
     .hero-logo img {
         width: min(90vw, 400px);
-        height: auto;
-        object-fit: contain;
     }
 
     .hero-texte {
         width: 100%;
         max-width: 500px;
+
         margin: 0;
-        padding: 0;
+
         transform: none;
+
         text-align: center;
     }
 
     .hero-texte h2 {
+        margin-bottom: 10px;
+
         font-size: 16px;
-        margin: 0 0 10px;
     }
 
     .hero-texte h1 {
         width: auto;
+
         font-size: 34px;
+
         line-height: 1.15;
-        margin: 0 0 15px;
     }
 
     .hero-texte p {
         width: auto;
+
+        margin: 10px auto;
+
         font-size: 14px;
         line-height: 1.5;
-        margin: 10px auto;
     }
 
     .bouton {
         width: min(90%, 300px);
+
         margin: 20px auto 0;
     }
 
 
-    /* ACCÈS RAPIDES */
+    /* -----------------------------------------------------
+       ACCÈS RAPIDES
+    ----------------------------------------------------- */
 
     .acces-rapide {
         flex-direction: column;
+
         width: 100%;
     }
 
     .acces-carte {
         width: 100%;
-        box-sizing: border-box;
+
         padding: 25px 20px;
     }
 
     .acces-carte:not(:last-child)::after {
         top: auto;
+        right: auto;
         bottom: 0;
         left: 10%;
+
         width: 80%;
         height: 1px;
     }
 
 
-    /* FOOTER */
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
 
     footer {
         flex-direction: column;
+
         align-items: center;
-        text-align: center;
+
         gap: 25px;
+
         padding: 40px 20px;
+
+        text-align: center;
     }
 
     footer img {
         width: 140px;
     }
-
-    .footer-contenu {
-        text-align: center;
-    }
 }
-/* =========================
+
+
+/* =========================================================
    RESPONSIVE TABLETTE
-   ========================= */
+========================================================= */
 
 @media (min-width: 769px) and (max-width: 1100px) {
 
     .hero {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
         min-height: 500px;
+
+        gap: 20px;
+
         padding: 30px;
-        box-sizing: border-box;
     }
 
     .hero-logo {
         width: 50%;
+
         transform: none;
-        display: flex;
-        justify-content: center;
     }
 
     .hero-logo img {
         width: min(48vw, 500px);
-        height: auto;
     }
 
     .hero-texte {
         width: 45%;
+
         margin: 0;
+
         transform: none;
-        text-align: left;
     }
 
     .hero-texte h2 {
@@ -476,12 +605,14 @@ footer p {
 
     .hero-texte h1 {
         width: auto;
+
         font-size: 38px;
         line-height: 1.15;
     }
 
     .hero-texte p {
         width: auto;
+
         font-size: 14px;
         line-height: 1.5;
     }
@@ -489,9 +620,6 @@ footer p {
     .bouton {
         width: 260px;
     }
-
-
-    /* ACCÈS RAPIDES */
 
     .acces-rapide {
         flex-wrap: wrap;
@@ -501,14 +629,7 @@ footer p {
         min-width: 30%;
     }
 
-
-    /* FOOTER */
-
     footer {
         padding: 40px 5%;
-    }
-
-    .footer-principal {
-        gap: 30px;
     }
 }
