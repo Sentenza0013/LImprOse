@@ -1,0 +1,837 @@
+/* =========================================================
+   L'IMPROSE — PAGE CATÉGORIES
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+.categories-page {
+    --cat-purple: #5b16c5;
+    --cat-purple-dark: #35106f;
+    --cat-orange: #ff7900;
+
+    --cat-black: #09080d;
+    --cat-text: #222029;
+    --cat-muted: #69636f;
+
+    --cat-background: #fbf9fc;
+    --cat-light: #f3edf8;
+
+    --cat-border: #e5dfe9;
+
+    --cat-radius: 10px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   CONTENEUR
+========================================================= */
+
+.categories-container {
+    width: calc(100% - 40px);
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.categories-header {
+    position: relative;
+    z-index: 100;
+    background: var(--cat-black);
+}
+
+.categories-navbar {
+    width: calc(100% - 36px);
+    max-width: 1180px;
+    min-height: 62px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.categories-logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.categories-logo img {
+    display: block;
+    width: 105px;
+    height: auto;
+}
+
+.categories-menu {
+    align-items: center;
+    gap: 14px;
+}
+
+.categories-menu .nav-link {
+    position: relative;
+    padding: 23px 4px 20px;
+    color: #e9e5ed;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.categories-menu .nav-link:hover,
+.categories-menu .nav-link.active {
+    color: #ffffff;
+}
+
+.categories-menu .nav-link.active::after {
+    position: absolute;
+    right: 4px;
+    bottom: 9px;
+    left: 4px;
+    height: 2px;
+    border-radius: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--cat-purple),
+        var(--cat-orange)
+    );
+    content: "";
+}
+
+
+/* =========================================================
+   BOUTON MOBILE
+========================================================= */
+
+.categories-header .navbar-toggler {
+    width: 40px;
+    height: 36px;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 7px;
+}
+
+.categories-header .navbar-toggler-icon {
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(#ffffff 0 0),
+        linear-gradient(#ffffff 0 0),
+        linear-gradient(#ffffff 0 0);
+    background-repeat: no-repeat;
+    background-position:
+        center 20%,
+        center 50%,
+        center 80%;
+    background-size:
+        100% 2px,
+        100% 2px,
+        100% 2px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.categories-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 205px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f6f0f9, #ffffff);
+    text-align: center;
+}
+
+.categories-hero-content {
+    width: 100%;
+}
+
+.categories-kicker {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--cat-purple);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.categories-hero h1 {
+    margin: 0;
+    color: var(--cat-text);
+    font-size: clamp(36px, 6vw, 58px);
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 1;
+}
+
+.categories-hero p {
+    margin: 10px 0 0;
+    color: var(--cat-text);
+    font-size: 12px;
+}
+
+.categories-title-line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    margin: 12px auto 0;
+    border-radius: 2px;
+    background: var(--cat-purple);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.categories-introduction {
+    padding: 55px 0 45px;
+    background: #ffffff;
+}
+
+.categories-section-heading {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.categories-section-heading h2 {
+    margin: 0 0 12px;
+    color: var(--cat-text);
+    font-size: clamp(25px, 4vw, 34px);
+    font-weight: 900;
+    letter-spacing: -0.035em;
+}
+
+.categories-section-heading p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--cat-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARTES
+========================================================= */
+
+.category-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 205px;
+    padding: 17px 15px 14px;
+    border: 1px solid var(--cat-border);
+    border-radius: var(--cat-radius);
+    background: #ffffff;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(37, 17, 53, 0.035);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 17, 53, 0.08);
+}
+
+
+/* =========================================================
+   ICÔNES
+========================================================= */
+
+.category-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 7px;
+}
+
+.category-icon svg {
+    width: 42px;
+    height: 42px;
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.category-icon-purple {
+    color: var(--cat-purple);
+}
+
+.category-icon-orange {
+    color: var(--cat-orange);
+}
+
+
+/* =========================================================
+   CONTENU CARTES
+========================================================= */
+
+.category-card h3 {
+    margin: 2px 0 8px;
+    color: #17151a;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.category-card p {
+    max-width: 180px;
+    margin: 0 auto;
+    color: var(--cat-muted);
+    font-size: 9px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   LIEN GÉNÉRAL VERS LES EXERCICES
+========================================================= */
+
+.categories-exercises-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.categories-exercises-link a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 24px;
+    border-radius: 7px;
+    color: #ffffff;
+    background: var(--cat-purple);
+    font-size: 9px;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.categories-exercises-link a span {
+    font-size: 13px;
+}
+
+.categories-exercises-link a:hover {
+    color: #ffffff;
+    background: var(--cat-purple-dark);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BLOCS EXPLICATIFS
+========================================================= */
+
+.categories-text-section {
+    padding: 65px 0;
+    background: var(--cat-background);
+}
+
+.categories-text-section-light {
+    background: var(--cat-light);
+}
+
+.categories-text-inner {
+    max-width: 760px;
+    text-align: center;
+}
+
+.categories-text-inner h2 {
+    margin: 0 0 15px;
+    color: var(--cat-text);
+    font-size: clamp(25px, 4vw, 34px);
+    font-weight: 900;
+    letter-spacing: -0.035em;
+}
+
+.categories-text-inner p {
+    margin: 0 auto 12px;
+    color: var(--cat-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.categories-text-inner p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   FAUTES
+========================================================= */
+
+.categories-faults {
+    padding: 70px 0;
+    background: #ffffff;
+}
+
+.fault-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.fault-card {
+    padding: 20px;
+    border: 1px solid var(--cat-border);
+    border-radius: var(--cat-radius);
+    background: #ffffff;
+}
+
+.fault-card h3 {
+    margin: 0 0 7px;
+    color: var(--cat-purple-dark);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.fault-card p {
+    margin: 0;
+    color: var(--cat-muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   GÉNÉRATEUR
+========================================================= */
+
+.categories-generator {
+    padding: 0 0 65px;
+    background: #ffffff;
+}
+
+.generator-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 25px;
+    border-radius: 11px;
+    color: #ffffff;
+    background: linear-gradient(120deg, #421087, #260a55);
+    box-shadow: 0 8px 20px rgba(44, 13, 78, 0.16);
+}
+
+.generator-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    font-size: 31px;
+}
+
+.generator-content {
+    flex: 1;
+}
+
+.generator-content h2 {
+    margin: 0 0 5px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.generator-content p {
+    max-width: 520px;
+    margin: 0;
+    color: #d9cfe7;
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.generator-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 125px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    color: #ffffff;
+    background: #0c0910;
+    font-size: 8px;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.generator-button:hover {
+    color: #ffffff;
+    background: #000000;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CONSEIL
+========================================================= */
+
+.categories-advice {
+    padding: 0 0 70px;
+    background: #ffffff;
+}
+
+.advice-box {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 35px 25px;
+    border-radius: 14px;
+    background: var(--cat-light);
+    text-align: center;
+}
+
+.advice-box h2 {
+    margin: 0 0 10px;
+    color: var(--cat-text);
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.advice-box p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--cat-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.categories-footer {
+    background: var(--cat-black);
+    color: #dcd7e1;
+}
+
+.categories-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    min-height: 100px;
+    margin: 0 auto;
+}
+
+.categories-footer img {
+    width: 55px;
+    height: auto;
+}
+
+.categories-footer p {
+    margin: 2px 0;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   RETOUR EN HAUT
+========================================================= */
+
+.categories-page .retour-haut {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: var(--cat-purple);
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .categories-menu {
+        gap: 8px;
+    }
+
+    .categories-menu .nav-link {
+        font-size: 8px;
+    }
+
+    .category-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fault-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .categories-navbar {
+        width: calc(100% - 24px);
+        min-height: 62px;
+    }
+
+    .categories-logo img {
+        width: 100px;
+    }
+
+    .categories-header .navbar-collapse {
+        padding: 8px 0 12px;
+    }
+
+    .categories-menu {
+        align-items: stretch;
+        gap: 0;
+        padding-top: 5px;
+    }
+
+    .categories-menu .nav-link {
+        padding: 10px 4px;
+        font-size: 10px;
+    }
+
+    .categories-menu .nav-link.active::after {
+        right: auto;
+        bottom: 4px;
+        left: 4px;
+        width: 35px;
+    }
+
+
+    /* HERO */
+
+    .categories-hero {
+        min-height: 190px;
+        padding: 35px 15px;
+    }
+
+    .categories-hero h1 {
+        font-size: 42px;
+    }
+
+    .categories-hero p {
+        font-size: 11px;
+    }
+
+
+    /* CONTENU */
+
+    .categories-container {
+        width: calc(100% - 30px);
+    }
+
+    .categories-introduction {
+        padding: 48px 0 35px;
+    }
+
+    .categories-section-heading {
+        margin-bottom: 25px;
+    }
+
+    .categories-section-heading h2 {
+        font-size: 25px;
+    }
+
+    .categories-section-heading p {
+        font-size: 12px;
+    }
+
+
+    /* CARTES */
+
+    .category-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .category-card {
+        min-height: 185px;
+        padding: 17px 20px 14px;
+    }
+
+    .category-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .category-icon svg {
+        width: 38px;
+        height: 38px;
+    }
+
+    .category-card h3 {
+        font-size: 12px;
+    }
+
+    .category-card p {
+        max-width: 250px;
+        font-size: 10px;
+    }
+
+    .categories-exercises-link {
+        margin-top: 16px;
+    }
+
+    .categories-exercises-link a {
+        width: auto;
+        max-width: 220px;
+    }
+
+
+    /* TEXTES */
+
+    .categories-text-section {
+        padding: 50px 0;
+    }
+
+    .categories-text-inner h2 {
+        font-size: 25px;
+    }
+
+    .categories-text-inner p {
+        font-size: 12px;
+    }
+
+
+    /* FAUTES */
+
+    .categories-faults {
+        padding: 50px 0;
+    }
+
+    .fault-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .fault-card {
+        padding: 17px;
+    }
+
+
+    /* GÉNÉRATEUR */
+
+    .categories-generator {
+        padding-bottom: 50px;
+    }
+
+    .generator-box {
+        flex-direction: column;
+        gap: 10px;
+        padding: 25px 18px;
+        text-align: center;
+    }
+
+    .generator-content p {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .generator-button {
+        width: 100%;
+        max-width: 190px;
+    }
+
+
+    /* CONSEIL */
+
+    .categories-advice {
+        padding-bottom: 50px;
+    }
+
+    .advice-box {
+        padding: 28px 18px;
+    }
+
+    .advice-box h2 {
+        font-size: 22px;
+    }
+
+    .advice-box p {
+        font-size: 12px;
+    }
+
+
+    /* FOOTER */
+
+    .categories-footer-inner {
+        flex-direction: column;
+        min-height: 130px;
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    .categories-footer img {
+        width: 50px;
+    }
+}
+
+
+/* =========================================================
+   TRÈS PETIT MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .categories-hero h1 {
+        font-size: 38px;
+    }
+
+    .categories-section-heading h2 {
+        font-size: 23px;
+    }
+
+    .category-card {
+        min-height: 175px;
+    }
+
+    .generator-content h2 {
+        font-size: 13px;
+    }
+}

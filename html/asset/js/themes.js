@@ -1,80 +1,122 @@
-let themes = [];
+document.addEventListener("DOMContentLoaded", () => {
 
-const excelFile = document.querySelector("#excelFile");
-const generateButton = document.querySelector("#generateTheme");
-const themeDisplay = document.querySelector("#theme");
+    /* =====================================================
+       MENU MOBILE
+    ===================================================== */
 
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainMenu = document.querySelector(".main-menu");
 
-/* ================================
-   CHARGEMENT DU FICHIER EXCEL
-================================ */
+    if (menuToggle && mainMenu) {
 
-excelFile.addEventListener("change", function () {
+        menuToggle.addEventListener("click", () => {
 
-    const fichier = this.files[0];
+            const isOpen =
+                menuToggle.getAttribute("aria-expanded") === "true";
 
-    if (!fichier) {
-        return;
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
+
+            mainMenu.classList.toggle("is-open");
+        });
     }
 
-    const lecteur = new FileReader();
 
-    lecteur.onload = function (event) {
+    /* =====================================================
+       MENU OUTILS
+    ===================================================== */
 
-        const donnees = new Uint8Array(event.target.result);
+    const dropdownButton =
+        document.querySelector(".dropdown-button");
 
-        const classeur = XLSX.read(donnees, {
-            type: "array"
+    const dropdown =
+        document.querySelector(".menu-dropdown");
+
+    if (dropdownButton && dropdown) {
+
+        dropdownButton.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            const isOpen =
+                dropdownButton.getAttribute("aria-expanded") === "true";
+
+            dropdownButton.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
+
+            dropdown.classList.toggle("is-open");
         });
-
-        const nomFeuille = classeur.SheetNames[0];
-
-        const feuille = classeur.Sheets[nomFeuille];
-
-        const lignes = XLSX.utils.sheet_to_json(feuille, {
-            header: 1
-        });
-
-        /*
-         * On récupère la première colonne.
-         * La première ligne correspond au titre de la colonne,
-         * donc on la retire avec slice(1).
-         */
-
-        themes = lignes
-            .slice(1)
-            .map(ligne => ligne[0])
-            .filter(theme => theme !== undefined && theme !== "");
-
-        themeDisplay.textContent =
-            themes.length + " thèmes chargés.";
-
-        console.log("Thèmes chargés :", themes);
-    };
-
-    lecteur.readAsArrayBuffer(fichier);
-});
-
-
-/* ================================
-   GÉNÉRER UN THÈME
-================================ */
-
-generateButton.addEventListener("click", function () {
-
-    if (themes.length === 0) {
-
-        themeDisplay.textContent =
-            "Veuillez d'abord sélectionner votre fichier Excel.";
-
-        return;
     }
 
-    const index = Math.floor(
-        Math.random() * themes.length
-    );
 
-    const theme = themes[index];
+    /* =====================================================
+       FERMER LE MENU OUTILS EN CLIQUANT AILLEURS
+    ===================================================== */
 
-    themeDisplay.textContent = theme;
+    document.addEventListener("click", (event) => {
+
+        if (!dropdown || !dropdownButton) {
+            return;
+        }
+
+        if (!dropdown.contains(event.target)) {
+
+            dropdown.classList.remove("is-open");
+
+            dropdownButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+    });
+
+
+    /* =====================================================
+       FERMER LE MENU MOBILE APRÈS UN CLIC
+    ===================================================== */
+
+    if (mainMenu && menuToggle) {
+
+        const menuLinks =
+            mainMenu.querySelectorAll("a");
+
+        menuLinks.forEach((link) => {
+
+            link.addEventListener("click", () => {
+
+                mainMenu.classList.remove("is-open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            });
+        });
+    }
+
+
+    /* =====================================================
+       RETOUR EN HAUT
+    ===================================================== */
+
+    const backToTop =
+        document.querySelector(".back-to-top");
+
+    if (backToTop) {
+
+        backToTop.addEventListener("click", (event) => {
+
+            event.preventDefault();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+
 });

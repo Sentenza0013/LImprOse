@@ -1,1021 +1,1986 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercices d'improvisation</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./asset/css/style.css">
-  <link rel="icon" type="image/png" href="./asset/images/favicon.png">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Exercices d'improvisation | L'ImprOse
+    </title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./asset/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./asset/css/exercices.css"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="./asset/images/favicon.png"
+    >
+
 </head>
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <img src="./asset/images/banniere2.png" alt="L'ImprOse" height="50">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="./index.html">Accueil</a></li>
-            <li class="nav-item"><a class="nav-link" href="./impro.html">Qu'est-ce que l'impro ?</a></li>
-            <li class="nav-item"><a class="nav-link" href="./bienfaits.html">Les bienfaits</a></li>
-            <li class="nav-item"><a class="nav-link" href="./troupes.html">Trouver une troupe</a></li>
-            <li class="nav-item"><a class="nav-link" href="./themes.html">Thèmes</a></li>
-            <li class="nav-item"><a class="nav-link" href="./categories.html">Catégories</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="./exercices.html">Exercices</a></li>
-            <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Outils</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Générateur de thèmes</a></li>
-                <li><a class="dropdown-item" href="#">Générateur de catégories</a></li>
-                <li><a class="dropdown-item" href="#">Chronomètre</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Tableau de match</a></li>
-              </ul>
-            </li>
-          </ul>
+
+
+<body class="exercices-page">
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg">
+
+            <div class="container-fluid">
+
+                <a
+                    class="navbar-brand"
+                    href="./index.html"
+                >
+
+                    <img
+                        src="./asset/images/banniere2.png"
+                        alt="L'ImprOse"
+                        height="50"
+                    >
+
+                </a>
+
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Ouvrir le menu"
+                >
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="./index.html"
+                            >
+                                Accueil
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="./impro.html"
+                            >
+                                L'ImprO
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="./categories.html"
+                            >
+                                Catégories
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="./themes.html"
+                            >
+                                Thèmes
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="./exercices.html"
+                            >
+                                Exercices
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="./outils.html"
+                            >
+                                Outils
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="./troupes.html"
+                            >
+                                Troupes
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="./contact.html"
+                            >
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENU
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="exercices-hero">
+
+            <span class="exercices-kicker">
+                L'IMPROSE
+            </span>
+
+            <h1>
+                EXERCICES
+            </h1>
+
+            <p>
+                Une sélection d'exercices pour progresser dans la pratique
+                du théâtre d'improvisation.
+            </p>
+
+        </section>
+
+
+
+        <!-- CONTENU -->
+
+        <div class="exercices-content">
+
+
+            <!-- INTRODUCTION -->
+
+            <div class="exercices-intro">
+
+                <p>
+                    Ces exercices permettent de développer l'écoute,
+                    la spontanéité, l'imaginaire, la présence et
+                    la cohésion indispensables au théâtre
+                    d'improvisation.
+                </p>
+
+                <p>
+                    Ils peuvent être utilisés comme échauffements,
+                    comme exercices ciblés ou comme base d'un atelier.
+                </p>
+
+                <p>
+                    Les exercices sont regroupés par familles.
+                    Ouvrez une famille, puis choisissez l'exercice
+                    qui correspond à votre objectif.
+                </p>
+
+            </div>
+
+
+
+            <!-- SOMMAIRE -->
+
+            <nav
+                class="exercices-sommaire"
+                aria-label="Sommaire des familles d'exercices"
+            >
+
+                <h2>
+                    Les familles d'exercices
+                </h2>
+
+                <ul>
+
+                    <li>
+                        <a href="#mise-en-mouvement-et-cohesion-du-groupe">
+                            Mise en mouvement et cohésion du groupe
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#imaginaire-verbal">
+                            Imaginaire verbal
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#la-prise-de-lespace">
+                            La prise de l'espace
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#la-conscience-du-temps">
+                            La conscience du temps
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#lexpressivite-du-visage-et-du-corps">
+                            L'expressivité du visage et du corps
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#themes-dimprovisation">
+                            Thèmes d'improvisation
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+
+            <!-- =================================================
+                 FAMILLE 1
+            ================================================== -->
+
+            <section
+                class="exercices-family"
+                id="mise-en-mouvement-et-cohesion-du-groupe"
+            >
+
+                <details>
+
+                    <summary>
+                        Mise en mouvement et cohésion du groupe
+                    </summary>
+
+
+                    <!-- COMPTER DE 20 À 0 -->
+
+                    <details>
+
+                        <summary>
+                            Compter de 20 à 0
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer l'écoute collective, la concentration
+                            et la cohésion du groupe. Cet exercice apprend
+                            aux joueurs à être attentifs aux autres avant
+                            de prendre la parole.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 4 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Les joueurs se déplacent librement dans l'espace.
+                            Ensemble, ils doivent compter de 20 jusqu'à 0.
+                        </p>
+
+                        <p>
+                            Une seule personne peut annoncer un chiffre à la fois.
+                        </p>
+
+                        <p>
+                            Si deux joueurs parlent simultanément, si un mauvais
+                            nombre est annoncé ou si l'ordre n'est pas respecté,
+                            le groupe recommence depuis 20.
+                        </p>
+
+                        <p>
+                            Le défi est de réussir sans se répartir les numéros
+                            à l'avance et sans désigner qui parlera.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Déplacez-vous dans tout l'espace.</li>
+                            <li>Parlez suffisamment fort pour être entendu.</li>
+                            <li>Prenez le temps d'observer les autres.</li>
+                            <li>Évitez de vous précipiter.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice renforce l'écoute, la patience
+                            et la confiance entre les participants.
+                        </p>
+
+                        <h3>Variantes</h3>
+
+                        <ul>
+                            <li>Compter de 0 à 20.</li>
+                            <li>Accélérer le rythme de déplacement.</li>
+                            <li>
+                                Commencer à un nombre correspondant au nombre
+                                de joueurs afin que chacun ne parle qu'une fois.
+                            </li>
+                            <li>Remplacer les nombres par les prénoms.</li>
+                            <li>
+                                Ajouter une contrainte de déplacement.
+                            </li>
+                        </ul>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Ne cherchez pas à parler le plus vite possible.
+                            Prenez quelques instants pour observer le groupe.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- LES PRÉNOMS -->
+
+                    <details>
+
+                        <summary>
+                            Les prénoms
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Apprendre les prénoms des participants tout en
+                            développant l'écoute, la concentration et la
+                            cohésion du groupe.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 4 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Les participants se placent en ligne de manière
+                            à ne pas pouvoir se regarder.
+                        </p>
+
+                        <p>
+                            Sans ordre établi, chacun annonce son prénom
+                            lorsqu'il sent que le moment est opportun.
+                        </p>
+
+                        <p>
+                            L'objectif est de respecter le rythme du groupe
+                            sans couper la parole à un autre participant.
+                        </p>
+
+                        <p>
+                            L'exercice se poursuit jusqu'à ce que chacun
+                            ait prononcé son prénom une seule fois.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Écoutez attentivement les autres.</li>
+                            <li>Parlez suffisamment fort.</li>
+                            <li>Respectez le rythme collectif.</li>
+                            <li>Ne cherchez pas à parler le plus vite possible.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice favorise l'écoute, aide à mémoriser
+                            les prénoms et permet au groupe de trouver
+                            progressivement une dynamique commune.
+                        </p>
+
+                        <h3>Variantes</h3>
+
+                        <ul>
+                            <li>
+                                Les participants peuvent se placer en cercle
+                                afin de pouvoir se regarder.
+                            </li>
+                        </ul>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Ne cherchez pas à remplir le silence.
+                            Prenez le temps d'écouter le groupe avant
+                            de prendre la parole.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- LA BALLE AUX PRÉNOMS -->
+
+                    <details>
+
+                        <summary>
+                            La balle aux prénoms
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Apprendre rapidement les prénoms des participants
+                            tout en développant l'écoute, la concentration
+                            et la précision des échanges.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            De 8 à 20 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Les joueurs forment un cercle.
+                        </p>
+
+                        <p>
+                            Le premier joueur lance une balle imaginaire
+                            à un autre participant en annonçant son propre prénom.
+                        </p>
+
+                        <p>
+                            Le joueur qui reçoit la balle la récupère,
+                            puis la lance à une nouvelle personne en disant
+                            à son tour son propre prénom.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Formez un cercle régulier.</li>
+                            <li>Regardez la personne à qui vous lancez la balle.</li>
+                            <li>Mimez clairement le lancer et la réception.</li>
+                            <li>Annoncez votre prénom de manière audible.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice facilite la mémorisation des prénoms,
+                            améliore l'attention portée aux partenaires et
+                            encourage chacun à participer dès le début de la séance.
+                        </p>
+
+                        <h3>Variantes</h3>
+
+                        <ul>
+                            <li>
+                                Prononcer le prénom de la personne à qui
+                                la balle est destinée.
+                            </li>
+                        </ul>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Regardez toujours votre partenaire avant de lui
+                            envoyer la balle.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- LES CHAISES MUSICALES -->
+
+                    <details>
+
+                        <summary>
+                            Les chaises musicales
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Créer une dynamique de groupe, développer
+                            la réactivité et aider les participants à
+                            prendre la parole devant les autres dans
+                            une ambiance ludique.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 6 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Disposez les chaises contre les murs de la salle
+                            en laissant une chaise de moins que le nombre
+                            de participants.
+                        </p>
+
+                        <p>
+                            Au signal de l'animateur, tous les joueurs
+                            changent de place et tentent de s'asseoir
+                            sur une nouvelle chaise.
+                        </p>
+
+                        <p>
+                            Le joueur qui reste debout réalise le défi
+                            choisi par l'animateur.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Changez obligatoirement de chaise.</li>
+                            <li>Ne courez pas.</li>
+                            <li>Respectez les autres participants.</li>
+                            <li>Restez attentifs au prochain signal.</li>
+                        </ul>
+
+                        <h3>Défis possibles</h3>
+
+                        <ul>
+                            <li>Dire son prénom en regardant une personne.</li>
+                            <li>Parler pendant 15 secondes.</li>
+                            <li>Chanter quelques secondes.</li>
+                            <li>Estimer 15 secondes sans chronomètre.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice crée rapidement une bonne dynamique
+                            de groupe et favorise la spontanéité.
+                        </p>
+
+                        <h3>Variantes</h3>
+
+                        <ul>
+                            <li>Interdire la course.</li>
+                            <li>Saluer une personne pendant le déplacement.</li>
+                            <li>Trouver différentes façons de dire bonjour.</li>
+                            <li>Produire un son pendant chaque déplacement.</li>
+                        </ul>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Le défi ne doit jamais être vécu comme une punition.
+                            Gardez une ambiance bienveillante.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- UN GESTE, UN PRÉNOM -->
+
+                    <details>
+
+                        <summary>
+                            Un geste, un prénom
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Apprendre les prénoms des participants tout en
+                            développant la mémoire, l'expression corporelle
+                            et la confiance en soi.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 6 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Le premier joueur annonce son prénom en l'associant
+                            à un geste simple.
+                        </p>
+
+                        <p>
+                            Le joueur suivant reproduit le prénom et le geste,
+                            puis ajoute son propre prénom et son propre geste.
+                        </p>
+
+                        <p>
+                            Le groupe poursuit jusqu'à ce que tout le monde
+                            soit passé.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Prononcez clairement votre prénom.</li>
+                            <li>Choisissez un geste simple.</li>
+                            <li>Observez attentivement les autres.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            L'exercice favorise la mémorisation, la concentration
+                            et l'expression corporelle.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- LE RÉFLEXE -->
+
+                    <details>
+
+                        <summary>
+                            Le réflexe
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer la concentration, la maîtrise de soi,
+                            la rapidité de réaction et l'engagement.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 2 participants.
+                        </p>
+
+                        <h3>Matériel</h3>
+
+                        <ul>
+                            <li>Un petit objet placé entre les deux joueurs.</li>
+                        </ul>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Deux joueurs s'assoient face à face.
+                            Leurs mains restent posées sur leurs genoux.
+                        </p>
+
+                        <p>
+                            L'animateur donne un rythme en frappant dans ses mains.
+                        </p>
+
+                        <p>
+                            Lorsque le signal convenu est donné,
+                            les deux joueurs tentent de saisir l'objet.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Gardez les mains sur les genoux.</li>
+                            <li>Ne bougez qu'au bon signal.</li>
+                            <li>Restez concentré.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice développe la concentration,
+                            le contrôle des impulsions et la rapidité.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- JE M'ASSIEDS -->
+
+                    <details>
+
+                        <summary>
+                            Je m'assieds, tu te lèves
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer l'écoute collective, la coordination
+                            et la capacité à agir au bon moment sans
+                            communication verbale.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 6 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Tous les participants sont assis en cercle
+                            ou répartis dans l'espace.
+                        </p>
+
+                        <p>
+                            Un premier joueur se lève puis se rassoit.
+                            Au moment précis où il s'assoit, une seule
+                            autre personne doit se lever.
+                        </p>
+
+                        <p>
+                            Le relais continue ainsi jusqu'à ce que
+                            tous les participants aient eu l'occasion
+                            de se lever.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Observez attentivement le groupe.</li>
+                            <li>Ne vous précipitez pas.</li>
+                            <li>Laissez chacun trouver naturellement son moment.</li>
+                            <li>Variez les participants.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice développe une écoute fine du groupe,
+                            améliore la coordination collective et encourage
+                            l'équilibre entre initiative et patience.
+                        </p>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            La réussite repose davantage sur l'observation
+                            que sur la rapidité.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- DISSOCIATIONS MUSICALES -->
+
+                    <details>
+
+                        <summary>
+                            Dissociations musicales
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer la conscience corporelle,
+                            la coordination, la dissociation des mouvements
+                            et le sens du rythme.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 3 participants.
+                        </p>
+
+                        <h3>Matériel</h3>
+
+                        <ul>
+                            <li>Une musique rythmée.</li>
+                        </ul>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Les participants sont assis face au groupe.
+                            L'animateur lance la musique puis annonce
+                            une partie du corps à mettre en mouvement.
+                        </p>
+
+                        <p>
+                            Il peut ajouter ou retirer progressivement
+                            des parties du corps afin de complexifier
+                            les mouvements.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Écoutez attentivement.</li>
+                            <li>Respectez le rythme.</li>
+                            <li>Bougez uniquement les parties demandées.</li>
+                            <li>Variez vos mouvements.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice améliore la coordination,
+                            la maîtrise du corps et la concentration.
+                        </p>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Commencez avec une seule partie du corps,
+                            puis augmentez progressivement la difficulté.
+                        </p>
+
+                    </details>
+
+                </details>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FAMILLE 2
+            ================================================== -->
+
+            <section
+                class="exercices-family"
+                id="imaginaire-verbal"
+            >
+
+                <details>
+
+                    <summary>
+                        Imaginaire verbal
+                    </summary>
+
+
+                    <!-- ASSOCIATIONS -->
+
+                    <details>
+
+                        <summary>
+                            Associations d'idées
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer la spontanéité, la créativité
+                            verbale et la capacité à rebondir rapidement
+                            sur les propositions des autres joueurs.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 4 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Les participants sont assis ou debout en cercle.
+                        </p>
+
+                        <p>
+                            Un premier joueur annonce un mot.
+                            Son voisin répond immédiatement avec un autre
+                            mot qui lui fait penser au précédent.
+                        </p>
+
+                        <p>
+                            L'exercice continue ainsi de joueur en joueur.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Répondez sans trop réfléchir.</li>
+                            <li>Ne préparez pas votre mot à l'avance.</li>
+                            <li>Variez les associations.</li>
+                            <li>Gardez un rythme dynamique.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice stimule l'imagination et aide
+                            les joueurs à accepter leurs premières idées.
+                        </p>
+
+                        <h3>Variantes</h3>
+
+                        <ul>
+                            <li>
+                                Trouver un mot qui ressemble au précédent
+                                par sa sonorité ou son rythme.
+                            </li>
+                        </ul>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Il n'existe pas de mauvaise association.
+                            Faites confiance à votre premier réflexe.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- DISSOCIATIONS -->
+
+                    <details>
+
+                        <summary>
+                            Dissociations d'idées
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer la spontanéité, stimuler l'imagination
+                            et apprendre à sortir des associations d'idées
+                            les plus évidentes.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 4 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Les participants se placent en cercle.
+                        </p>
+
+                        <p>
+                            Un premier joueur annonce un mot.
+                            Son voisin répond immédiatement avec un mot
+                            qui n'a aucun lien logique avec le précédent.
+                        </p>
+
+                        <p>
+                            Le jeu continue de joueur en joueur
+                            en maintenant un rythme soutenu.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Répondez spontanément.</li>
+                            <li>Évitez toute association logique.</li>
+                            <li>Ne préparez pas votre réponse.</li>
+                            <li>Parlez clairement.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice encourage les joueurs à dépasser
+                            leurs automatismes de pensée et développe
+                            la créativité, la réactivité et la confiance
+                            dans leur imaginaire.
+                        </p>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Ne cherchez pas le mot parfait.
+                            Plus votre proposition est inattendue,
+                            plus elle vous aidera à sortir de vos habitudes.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- MOI ET MA CONSCIENCE -->
+
+                    <details>
+
+                        <summary>
+                            Moi et ma conscience
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer l'écoute, la co-construction
+                            d'une histoire et la capacité à intégrer
+                            les propositions d'un partenaire.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            2 joueurs.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Un joueur s'assoit et commence à raconter
+                            une histoire.
+                        </p>
+
+                        <p>
+                            Son partenaire se place derrière lui et
+                            joue le rôle de sa conscience.
+                        </p>
+
+                        <p>
+                            À tout moment, la conscience peut intervenir
+                            pour ajouter une précision, corriger un détail
+                            ou enrichir le récit.
+                        </p>
+
+                        <p>
+                            Le narrateur doit immédiatement intégrer
+                            cette nouvelle information et poursuivre
+                            son histoire sans la contredire.
+                        </p>
+
+                        <p>
+                            Les rôles sont ensuite inversés.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Le narrateur laisse de la place.</li>
+                            <li>La conscience enrichit le récit.</li>
+                            <li>Restez attentifs aux propositions.</li>
+                            <li>Intégrez naturellement les nouvelles idées.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice développe l'écoute active,
+                            l'acceptation des propositions et la capacité
+                            à construire une histoire à plusieurs.
+                        </p>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            La conscience n'est pas là pour piéger
+                            le narrateur. Son rôle est d'enrichir l'histoire.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- INSERTIONS DE MOTS -->
+
+                    <details>
+
+                        <summary>
+                            Insertions de mots
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer la réactivité, l'écoute, la concentration
+                            et la capacité à intégrer une contrainte de manière
+                            fluide dans un récit improvisé.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 5 participants.
+                        </p>
+
+                        <h3>Matériel</h3>
+
+                        <ul>
+                            <li>Une liste de mots préparée par l'animateur.</li>
+                        </ul>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Les participants se placent en file face
+                            à l'animateur.
+                        </p>
+
+                        <p>
+                            Le premier joueur commence à raconter une histoire.
+                        </p>
+
+                        <p>
+                            À tout moment, l'animateur annonce un mot
+                            à voix haute.
+                        </p>
+
+                        <p>
+                            Le narrateur doit immédiatement intégrer
+                            ce mot dans son histoire sans interrompre
+                            son récit.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Continuez votre récit sans vous arrêter.</li>
+                            <li>Intégrez le mot naturellement.</li>
+                            <li>Ne préparez pas votre histoire.</li>
+                            <li>Gardez un rythme dynamique.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice améliore la spontanéité,
+                            l'adaptation et l'écoute.
+                        </p>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Accueillez le mot comme un nouvel élément
+                            du récit et laissez votre imagination faire le reste.
+                        </p>
+
+                    </details>
+
+                </details>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FAMILLE 3
+            ================================================== -->
+
+            <section
+                class="exercices-family"
+                id="la-prise-de-lespace"
+            >
+
+                <details>
+
+                    <summary>
+                        La prise de l'espace
+                    </summary>
+
+
+                    <!-- DÉAMBULATION -->
+
+                    <details>
+
+                        <summary>
+                            Déambulation consciente
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer l'écoute collective, la conscience
+                            de l'espace et la capacité à réagir aux mouvements
+                            du groupe.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 6 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Tous les participants marchent librement
+                            dans l'espace.
+                        </p>
+
+                        <p>
+                            L'objectif est d'occuper toute la scène
+                            de manière équilibrée, sans former de groupes.
+                        </p>
+
+                        <p>
+                            À tout moment, un participant peut décider
+                            de s'arrêter.
+                        </p>
+
+                        <p>
+                            Dès qu'il s'arrête, l'ensemble du groupe
+                            doit s'immobiliser.
+                        </p>
+
+                        <p>
+                            Lorsque ce participant reprend sa marche,
+                            tout le groupe repart.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Occupez tout l'espace.</li>
+                            <li>Gardez une vitesse naturelle.</li>
+                            <li>Observez les mouvements des autres.</li>
+                            <li>Réagissez aux arrêts et reprises.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice développe l'écoute collective,
+                            la perception de l'espace et la concentration.
+                        </p>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Ne cherchez pas à deviner qui va s'arrêter.
+                            Concentrez-vous sur ce qui se passe autour de vous.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- LES BULLES -->
+
+                    <details>
+
+                        <summary>
+                            Les bulles (La proxémie)
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Prendre conscience de son espace personnel,
+                            apprendre à respecter celui des autres et
+                            développer la présence dans la relation
+                            avec un partenaire.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 6 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Les participants forment deux lignes face à face,
+                            séparées de plusieurs mètres.
+                        </p>
+
+                        <p>
+                            Au signal de l'animateur, une des deux lignes
+                            avance lentement vers l'autre.
+                        </p>
+
+                        <p>
+                            Chaque joueur s'arrête lorsqu'il atteint la
+                            distance à laquelle il se sent encore parfaitement
+                            à l'aise face à son partenaire.
+                        </p>
+
+                        <p>
+                            Les rôles sont ensuite inversés.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Avancez lentement.</li>
+                            <li>Gardez le contact visuel.</li>
+                            <li>Ne parlez pas pendant l'exercice.</li>
+                            <li>Respectez la distance choisie par votre partenaire.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice aide à comprendre la notion
+                            d'espace personnel et développe la présence.
+                        </p>
+
+                        <h3>Variantes</h3>
+
+                        <ul>
+                            <li>
+                                Ajouter un perturbateur afin de tester
+                                la concentration du joueur.
+                            </li>
+                        </ul>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Il n'existe pas de bonne ou de mauvaise distance.
+                            Chaque personne possède sa propre zone de confort.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- JE TE REGARDE -->
+
+                    <details>
+
+                        <summary>
+                            Je te regarde, tu m'appelles
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer l'écoute, le regard, la concentration
+                            et l'anticipation au sein du groupe.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            De 8 à 20 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Les joueurs forment un cercle.
+                        </p>
+
+                        <p>
+                            Un premier participant choisit une personne
+                            et commence à marcher vers elle.
+                        </p>
+
+                        <p>
+                            La personne visée regarde un autre joueur,
+                            qui doit l'appeler par son prénom.
+                        </p>
+
+                        <p>
+                            Une fois son prénom entendu, elle peut marcher
+                            vers lui.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Marchez lentement.</li>
+                            <li>Regardez clairement la personne choisie.</li>
+                            <li>Appelez les prénoms distinctement.</li>
+                            <li>Gardez le mouvement continu.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            L'exercice développe l'attention, la réactivité
+                            et la communication non verbale.
+                        </p>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Ne cherchez pas à aller vite.
+                            La réussite repose sur la fluidité.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- UN AMI, UN ENNEMI -->
+
+                    <details>
+
+                        <summary>
+                            Un ami, un ennemi
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer les déplacements, la perception
+                            de l'espace, la réactivité et la cohésion.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            De 8 à 20 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Chaque joueur choisit secrètement deux personnes :
+                            un ami qu'il devra protéger et un ennemi dont
+                            il devra empêcher l'accès à son ami.
+                        </p>
+
+                        <p>
+                            Chaque participant cherche en permanence
+                            à se placer entre son ami et son ennemi.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Déplacez-vous calmement.</li>
+                            <li>Évitez les contacts brusques.</li>
+                            <li>Restez attentif au groupe.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice développe l'observation,
+                            l'anticipation et la capacité à réagir
+                            aux mouvements des autres.
+                        </p>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Gardez une vision d'ensemble du groupe
+                            plutôt que de fixer uniquement votre ami
+                            ou votre ennemi.
+                        </p>
+
+                    </details>
+
+
+
+                    <!-- L'AVEUGLE -->
+
+                    <details>
+
+                        <summary>
+                            L'aveugle
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer la confiance entre partenaires,
+                            l'écoute et la communication non verbale.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 10 participants, en binômes.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Les participants se mettent par deux.
+                            L'un ferme les yeux et devient l'aveugle,
+                            l'autre devient le guide.
+                        </p>
+
+                        <p>
+                            Le guide accompagne son partenaire dans
+                            l'espace en veillant constamment à sa sécurité.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Le guide reste attentif.</li>
+                            <li>L'aveugle fait confiance progressivement.</li>
+                            <li>Adaptez le rythme aux capacités du partenaire.</li>
+                            <li>Évitez les obstacles dangereux.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            L'exercice développe la confiance,
+                            l'écoute et la communication non verbale.
+                        </p>
+
+                    </details>
+
+                </details>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FAMILLE 4
+            ================================================== -->
+
+            <section
+                class="exercices-family"
+                id="la-conscience-du-temps"
+            >
+
+                <details>
+
+                    <summary>
+                        La conscience du temps
+                    </summary>
+
+
+                    <details>
+
+                        <summary>
+                            La minute
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer la présence scénique,
+                            améliorer la gestion du temps et
+                            gagner en aisance lors d'une improvisation
+                            en solo.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            1 joueur à la fois.
+                        </p>
+
+                        <h3>Matériel</h3>
+
+                        <ul>
+                            <li>Un chronomètre.</li>
+                        </ul>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Un participant entre seul sur scène et
+                            improvise librement pendant ce qu'il pense
+                            être une minute.
+                        </p>
+
+                        <p>
+                            Pendant ce temps, l'animateur chronomètre
+                            précisément la durée.
+                        </p>
+
+                        <p>
+                            À la fin, le joueur indique combien de temps
+                            il pense être resté sur scène.
+                        </p>
+
+                        <p>
+                            L'animateur révèle ensuite la durée réelle.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Jouez naturellement.</li>
+                            <li>Ne comptez pas mentalement les secondes.</li>
+                            <li>Ne regardez pas de montre.</li>
+                            <li>Faites confiance à votre ressenti.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice aide à mieux percevoir le temps,
+                            améliore la présence sur scène et apprend
+                            à gérer les silences.
+                        </p>
+
+                        <h3>Variantes</h3>
+
+                        <ul>
+                            <li>30 secondes.</li>
+                            <li>2 minutes.</li>
+                            <li>3 minutes.</li>
+                        </ul>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Ne cherchez pas à deviner le temps écoulé.
+                            Concentrez-vous sur votre improvisation.
+                        </p>
+
+                    </details>
+
+                </details>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FAMILLE 5
+            ================================================== -->
+
+            <section
+                class="exercices-family"
+                id="lexpressivite-du-visage-et-du-corps"
+            >
+
+                <details>
+
+                    <summary>
+                        L'expressivité du visage et du corps
+                    </summary>
+
+
+                    <details>
+
+                        <summary>
+                            Le sculpteur
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer l'expression corporelle,
+                            la communication non verbale et la capacité
+                            à représenter une idée ou une émotion avec le corps.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            À partir de 4 participants.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Un participant est désigné comme sculpteur.
+                        </p>
+
+                        <p>
+                            Les autres deviennent les « statues ».
+                        </p>
+
+                        <p>
+                            Sans parler, le sculpteur place progressivement
+                            chaque participant afin de créer une scène,
+                            une émotion ou un tableau vivant.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Le sculpteur ne parle pas.</li>
+                            <li>Les statues se laissent guider.</li>
+                            <li>Respectez les positions de chacun.</li>
+                            <li>Maintenez la posture jusqu'à la fin.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice développe la conscience du corps,
+                            l'expressivité, l'observation et la communication
+                            sans paroles.
+                        </p>
+
+                        <h3>Variantes</h3>
+
+                        <ul>
+                            <li>Une gare.</li>
+                            <li>Un mariage.</li>
+                            <li>Une victoire.</li>
+                            <li>Une dispute.</li>
+                            <li>Une tempête.</li>
+                            <li>Une forêt enchantée.</li>
+                        </ul>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Les expressions du visage, le regard et
+                            l'orientation des personnages racontent souvent
+                            autant que leur posture.
+                        </p>
+
+                    </details>
+
+                </details>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FAMILLE 6
+            ================================================== -->
+
+            <section
+                class="exercices-family"
+                id="themes-dimprovisation"
+            >
+
+                <details>
+
+                    <summary>
+                        Thèmes d'improvisation
+                    </summary>
+
+
+                    <details>
+
+                        <summary>
+                            L'entretien d'embauche
+                        </summary>
+
+                        <h3>Objectif</h3>
+
+                        <p>
+                            Développer l'écoute, la capacité à construire
+                            un personnage, la gestion des émotions et
+                            l'improvisation à partir d'une situation réaliste.
+                        </p>
+
+                        <h3>Nombre de joueurs</h3>
+
+                        <p>
+                            3 participants.
+                        </p>
+
+                        <h3>Durée</h3>
+
+                        <p>
+                            3 à 5 minutes.
+                        </p>
+
+                        <h3>Déroulement</h3>
+
+                        <p>
+                            Deux joueurs incarnent les recruteurs et
+                            un joueur joue le candidat.
+                        </p>
+
+                        <p>
+                            La scène débute comme un entretien d'embauche
+                            classique.
+                        </p>
+
+                        <p>
+                            Chaque personnage reçoit une attitude ou
+                            une humeur définie avant le début de l'improvisation.
+                        </p>
+
+                        <p>
+                            Les joueurs doivent rester cohérents avec
+                            leur personnage tout au long de la scène.
+                        </p>
+
+                        <h3>Consignes</h3>
+
+                        <ul>
+                            <li>Écoutez attentivement les autres joueurs.</li>
+                            <li>Restez fidèle au caractère de votre personnage.</li>
+                            <li>Faites évoluer naturellement la scène.</li>
+                            <li>Acceptez les propositions de vos partenaires.</li>
+                        </ul>
+
+                        <h3>Les bénéfices</h3>
+
+                        <p>
+                            Cet exercice développe l'écoute, l'imagination,
+                            la construction d'un personnage et la gestion
+                            des émotions.
+                        </p>
+
+                        <h3>Variantes</h3>
+
+                        <ul>
+                            <li>Inverser les rôles.</li>
+                            <li>Tirer au sort les traits de caractère.</li>
+                            <li>
+                                Changer le contexte : métier insolite,
+                                mission secrète ou poste imaginaire.
+                            </li>
+                        </ul>
+
+                        <h3>Le conseil de L'ImprOse</h3>
+
+                        <p>
+                            Le conflit ne doit pas empêcher l'histoire
+                            d'avancer. Même si votre personnage est
+                            difficile, gardez comme objectif de construire
+                            une scène intéressante avec vos partenaires.
+                        </p>
+
+                    </details>
+
+                </details>
+
+            </section>
+
+
+
+            <!-- CONSEIL -->
+
+            <section>
+
+                <h2>
+                    Conseil de L'ImprOse
+                </h2>
+
+                <p>
+                    Privilégiez toujours l'écoute, la bienveillance
+                    et le plaisir de jouer. Commencez simplement,
+                    observez le groupe et faites évoluer les contraintes
+                    progressivement.
+                </p>
+
+            </section>
+
+
+
+            <!-- CONCLUSION -->
+
+            <section>
+
+                <h2>
+                    Conclusion
+                </h2>
+
+                <p>
+                    La pratique régulière de ces exercices construit
+                    des réflexes solides : être présent, accepter les
+                    propositions, raconter ensemble et prendre sa place
+                    sur scène.
+                </p>
+
+                <p>
+                    Répétés dans un cadre sécurisant, ils nourrissent
+                    autant la confiance individuelle que la qualité
+                    du collectif.
+                </p>
+
+            </section>
+
+
         </div>
-      </div>
-    </nav>
-  </header>
 
-  <main>
-    <section>
-      <h1>Exercices d'improvisation</h1>
-      <p>Ces exercices aident à développer l'écoute, la spontanéité, l'imaginaire, la présence et la cohésion indispensables au théâtre d'improvisation. Utilisez-les comme échauffements, comme pistes de travail ciblées ou comme base d'un atelier complet.</p>
-      <p>Les fiches sont classées par familles : ouvrez celle qui correspond à votre objectif, puis choisissez un exercice et adaptez son rythme au groupe. Elles conviennent aussi bien aux débutants qu'aux joueurs confirmés.</p>
+    </main>
 
-      <nav aria-label="Sommaire des familles d'exercices">
-        <h2>Sommaire</h2>
-        <ul>
-              <li><a href="#mise-en-mouvement-et-cohesion-du-groupe">Mise en mouvement et cohésion du groupe</a></li>
-              <li><a href="#imaginaire-verbal">Imaginaire verbal</a></li>
-              <li><a href="#la-prise-de-lespace">La prise de l&#x27;espace</a></li>
-              <li><a href="#la-conscience-du-temps">La conscience du temps</a></li>
-              <li><a href="#lexpressivite-du-visage-et-du-corps">L&#x27;expressivité du visage et du corps</a></li>
-              <li><a href="#themes-dimprovisation">Thèmes d&#x27;improvisation</a></li>
-        </ul>
-      </nav>
 
-        <section id="mise-en-mouvement-et-cohesion-du-groupe">
-          <h2 class="visually-hidden">Mise en mouvement et cohésion du groupe</h2>
-          <details>
-            <summary>Mise en mouvement et cohésion du groupe</summary>
 
-            <details>
-              <summary>Compter de 20 à 0</summary>
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
-                <h3>Objectif</h3>
-                  <p>Développer l&#x27;écoute collective, la concentration et la cohésion du groupe. Cet exercice apprend aux joueurs à être attentifs aux autres avant de prendre la parole.</p>
+    <footer>
 
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 4 participants.</p>
+        <img
+            src="./asset/images/logo-vectoriel.png"
+            alt="Logo de L'ImprOse"
+        >
 
-                <h3>Déroulement</h3>
-                  <p>Les joueurs se déplacent librement dans l&#x27;espace. Ensemble, ils doivent compter de 20 jusqu&#x27;à 0.</p>
-                  <p>Une seule personne peut annoncer un chiffre à la fois.</p>
-                  <p>Si deux joueurs parlent simultanément, si un mauvais nombre est annoncé ou si l&#x27;ordre n&#x27;est pas respecté, le groupe recommence depuis 20.</p>
-                  <p>Le défi est de réussir sans se répartir les numéros à l&#x27;avance et sans désigner qui parlera.</p>
+        <h2>
+            L'ImprOse - Votre cerveau aux commandes
+        </h2>
 
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Déplacez-vous dans tout l&#x27;espace.</li>
-                    <li>Parlez suffisamment fort pour être entendu.</li>
-                    <li>Prenez le temps d&#x27;observer les autres avant d&#x27;intervenir.</li>
-                    <li>Évitez de vous précipiter.</li>
-                  </ul>
+        <p>
+            Développez votre créativité, votre écoute et votre
+            confiance grâce au théâtre d'improvisation.
+        </p>
 
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice renforce l&#x27;écoute, la patience et la confiance entre les participants. Il montre rapidement qu&#x27;une bonne communication passe parfois par le silence et l&#x27;observation plutôt que par la rapidité.</p>
+        <p>
+            &copy; 2026 L'ImprOse. Tous droits réservés.
+        </p>
 
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Compter de 0 à 20.</li>
-                    <li>Accélérer le rythme de déplacement.</li>
-                    <li>Commencer à un nombre correspondant au nombre de joueurs afin que chacun ne parle qu&#x27;une seule fois.</li>
-                    <li>Remplacer les nombres par les prénoms des participants.</li>
-                    <li>Ajouter une contrainte de déplacement (marche rapide, marche lente, changement de direction...).</li>
-                  </ul>
+    </footer>
 
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Ne cherchez pas à parler le plus vite possible. Prenez quelques instants pour observer le groupe. Plus chacun écoute les autres, plus l&#x27;exercice devient fluide.</p>
-            </details>
 
-            <details>
-              <summary>Les prénoms</summary>
 
-                <h3>Objectif</h3>
-                  <p>Favoriser la mémorisation des prénoms tout en développant l&#x27;écoute, la présence et la cohésion du groupe dès le début d&#x27;un atelier.</p>
+    <!-- BOOTSTRAP -->
 
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 4 participants.</p>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
-                <h3>Déroulement</h3>
-                  <p>Les participants se placent en ligne, de manière à ne pas pouvoir se regarder.</p>
-                  <p>Sans ordre établi, chacun annonce son prénom lorsqu&#x27;il sent que le moment est opportun. L&#x27;objectif est de respecter le rythme du groupe sans couper la parole à un autre participant.</p>
-                  <p>L&#x27;exercice se poursuit jusqu&#x27;à ce que chacun ait prononcé son prénom une seule fois.</p>
 
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Écouter attentivement les autres.</li>
-                    <li>Parler suffisamment fort pour être entendu.</li>
-                    <li>Respecter le rythme collectif.</li>
-                    <li>Ne pas chercher à parler le plus vite possible.</li>
-                  </ul>
+    <!-- RETOUR EN HAUT -->
 
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice favorise l&#x27;écoute, aide à mémoriser les prénoms et permet au groupe de trouver progressivement une dynamique commune.</p>
+    <a
+        href="#"
+        class="retour-haut"
+        aria-label="Retour en haut"
+    >
+        ↑
+    </a>
 
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Les participants se placent en cercle afin de pouvoir se regarder. Cette disposition facilite l&#x27;association des prénoms aux visages tout en développant le contact visuel entre les joueurs.</li>
-                  </ul>
 
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Ne cherchez pas à remplir le silence. Prenez le temps d&#x27;écouter le groupe avant de prendre la parole. Une bonne écoute est souvent plus importante que la rapidité.</p>
-            </details>
-
-            <details>
-              <summary>La balle aux prénoms</summary>
-
-                <h3>Objectif</h3>
-                  <p>Apprendre rapidement les prénoms des participants tout en développant l&#x27;écoute, la concentration et la précision des échanges.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>De 8 à 20 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Les joueurs forment un cercle.</p>
-                  <p>Le premier joueur lance une balle imaginaire à un autre participant en annonçant son propre prénom.</p>
-                  <p>Le joueur qui reçoit la balle la récupère, puis la lance à une nouvelle personne en disant à son tour son propre prénom.</p>
-                  <p>L&#x27;exercice continue jusqu&#x27;à ce que chacun ait participé plusieurs fois.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Formez un cercle régulier.</li>
-                    <li>Regardez la personne à qui vous lancez la balle.</li>
-                    <li>Mimez clairement le lancer et la réception.</li>
-                    <li>Annoncez votre prénom de manière audible.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice facilite la mémorisation des prénoms, améliore l&#x27;attention portée aux partenaires et encourage chacun à participer dès le début de la séance.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Au lieu d&#x27;annoncer son propre prénom, le joueur prononce le prénom de la personne à qui il lance la balle. Cette version demande davantage de concentration et sollicite encore plus la mémoire.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Même si la balle est imaginaire, jouez-la comme si elle existait réellement. Plus les gestes sont précis et crédibles, plus l&#x27;exercice devient immersif et agréable pour tout le groupe.</p>
-            </details>
-
-            <details>
-              <summary>Je te regarde, tu m&#x27;appelles</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer l&#x27;écoute, le regard, la concentration et l&#x27;anticipation au sein du groupe.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>De 8 à 20 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Les joueurs forment un cercle.</p>
-                  <p>Un premier participant choisit une personne et commence à marcher lentement vers elle.</p>
-                  <p>La personne visée ne démarre pas immédiatement. Elle doit d&#x27;abord regarder un autre joueur.</p>
-                  <p>Ce nouveau joueur doit l&#x27;appeler par son prénom.</p>
-                  <p>Une fois son prénom entendu, elle peut commencer à marcher vers lui.</p>
-                  <p>Pendant ce temps, le joueur qui vient de l&#x27;appeler regarde une nouvelle personne, qui devra à son tour l&#x27;appeler avant qu&#x27;il ne se mette en mouvement.</p>
-                  <p>Le déplacement doit rester fluide afin que plusieurs joueurs soient en mouvement en même temps.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Marchez à un rythme lent et régulier.</li>
-                    <li>Regardez clairement la personne choisie.</li>
-                    <li>Appelez les prénoms distinctement.</li>
-                    <li>Gardez le mouvement continu sans vous arrêter.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe l&#x27;attention portée aux partenaires, la réactivité et la capacité à gérer plusieurs informations en même temps. Il renforce également la confiance et la communication non verbale.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Supprimez les prénoms et utilisez uniquement le regard pour déclencher le déplacement du joueur suivant. Cette version demande une observation encore plus attentive.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Ne cherchez pas à aller vite. La réussite de l&#x27;exercice repose sur la fluidité des déplacements et la qualité des regards plutôt que sur la rapidité.</p>
-            </details>
-
-            <details>
-              <summary>Un ami, un ennemi</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer les déplacements, la perception de l&#x27;espace, la réactivité et la cohésion du groupe.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>De 8 à 20 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Chaque joueur choisit secrètement deux personnes dans le groupe :</p>
-                  <p>un ami, qu&#x27;il devra protéger ;</p>
-                  <p>un ennemi, dont il devra empêcher l&#x27;accès à son ami.</p>
-                  <p>Lorsque tout le monde commence à marcher dans l&#x27;espace, chaque participant cherche en permanence à se placer entre son ami et son ennemi.</p>
-                  <p>L&#x27;objectif est de maintenir cette position malgré les déplacements de l&#x27;ensemble du groupe.</p>
-                  <p>À tout moment, l&#x27;animateur peut annoncer « Stop ! » afin de vérifier les positions de chacun.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Déplacez-vous calmement sans courir.</li>
-                    <li>Évitez les contacts brusques.</li>
-                    <li>Restez attentif aux déplacements de tous les joueurs.</li>
-                    <li>Gardez votre ami protégé en permanence.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe l&#x27;observation, l&#x27;anticipation, les déplacements dans l&#x27;espace et la capacité à réagir rapidement aux mouvements des autres participants.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Inversez les rôles : l&#x27;ancien ennemi devient l&#x27;ami à protéger, puis choisissez un nouvel ennemi. Les repères changent complètement et obligent les joueurs à s&#x27;adapter rapidement.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Ne fixez pas uniquement votre ami ou votre ennemi. Gardez une vision d&#x27;ensemble du groupe pour anticiper les déplacements et conserver votre position plus facilement.</p>
-            </details>
-
-            <details>
-              <summary>L&#x27;aveugle</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer la confiance entre partenaires, l&#x27;écoute, la communication non verbale et le sens des responsabilités.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 10 participants (en binômes).</p>
-
-                <h3>Déroulement</h3>
-                  <p>Les participants se mettent par deux.</p>
-                  <p>L&#x27;un des joueurs ferme les yeux et devient l&#x27;aveugle.</p>
-                  <p>L&#x27;autre devient le guide.</p>
-                  <p>Le guide accompagne son partenaire dans l&#x27;espace en veillant constamment à sa sécurité. Il adapte son rythme afin que son partenaire puisse avancer en toute confiance.</p>
-                  <p>Après quelques minutes, les rôles sont inversés.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>L&#x27;aveugle garde les yeux fermés pendant toute la durée de l&#x27;exercice.</li>
-                    <li>Le guide reste attentif à son partenaire.</li>
-                    <li>Déplacez-vous calmement.</li>
-                    <li>Évitez les obstacles et les autres participants.</li>
-                    <li>Sauf indication contraire, ne parlez pas.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe la confiance mutuelle, la qualité de l&#x27;écoute et la capacité à prendre soin d&#x27;un partenaire. Il invite également les joueurs à se concentrer sur leurs sensations plutôt que sur la vue.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Le guide décrit un paysage imaginaire afin de faire voyager son partenaire.</li>
-                    <li>Le déplacement est accompagné uniquement de sons, de bruitages ou d&#x27;ambiances sonores, sans aucune description.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Le rôle du guide est aussi important que celui de l&#x27;aveugle. Prenez le temps d&#x27;observer votre partenaire et adaptez votre rythme à son niveau de confiance. Un guide rassurant permet à l&#x27;aveugle de vivre pleinement l&#x27;expérience.</p>
-            </details>
-
-            <details>
-              <summary>Les chaises musicales</summary>
-
-                <h3>Objectif</h3>
-                  <p>Créer une dynamique de groupe, développer la réactivité et aider les participants à prendre la parole devant les autres dans une ambiance ludique.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 6 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Disposez les chaises contre les murs de la salle en laissant une chaise de moins que le nombre de participants.</p>
-                  <p>Au signal de l&#x27;animateur, tous les joueurs changent de place et tentent de s&#x27;asseoir sur une nouvelle chaise.</p>
-                  <p>Le joueur qui reste debout réalise le défi choisi par l&#x27;animateur avant que le jeu ne reprenne.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Changez obligatoirement de chaise à chaque signal.</li>
-                    <li>Ne courez pas.</li>
-                    <li>Respectez les autres participants.</li>
-                    <li>Restez attentifs au prochain signal.</li>
-                  </ul>
-
-                <h3>Défis possibles</h3>
-                  <ul>
-                    <li>Le joueur sans chaise peut par exemple :</li>
-                    <li>dire son prénom en regardant une personne dans les yeux ;</li>
-                    <li>parler pendant 15 secondes sans interruption ;</li>
-                    <li>chanter quelques secondes ;</li>
-                    <li>estimer une durée de 15 secondes sans chronomètre.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice crée rapidement une bonne dynamique de groupe, favorise la spontanéité et permet aux participants de prendre la parole dans une ambiance détendue.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Interdire la course.</li>
-                    <li>Saluer une ou plusieurs personnes pendant le déplacement.</li>
-                    <li>Trouver différentes façons de dire bonjour.</li>
-                    <li>Produire un son pendant chaque déplacement.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Le défi ne doit jamais être vécu comme une punition. Choisissez des consignes adaptées au niveau du groupe afin que chacun ose participer dans une ambiance bienveillante.</p>
-            </details>
-
-            <details>
-              <summary>Un geste, un prénom</summary>
-
-                <h3>Objectif</h3>
-                  <p>Apprendre les prénoms des participants tout en développant la mémoire, l&#x27;expression corporelle et la confiance en soi.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 6 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Les participants se placent face au groupe.</p>
-                  <p>Le premier joueur annonce son prénom en l&#x27;associant à un geste simple.</p>
-                  <p>Le deuxième joueur reproduit le prénom et le geste du premier, puis ajoute son propre prénom accompagné d&#x27;un nouveau geste.</p>
-                  <p>Le troisième reprend les deux premiers avant d&#x27;ajouter le sien.</p>
-                  <p>L&#x27;exercice continue jusqu&#x27;à ce que tous les participants soient passés.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Prononcez votre prénom clairement.</li>
-                    <li>Réalisez un geste simple et facile à reproduire.</li>
-                    <li>Soyez attentif aux gestes et aux prénoms des joueurs précédents.</li>
-                    <li>Reproduisez les mouvements avec précision.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice favorise la mémorisation des prénoms, stimule la concentration et encourage les participants à utiliser leur corps pour communiquer. Il aide également chacun à prendre sa place au sein du groupe.</p>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Choisissez un geste facile à reconnaître. Plus il est clair et précis, plus il sera simple à retenir pour l&#x27;ensemble du groupe.</p>
-            </details>
-
-            <details>
-              <summary>Le réflexe</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer la concentration, la maîtrise de soi, la rapidité de réaction et l&#x27;engagement.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 2 participants.</p>
-
-                <h3>Matériel</h3>
-                  <ul>
-                    <li>Un petit objet placé entre les deux joueurs (briquet, balle, bouchon, gomme...).</li>
-                  </ul>
-
-                <h3>Déroulement</h3>
-                  <p>Deux joueurs s&#x27;assoient face à face.</p>
-                  <p>Leurs mains restent posées sur leurs genoux tandis que l&#x27;objet est placé entre eux.</p>
-                  <p>L&#x27;animateur donne un rythme en frappant dans ses mains.</p>
-                  <p>Tant que deux claquements sont entendus, les joueurs ne doivent pas bouger.</p>
-                  <p>Lorsque l&#x27;animateur ne frappe qu&#x27;une seule fois, les deux joueurs tentent immédiatement de saisir l&#x27;objet.</p>
-                  <p>Le premier qui l&#x27;attrape remporte le duel.</p>
-                  <p>Si un joueur retire sa main de son genou avant le bon signal, il perd automatiquement la manche.</p>
-                  <p>Le perdant peut être remplacé par un nouveau participant.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Gardez les mains sur les genoux.</li>
-                    <li>Ne bougez qu&#x27;au bon signal.</li>
-                    <li>Restez concentré sur le rythme donné par l&#x27;animateur.</li>
-                    <li>Respectez votre adversaire.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe la concentration, le contrôle de ses impulsions, la rapidité d&#x27;exécution et la capacité à rester attentif malgré la pression.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Utiliser plusieurs objets et plusieurs duels en même temps.</li>
-                    <li>Modifier le rythme des claquements pour augmenter la difficulté.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>La victoire ne dépend pas uniquement de la vitesse. Les joueurs les plus performants sont souvent ceux qui savent attendre le bon moment sans se précipiter.</p>
-            </details>
-
-            <details>
-              <summary>Parler le plus vite possible</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer la spontanéité, l&#x27;imagination, l&#x27;écoute et l&#x27;aisance à l&#x27;oral tout en apprenant à construire une histoire collectivement.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 5 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Les joueurs se placent en file face à l&#x27;animateur.</p>
-                  <p>Le premier commence à raconter une histoire en parlant rapidement.</p>
-                  <p>Au signal de l&#x27;animateur, il rejoint la fin de la file.</p>
-                  <p>Le joueur suivant reprend immédiatement le récit en s&#x27;appuyant sur la dernière idée ou la dernière phrase entendue avant de poursuivre l&#x27;histoire.</p>
-                  <p>Le relais continue jusqu&#x27;à ce que chacun ait participé plusieurs fois.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Parlez avec énergie.</li>
-                    <li>Écoutez attentivement l&#x27;histoire.</li>
-                    <li>Reprenez naturellement le fil du récit.</li>
-                    <li>Acceptez toutes les propositions faites par les joueurs précédents.</li>
-                    <li>Faites avancer l&#x27;histoire sans revenir en arrière.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe la réactivité, l&#x27;imagination, la mémoire immédiate et la capacité à construire une histoire collective sans préparation.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Au lieu d&#x27;interrompre les joueurs avec un signal, chacun décide lui-même du moment où il passe la parole au participant suivant.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Ne cherchez pas l&#x27;histoire parfaite. Votre objectif est de faire avancer le récit, même avec des idées inattendues. En improvisation, mieux vaut proposer que rester bloqué.</p>
-            </details>
-
-            <details>
-              <summary>La définition</summary>
-
-                <h3>Objectif</h3>
-                  <p>Stimuler l&#x27;imagination, développer la répartie et apprendre à défendre une idée, même complètement inventée.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 4 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Les joueurs se placent en file face à l&#x27;animateur.</p>
-                  <p>Les trois premiers annoncent rapidement une syllabe chacun.</p>
-                  <p>Le quatrième joueur répète ces syllabes dans le même ordre afin de former un mot imaginaire.</p>
-                  <p>Sans réfléchir trop longtemps, il doit ensuite inventer et annoncer la définition de ce nouveau mot comme s&#x27;il existait réellement.</p>
-                  <p>L&#x27;exercice recommence ensuite avec les joueurs suivants.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Prononcez les syllabes rapidement.</li>
-                    <li>Acceptez le mot obtenu, même s&#x27;il paraît étrange.</li>
-                    <li>Donnez immédiatement une définition.</li>
-                    <li>Assumez votre proposition jusqu&#x27;au bout.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe la créativité, l&#x27;aisance à l&#x27;oral, la spontanéité et la capacité à justifier une idée inventée sans perdre en crédibilité.</p>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Ne cherchez pas une définition parfaite. Plus vous assumez votre invention avec conviction, plus elle semblera crédible aux yeux du groupe.</p>
-            </details>
-
-            <details>
-              <summary>La rock star</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer la confiance en soi, apprendre à accepter les compliments et se sentir à l&#x27;aise face à un public.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 5 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Un participant entre seul dans l&#x27;espace de jeu.</p>
-                  <p>Il se place au centre de la scène et reste simplement présent face au groupe.</p>
-                  <p>Les autres participants l&#x27;accueillent par de chaleureux applaudissements pendant une trentaine de secondes.</p>
-                  <p>Le joueur propose ensuite une courte prestation de son choix (chanter, réciter un texte, raconter une anecdote, etc.).</p>
-                  <p>À la fin de sa prestation, il reste quelques instants immobile pendant que le groupe l&#x27;applaudit une nouvelle fois avant de quitter la scène.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Entrez calmement sur scène.</li>
-                    <li>Prenez le temps de recevoir les applaudissements.</li>
-                    <li>Ne minimisez pas les encouragements du groupe.</li>
-                    <li>Profitez pleinement de votre moment sur scène.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice aide les participants à mieux gérer leur trac, à accepter le regard des autres et à recevoir des retours positifs avec naturel.</p>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Le plus difficile n&#x27;est souvent pas de monter sur scène, mais d&#x27;accepter d&#x27;être applaudi. Essayez de profiter pleinement de ce moment sans vous excuser ni vous dévaloriser.</p>
-            </details>
-
-            <details>
-              <summary>Le métier imaginaire</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer l&#x27;imagination, la spontanéité et la capacité à construire un univers cohérent tout en acceptant les propositions des autres joueurs.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 6 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Par groupes de deux ou trois, les participants disposent de quelques minutes pour inventer plusieurs métiers totalement imaginaires.</p>
-                  <p>Par exemple :</p>
-                  <p>Compteur de gouttes de pluie</p>
-                  <p>Cacheur de lune</p>
-                  <p>Réparateur de souvenirs</p>
-                  <p>Fabricant d&#x27;ombres</p>
-                  <p>Chaque joueur choisit ensuite le métier qu&#x27;il préfère.</p>
-                  <p>À tour de rôle, les participants montent sur scène et présentent leur profession au groupe.</p>
-                  <p>Les spectateurs peuvent poser toutes les questions qu&#x27;ils souhaitent.</p>
-                  <p>Le joueur doit répondre immédiatement en restant cohérent avec son personnage et son métier.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Acceptez toutes les questions.</li>
-                    <li>Ne répondez jamais uniquement par « non ».</li>
-                    <li>Développez votre univers au fur et à mesure.</li>
-                    <li>Assumez pleinement votre personnage.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice stimule l&#x27;imagination, développe la répartie et apprend à construire une histoire à partir des propositions du groupe.</p>
-                  <p>Il permet également de travailler l&#x27;acceptation, une compétence essentielle en improvisation.</p>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Même si une question vous surprend, considérez-la comme une opportunité d&#x27;enrichir votre métier. Les meilleures idées naissent souvent des propositions les plus inattendues.</p>
-            </details>
-
-            <details>
-              <summary>Je m&#x27;assieds, tu te lèves</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer l&#x27;écoute collective, la coordination et la capacité à agir au bon moment sans communication verbale.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 6 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Tous les participants sont assis en cercle ou répartis dans l&#x27;espace.</p>
-                  <p>Un premier joueur se lève, puis se rassoit.</p>
-                  <p>Au moment précis où il s&#x27;assoit, une seule autre personne doit se lever.</p>
-                  <p>Le relais continue ainsi jusqu&#x27;à ce que tous les participants aient eu l&#x27;occasion de se lever.</p>
-                  <p>Si deux joueurs se lèvent en même temps, l&#x27;exercice recommence depuis le début.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Observez attentivement le groupe.</li>
-                    <li>Ne vous précipitez pas.</li>
-                    <li>Laissez chacun trouver naturellement son moment.</li>
-                    <li>Essayez de varier les participants afin que tout le monde puisse intervenir.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe une écoute fine du groupe, améliore la coordination collective et encourage les joueurs à trouver le bon équilibre entre initiative et patience.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Lorsque le groupe maîtrise la version classique, deux joueurs peuvent se lever simultanément. Lorsqu&#x27;ils se rassoient, deux autres prennent immédiatement le relais.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>La réussite repose davantage sur l&#x27;observation que sur la rapidité. Prenez le temps de sentir le rythme du groupe avant d&#x27;agir.</p>
-            </details>
-
-            <details>
-              <summary>Dissociations musicales</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer la conscience corporelle, la coordination, la dissociation des mouvements et le sens du rythme.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 3 participants.</p>
-
-                <h3>Matériel</h3>
-                  <ul>
-                    <li>Une musique rythmée.</li>
-                  </ul>
-
-                <h3>Déroulement</h3>
-                  <p>Les participants sont assis face au groupe.</p>
-                  <p>L&#x27;animateur lance la musique puis annonce une partie du corps à mettre en mouvement (tête, épaules, mains, pieds, etc.).</p>
-                  <p>Au fil de l&#x27;exercice, il peut ajouter ou retirer des parties du corps afin de complexifier progressivement les mouvements.</p>
-                  <p>Le défi consiste à bouger uniquement les parties indiquées tout en restant en rythme.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Écoutez attentivement les consignes.</li>
-                    <li>Respectez le rythme de la musique.</li>
-                    <li>Bougez uniquement les parties du corps demandées.</li>
-                    <li>Variez vos mouvements sans répéter toujours les mêmes.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice améliore la coordination, la maîtrise du corps, la concentration et la capacité à dissocier plusieurs mouvements simultanément.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Lorsque les participants maîtrisent la version assise, réalisez le même exercice debout en ajoutant des déplacements dans l&#x27;espace.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Commencez avec une seule partie du corps, puis augmentez progressivement la difficulté. Une progression trop rapide risque de faire perdre le rythme et la précision des mouvements.</p>
-                  <p>Imaginaire verbal</p>
-            </details>
-          </details>
-        </section>
-        <section id="imaginaire-verbal">
-          <h2 class="visually-hidden">Imaginaire verbal</h2>
-          <details>
-            <summary>Imaginaire verbal</summary>
-
-            <details>
-              <summary>Associations d&#x27;idées</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer la spontanéité, la créativité verbale et la capacité à rebondir rapidement sur les propositions des autres joueurs.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 4 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Les participants sont assis ou debout en cercle.</p>
-                  <p>Un premier joueur annonce un mot.</p>
-                  <p>Son voisin répond immédiatement avec un autre mot qui lui fait penser au précédent.</p>
-                  <p>L&#x27;exercice se poursuit jusqu&#x27;à ce que chacun ait participé plusieurs fois.</p>
-                  <p>Toutes les associations sont acceptées, à condition qu&#x27;elles soient spontanées.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Répondez sans trop réfléchir.</li>
-                    <li>Ne préparez pas votre mot à l&#x27;avance.</li>
-                    <li>Variez les associations.</li>
-                    <li>Gardez un rythme dynamique.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice stimule l&#x27;imagination, enrichit les réflexes créatifs et aide les joueurs à accepter leurs premières idées sans les censurer.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Au lieu de chercher un lien de sens, trouvez un mot qui ressemble au précédent par sa sonorité ou son rythme.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Il n&#x27;existe pas de mauvaise association. Faites confiance à votre premier réflexe : il est souvent plus intéressant qu&#x27;une idée longuement réfléchie.</p>
-            </details>
-
-            <details>
-              <summary>Dissociations d&#x27;idées</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer la spontanéité, stimuler l&#x27;imagination et apprendre à sortir des associations d&#x27;idées les plus évidentes.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 4 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Les participants se placent en cercle.</p>
-                  <p>Un premier joueur annonce un mot.</p>
-                  <p>Son voisin doit immédiatement répondre avec un mot qui n&#x27;a aucun lien logique avec le précédent.</p>
-                  <p>Le jeu continue ainsi de joueur en joueur en maintenant un rythme soutenu.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Répondez spontanément.</li>
-                    <li>Évitez toute association logique.</li>
-                    <li>Ne préparez pas votre réponse à l&#x27;avance.</li>
-                    <li>Parlez clairement et suffisamment fort.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice encourage les joueurs à dépasser leurs automatismes de pensée et à accepter les idées les plus inattendues. Il développe la créativité, la réactivité et la confiance dans son imaginaire.</p>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Ne cherchez pas le mot parfait. Plus votre proposition est inattendue, plus elle vous aidera à sortir de vos habitudes de pensée.</p>
-            </details>
-
-            <details>
-              <summary>Moi et ma conscience</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer l&#x27;écoute, la co-construction d&#x27;une histoire et la capacité à intégrer les propositions d&#x27;un partenaire.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>2 joueurs.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Un joueur s&#x27;assoit et commence à raconter une histoire.</p>
-                  <p>Son partenaire se place derrière lui et joue le rôle de sa conscience.</p>
-                  <p>À tout moment, la conscience peut intervenir pour ajouter une précision, corriger un détail ou enrichir le récit.</p>
-                  <p>Le narrateur doit immédiatement intégrer cette nouvelle information et poursuivre son histoire sans la contredire.</p>
-                  <p>Les rôles sont ensuite inversés.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Le narrateur parle calmement afin de laisser de la place aux interventions.</li>
-                    <li>La conscience enrichit le récit sans chercher à le bloquer.</li>
-                    <li>Les deux joueurs restent attentifs aux propositions de leur partenaire.</li>
-                    <li>Acceptez les nouvelles idées et intégrez-les naturellement.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe l&#x27;écoute active, l&#x27;acceptation des propositions et la capacité à construire une histoire à plusieurs sans perdre sa cohérence.</p>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>La conscience n&#x27;est pas là pour piéger le narrateur. Son rôle est d&#x27;enrichir l&#x27;histoire, pas de la rendre impossible à raconter.</p>
-            </details>
-
-            <details>
-              <summary>Insertions de mots</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer la réactivité, l&#x27;écoute, la concentration et la capacité à intégrer une contrainte de manière fluide dans un récit improvisé.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 5 participants.</p>
-
-                <h3>Matériel</h3>
-                  <ul>
-                    <li>Une liste de mots préparée par l&#x27;animateur.</li>
-                  </ul>
-
-                <h3>Déroulement</h3>
-                  <p>Les participants se placent en file face à l&#x27;animateur.</p>
-                  <p>Le premier joueur commence à raconter une histoire.</p>
-                  <p>À tout moment, l&#x27;animateur annonce un mot à voix haute.</p>
-                  <p>Le narrateur doit immédiatement intégrer ce mot dans son histoire, sans interrompre son récit.</p>
-                  <p>Au signal de l&#x27;animateur, le joueur rejoint la fin de la file et le participant suivant débute une nouvelle histoire.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Continuez votre récit sans vous arrêter.</li>
-                    <li>Intégrez le mot naturellement dans votre histoire.</li>
-                    <li>Ne préparez pas votre histoire à l&#x27;avance.</li>
-                    <li>Gardez un rythme dynamique.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice améliore la spontanéité, la capacité d&#x27;adaptation et l&#x27;écoute. Il apprend également à intégrer une contrainte tout en conservant un récit cohérent.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Au lieu d&#x27;utiliser le mot exact, le joueur doit intégrer le thème annoncé.</li>
-                    <li>Par exemple :</li>
-                    <li>Mot annoncé : pluie</li>
-                    <li>Le joueur peut utiliser : averse, orage, rivière, océan, nuages...</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>N&#x27;essayez pas de modifier toute votre histoire pour intégrer le mot. Accueillez-le comme un nouvel élément du récit et laissez votre imagination faire le reste.</p>
-                  <p>La prise de l&#x27;espace</p>
-            </details>
-          </details>
-        </section>
-        <section id="la-prise-de-lespace">
-          <h2 class="visually-hidden">La prise de l&#x27;espace</h2>
-          <details>
-            <summary>La prise de l&#x27;espace</summary>
-
-            <details>
-              <summary>Déambulation consciente</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer l&#x27;écoute collective, la conscience de l&#x27;espace et la capacité à réagir aux mouvements du groupe.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 6 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Tous les participants marchent librement dans l&#x27;espace.</p>
-                  <p>L&#x27;objectif est d&#x27;occuper toute la scène de manière équilibrée, sans former de groupes ni suivre toujours les mêmes trajectoires.</p>
-                  <p>À tout moment, un participant peut décider de s&#x27;arrêter.</p>
-                  <p>Dès qu&#x27;il s&#x27;arrête, l&#x27;ensemble du groupe doit s&#x27;immobiliser.</p>
-                  <p>Lorsque ce participant reprend sa marche, tout le groupe repart en même temps.</p>
-                  <p>L&#x27;exercice se poursuit en laissant chacun prendre l&#x27;initiative à tour de rôle.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Occupez tout l&#x27;espace.</li>
-                    <li>Gardez une vitesse de marche naturelle.</li>
-                    <li>Soyez attentifs aux mouvements des autres.</li>
-                    <li>Réagissez immédiatement aux arrêts et aux reprises.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe l&#x27;écoute collective, la perception de l&#x27;espace, la concentration et la capacité à fonctionner comme un groupe uni.</p>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Ne cherchez pas à deviner qui va s&#x27;arrêter. Concentrez-vous simplement sur ce qui se passe autour de vous et laissez votre attention guider vos réactions.</p>
-            </details>
-
-            <details>
-              <summary>Les bulles (La proxémie)</summary>
-
-                <h3>Objectif</h3>
-                  <p>Prendre conscience de son espace personnel, apprendre à respecter celui des autres et développer la présence dans la relation avec un partenaire.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 6 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Les participants forment deux lignes face à face, séparées de plusieurs mètres.</p>
-                  <p>Au signal de l&#x27;animateur, une des deux lignes avance lentement vers l&#x27;autre.</p>
-                  <p>Chaque joueur reste attentif à ses sensations et s&#x27;arrête lorsqu&#x27;il atteint la distance à laquelle il se sent encore parfaitement à l&#x27;aise face à son partenaire.</p>
-                  <p>Une fois tous les participants arrêtés, chacun revient à sa place et les rôles sont inversés.</p>
-                  <p>À la fin de l&#x27;exercice, les binômes échangent quelques minutes sur leurs ressentis.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Avancez lentement.</li>
-                    <li>Gardez le contact visuel avec votre partenaire.</li>
-                    <li>Ne parlez pas pendant l&#x27;exercice.</li>
-                    <li>Arrêtez-vous dès que vous atteignez votre limite de confort.</li>
-                    <li>Respectez la distance choisie par votre partenaire.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice aide à mieux comprendre la notion d&#x27;espace personnel, améliore la qualité de la relation avec un partenaire et développe la présence scénique. Il permet également de prendre conscience de son propre rapport à la proximité physique.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Un participant peut jouer le rôle d&#x27;un perturbateur afin de tester la capacité du joueur à rester concentré et détendu malgré une distraction.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Il n&#x27;existe pas de bonne ou de mauvaise distance. Chaque personne possède sa propre zone de confort. L&#x27;objectif n&#x27;est pas de la dépasser, mais d&#x27;en prendre conscience.</p>
-                  <p>LA CONSCIENCE DU TEMPS</p>
-            </details>
-          </details>
-        </section>
-        <section id="la-conscience-du-temps">
-          <h2 class="visually-hidden">La conscience du temps</h2>
-          <details>
-            <summary>La conscience du temps</summary>
-
-            <details>
-              <summary>La minute</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer la présence scénique, améliorer la gestion du temps et gagner en aisance lors d&#x27;une improvisation en solo.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>1 joueur à la fois.</p>
-
-                <h3>Matériel</h3>
-                  <ul>
-                    <li>Un chronomètre.</li>
-                  </ul>
-
-                <h3>Déroulement</h3>
-                  <p>Un participant entre seul sur scène et improvise librement pendant ce qu&#x27;il pense être une minute.</p>
-                  <p>Pendant ce temps, l&#x27;animateur chronomètre précisément la durée.</p>
-                  <p>À la fin de l&#x27;improvisation, le joueur indique combien de temps il pense être resté sur scène.</p>
-                  <p>L&#x27;animateur révèle ensuite la durée réelle et compare les deux.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Jouez naturellement sans chercher à compter les secondes.</li>
-                    <li>Restez pleinement investi dans votre improvisation.</li>
-                    <li>Ne regardez pas de montre ou de chronomètre.</li>
-                    <li>Faites confiance à votre ressenti.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice aide à mieux percevoir le temps, améliore la présence sur scène et apprend à gérer les silences sans précipitation. Il permet également de prendre confiance lors d&#x27;une improvisation en solo.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Au lieu d&#x27;une minute, demandez une durée différente (30 secondes, 2 minutes ou 3 minutes) afin de travailler différentes perceptions du temps.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Ne cherchez pas à deviner le temps écoulé en comptant mentalement. Concentrez-vous sur votre improvisation : plus vous êtes présent dans le jeu, plus votre perception du temps deviendra naturelle.</p>
-            </details>
-          </details>
-        </section>
-        <section id="lexpressivite-du-visage-et-du-corps">
-          <h2 class="visually-hidden">L&#x27;expressivité du visage et du corps</h2>
-          <details>
-            <summary>L&#x27;expressivité du visage et du corps</summary>
-
-            <details>
-              <summary>Le sculpteur</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer l&#x27;expression corporelle, la communication non verbale et la capacité à représenter une idée ou une émotion avec le corps.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>À partir de 4 participants.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Un participant est désigné comme sculpteur.</p>
-                  <p>Les autres deviennent les &quot;statues&quot;.</p>
-                  <p>Sans parler, le sculpteur place progressivement chaque participant afin de créer une scène, une émotion ou un tableau vivant.</p>
-                  <p>Il peut guider les joueurs en les repositionnant délicatement ou en utilisant des gestes pour montrer ce qu&#x27;il attend.</p>
-                  <p>Une fois la sculpture terminée, le groupe l&#x27;observe avant de changer de sculpteur.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Le sculpteur ne parle pas.</li>
-                    <li>Les statues se laissent guider sans anticiper les intentions.</li>
-                    <li>Respectez les déplacements et les positions de chacun.</li>
-                    <li>Maintenez la posture jusqu&#x27;à la fin de la présentation.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe la conscience du corps, l&#x27;expressivité, l&#x27;observation et la communication sans paroles. Il apprend également à raconter une histoire ou transmettre une émotion uniquement grâce aux postures et aux expressions.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Le sculpteur reçoit un thème imposé avant de commencer.</li>
-                    <li>Exemples :</li>
-                    <li>Une gare</li>
-                    <li>Un mariage</li>
-                    <li>Une victoire</li>
-                    <li>Une dispute</li>
-                    <li>Une tempête</li>
-                    <li>Une forêt enchantée</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Une bonne sculpture ne repose pas seulement sur la position du corps. Les expressions du visage, le regard et l&#x27;orientation des personnages racontent souvent autant que leur posture.</p>
-                  <p>Thèmes d&#x27;improvisation</p>
-            </details>
-          </details>
-        </section>
-        <section id="themes-dimprovisation">
-          <h2 class="visually-hidden">Thèmes d&#x27;improvisation</h2>
-          <details>
-            <summary>Thèmes d&#x27;improvisation</summary>
-
-            <details>
-              <summary>L&#x27;entretien d&#x27;embauche</summary>
-
-                <h3>Objectif</h3>
-                  <p>Développer l&#x27;écoute, la capacité à construire un personnage, la gestion des émotions et l&#x27;improvisation à partir d&#x27;une situation réaliste.</p>
-
-                <h3>Nombre de joueurs</h3>
-                  <p>3 participants.</p>
-
-                <h3>Durée</h3>
-                  <p>3 à 5 minutes.</p>
-
-                <h3>Déroulement</h3>
-                  <p>Trois joueurs participent à la scène :</p>
-                  <p>deux incarnent les recruteurs ;</p>
-                  <p>un joue le rôle du candidat.</p>
-                  <p>La scène débute comme un entretien d&#x27;embauche classique.</p>
-                  <p>Chaque personnage reçoit une attitude ou une humeur définie avant le début de l&#x27;improvisation. Par exemple :</p>
-                  <p>bienveillant ;</p>
-                  <p>exigeant ;</p>
-                  <p>impatient ;</p>
-                  <p>irrespectueux ;</p>
-                  <p>stressé ;</p>
-                  <p>confiant.</p>
-                  <p>Les joueurs doivent rester cohérents avec leur personnage tout au long de la scène.</p>
-
-                <h3>Consignes</h3>
-                  <ul>
-                    <li>Écoutez attentivement les propositions des autres joueurs.</li>
-                    <li>Restez fidèle au caractère de votre personnage.</li>
-                    <li>Faites évoluer naturellement la scène.</li>
-                    <li>Acceptez les propositions de vos partenaires sans bloquer l&#x27;improvisation.</li>
-                  </ul>
-
-                <h3>Les bénéfices</h3>
-                  <p>Cet exercice développe l&#x27;écoute, l&#x27;imagination, la construction d&#x27;un personnage et la gestion des émotions dans une situation proche du quotidien. Il permet également de travailler l&#x27;adaptation face à des comportements variés.</p>
-
-                <h3>Variantes</h3>
-                  <ul>
-                    <li>Inverser les rôles à chaque nouvelle improvisation.</li>
-                    <li>Tirer au sort les traits de caractère des personnages avant de commencer.</li>
-                    <li>Changer le contexte : entretien pour un métier insolite, une mission secrète ou un poste totalement imaginaire.</li>
-                  </ul>
-
-                <h3>Le conseil de L&#x27;ImprOse</h3>
-                  <p>Le conflit ne doit pas empêcher l&#x27;histoire d&#x27;avancer. Même si votre personnage est difficile ou désagréable, gardez toujours comme objectif de construire une scène intéressante avec vos partenaires.</p>
-            </details>
-          </details>
-        </section>
-
-      <section>
-        <h2>Conseil de L'ImprOse</h2>
-        <p>Privilégiez toujours l'écoute, la bienveillance et le plaisir de jouer. Commencez simplement, observez le groupe et faites évoluer les contraintes progressivement : un exercice est réussi lorsque chacun peut oser, proposer et apprendre à son rythme.</p>
-      </section>
-
-      <section>
-        <h2>Conclusion</h2>
-        <p>La pratique régulière de ces exercices construit des réflexes solides : être présent, accepter les propositions, raconter ensemble et prendre sa place sur scène. Répétés dans un cadre sécurisant, ils nourrissent autant la confiance individuelle que la qualité du collectif.</p>
-      </section>
-    </section>
-  </main>
-
-  <footer>
-    <img src="./asset/images/logo-vectoriel.png" alt="Logo de L'ImprOse">
-    <h2>L'ImprOse - Votre cerveau aux commandes</h2>
-    <p>Développez votre créativité, votre écoute et votre confiance grâce au théâtre d'improvisation.</p>
-    <p>&copy; 2024 L'ImprOse. Tous droits réservés.</p>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <a href="#" class="retour-haut">⬆ Retour en haut</a>
 </body>
+
 </html>

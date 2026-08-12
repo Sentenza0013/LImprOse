@@ -1,6 +1,6 @@
 /* =========================================================
    L'IMPROSE — THEMES.CSS
-   Feuille complète pour themes.html
+   Styles spécifiques à la page themes.html
 ========================================================= */
 
 
@@ -9,21 +9,20 @@
 ========================================================= */
 
 :root {
-    --purple: #6511ba;
-    --purple-dark: #421078;
-    --purple-light: #eee3f8;
-    --orange: #f27b21;
+    --themes-purple: #6511ba;
+    --themes-purple-dark: #421078;
+    --themes-purple-light: #eee3f8;
+    --themes-orange: #f27b21;
 
-    --black: #0b0910;
-    --ink: #17131d;
-    --text: #5a5362;
-    --white: #ffffff;
-    --page: #faf8fb;
+    --themes-black: #0b0910;
+    --themes-ink: #17131d;
+    --themes-text: #5a5362;
+    --themes-white: #ffffff;
+    --themes-page: #faf8fb;
+    --themes-border: #e7e0eb;
 
-    --border: #e7e0eb;
-
-    --radius: 16px;
-    --shadow: 0 8px 24px rgba(32, 16, 44, 0.09);
+    --themes-radius: 16px;
+    --themes-shadow: 0 8px 24px rgba(32, 16, 44, 0.09);
 }
 
 
@@ -31,21 +30,23 @@
    BASE
 ========================================================= */
 
-* {
-    box-sizing: border-box;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
     min-width: 320px;
+    margin: 0;
     overflow-x: hidden;
-    color: var(--ink);
-    background: var(--page);
+    color: var(--themes-ink);
+    background: var(--themes-page);
     font-family: "Poppins", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 img {
@@ -66,7 +67,7 @@ a {
     position: relative;
     z-index: 100;
     width: 100%;
-    background: var(--black);
+    background: var(--themes-black);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -77,6 +78,11 @@ a {
     min-height: 82px;
     margin: 0 auto;
 }
+
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 .site-logo {
     display: flex;
@@ -92,12 +98,24 @@ a {
     object-fit: contain;
 }
 
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.site-nav {
+    display: flex;
+    align-items: center;
+}
+
 .main-menu {
     display: flex;
     align-items: center;
     gap: 25px;
+
     margin: 0;
     padding: 0;
+
     list-style: none;
 }
 
@@ -108,54 +126,88 @@ a {
 .main-menu a,
 .dropdown-button {
     position: relative;
+
     display: block;
+
     padding: 31px 0 28px;
+
     border: 0;
+
     color: #e4e0e7;
     background: transparent;
+
     font-size: 11px;
     font-weight: 700;
     line-height: 1;
+
     text-decoration: none;
     text-transform: uppercase;
+
     white-space: nowrap;
+
     cursor: pointer;
+
     transition: color 0.2s ease;
 }
 
 .main-menu a:hover,
 .main-menu a.active,
 .dropdown-button:hover {
-    color: var(--white);
+    color: var(--themes-white);
 }
+
+
+/* =========================================================
+   LIEN ACTIF
+========================================================= */
 
 .main-menu a.active::after {
     position: absolute;
+
     right: 0;
     bottom: 18px;
     left: 0;
+
     height: 3px;
+
     border-radius: 4px;
-    background: linear-gradient(
-        90deg,
-        var(--purple),
-        var(--orange)
-    );
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--themes-purple),
+            var(--themes-orange)
+        );
+
     content: "";
 }
 
+
+/* =========================================================
+   MENU OUTILS
+========================================================= */
+
 .menu-dropdown .dropdown-menu {
     position: absolute;
+
     top: calc(100% - 10px);
     right: 0;
+
     display: none;
+
     min-width: 190px;
+
     margin: 0;
     padding: 8px;
+
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 10px;
+
     background: #17131e;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.3);
+
     list-style: none;
 }
 
@@ -165,8 +217,11 @@ a {
 
 .menu-dropdown .dropdown-menu a {
     padding: 11px 12px;
+
     border-radius: 6px;
+
     font-size: 11px;
+
     text-transform: none;
 }
 
@@ -174,23 +229,36 @@ a {
     background: #2b1b3e;
 }
 
+
+/* =========================================================
+   BOUTON MENU MOBILE
+========================================================= */
+
 .menu-toggle {
     display: none;
+
     width: 44px;
     height: 40px;
+
     padding: 8px;
+
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 7px;
+
     background: transparent;
+
     cursor: pointer;
 }
 
 .menu-toggle span {
     display: block;
+
     width: 100%;
     height: 2px;
+
     margin: 5px 0;
-    background: var(--white);
+
+    background: var(--themes-white);
 }
 
 
@@ -202,8 +270,11 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+
     min-height: 300px;
+
     padding: 70px 24px;
+
     background:
         radial-gradient(
             circle at 50% 0%,
@@ -216,6 +287,7 @@ a {
             #fbf9fc 52%,
             #f1e9f7 100%
         );
+
     text-align: center;
 }
 
@@ -225,26 +297,35 @@ a {
 
 .section-kicker {
     margin: 0 0 10px;
-    color: var(--purple);
+
+    color: var(--themes-purple);
+
     font-size: 11px;
     font-weight: 800;
+
     letter-spacing: 0.16em;
     line-height: 1.2;
+
     text-transform: uppercase;
 }
 
 .themes-hero h1 {
     margin: 0;
-    color: var(--ink);
+
+    color: var(--themes-ink);
+
     font-size: clamp(52px, 7vw, 82px);
     font-weight: 900;
+
     letter-spacing: -0.055em;
     line-height: 0.95;
 }
 
 .themes-hero-subtitle {
     margin: 16px 0 0;
-    color: var(--text);
+
+    color: var(--themes-text);
+
     font-size: clamp(15px, 1.8vw, 19px);
     font-weight: 500;
 }
@@ -256,91 +337,127 @@ a {
 
 .themes-section {
     width: min(100% - 48px, 1180px);
+
     margin: 0 auto;
+
     padding: 85px 0;
 }
 
 .section-heading {
     width: min(100%, 820px);
+
     margin: 0 auto 38px;
+
     text-align: center;
 }
 
 .section-heading h2,
 .themes-text-section h2,
-.themes-generator h2,
+.themes-tool-cta h2,
 .themes-advice h2 {
     margin: 0 0 15px;
-    color: var(--ink);
+
+    color: var(--themes-ink);
+
     font-size: clamp(28px, 3.5vw, 40px);
     font-weight: 850;
+
     letter-spacing: -0.035em;
     line-height: 1.1;
 }
 
 .section-heading > p:not(.section-kicker) {
     margin: 0 auto;
-    color: var(--text);
+
+    color: var(--themes-text);
+
     font-size: 14px;
     line-height: 1.8;
 }
 
 
 /* =========================================================
-   SIX THEME CARDS
+   CARTES DE THÈMES
 ========================================================= */
 
 .theme-cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 22px;
 }
 
 .theme-card {
     position: relative;
+
     aspect-ratio: 1.62 / 1;
+
     overflow: hidden;
+
     margin: 0;
-    border-radius: var(--radius);
+
+    border-radius: var(--themes-radius);
+
     background: #19141f;
-    box-shadow: var(--shadow);
+
+    box-shadow: var(--themes-shadow);
+
     isolation: isolate;
 }
 
 .theme-card img {
     display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
     object-position: center;
-    transition: transform 0.35s ease;
+
+    transition:
+        transform 0.35s ease;
 }
 
 .theme-card-overlay {
     position: absolute;
+
     inset: 0;
+
     z-index: 1;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 38%,
-        rgba(0, 0, 0, 0.1) 55%,
-        rgba(0, 0, 0, 0.76) 100%
-    );
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 38%,
+            rgba(0, 0, 0, 0.1) 55%,
+            rgba(0, 0, 0, 0.76) 100%
+        );
 }
 
 .theme-card h3 {
     position: absolute;
+
     right: 18px;
     bottom: 17px;
     left: 18px;
+
     z-index: 2;
+
     margin: 0;
-    color: var(--white);
+
+    color: var(--themes-white);
+
     font-size: clamp(14px, 1.4vw, 18px);
     font-weight: 800;
+
     line-height: 1.2;
+
     text-align: center;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .theme-card:hover img {
@@ -349,7 +466,7 @@ a {
 
 
 /* =========================================================
-   TEXT SECTIONS
+   BLOCS EXPLICATIFS
 ========================================================= */
 
 .themes-text-section {
@@ -360,20 +477,26 @@ a {
 .themes-text-section-alt {
     width: 100%;
     max-width: none;
+
     padding-right: 24px;
     padding-left: 24px;
+
     background: #f1e9f7;
 }
 
 .text-section-inner {
     width: min(100%, 820px);
+
     margin: 0 auto;
+
     text-align: center;
 }
 
 .text-section-inner > p:not(.section-kicker) {
     margin: 0 auto 13px;
-    color: var(--text);
+
+    color: var(--themes-text);
+
     font-size: 14px;
     line-height: 1.85;
 }
@@ -389,57 +512,79 @@ a {
 
 .method-cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 20px;
 }
 
 .method-card {
     position: relative;
+
     padding: 30px 25px 28px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--white);
-    box-shadow: var(--shadow);
+
+    border: 1px solid var(--themes-border);
+    border-radius: var(--themes-radius);
+
+    background: var(--themes-white);
+
+    box-shadow: var(--themes-shadow);
 }
 
 .method-number {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     width: 38px;
     height: 38px;
+
     margin-bottom: 20px;
+
     border-radius: 50%;
-    color: var(--white);
-    background: var(--purple);
+
+    color: var(--themes-white);
+    background: var(--themes-purple);
+
     font-size: 11px;
     font-weight: 800;
 }
 
 .method-card h3 {
     margin: 0 0 12px;
-    color: var(--purple-dark);
+
+    color: var(--themes-purple-dark);
+
     font-size: 18px;
     font-weight: 800;
 }
 
 .method-card p {
     margin: 0;
-    color: var(--text);
+
+    color: var(--themes-text);
+
     font-size: 13px;
     line-height: 1.75;
 }
 
 .section-link-text {
     margin: 28px 0 0;
-    color: var(--text);
+
+    color: var(--themes-text);
+
     font-size: 13px;
+
     text-align: center;
 }
 
 .section-link-text a {
-    color: var(--purple);
+    color: var(--themes-purple);
+
     font-weight: 800;
+
     text-decoration: none;
 }
 
@@ -449,7 +594,7 @@ a {
 
 
 /* =========================================================
-   UNIVERS
+   GRANDS UNIVERS
 ========================================================= */
 
 .univers-section {
@@ -458,43 +603,59 @@ a {
 
 .univers-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
     gap: 17px;
 }
 
 .universe-card {
     min-height: 180px;
+
     padding: 24px 20px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--white);
-    box-shadow: 0 6px 20px rgba(32, 16, 44, 0.06);
+
+    border: 1px solid var(--themes-border);
+    border-radius: var(--themes-radius);
+
+    background: var(--themes-white);
+
+    box-shadow:
+        0 6px 20px rgba(32, 16, 44, 0.06);
+
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
 
 .universe-card:hover {
-    box-shadow: var(--shadow);
+    box-shadow: var(--themes-shadow);
+
     transform: translateY(-3px);
 }
 
 .universe-card > span {
     display: block;
+
     margin-bottom: 13px;
+
     font-size: 25px;
 }
 
 .universe-card h3 {
     margin: 0 0 9px;
-    color: var(--purple-dark);
+
+    color: var(--themes-purple-dark);
+
     font-size: 16px;
     font-weight: 800;
 }
 
 .universe-card p {
     margin: 0;
-    color: var(--text);
+
+    color: var(--themes-text);
+
     font-size: 12px;
     line-height: 1.65;
 }
@@ -510,44 +671,59 @@ a {
 
 .table-wrapper {
     width: 100%;
+
     overflow-x: auto;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--white);
-    box-shadow: var(--shadow);
+
+    border: 1px solid var(--themes-border);
+    border-radius: var(--themes-radius);
+
+    background: var(--themes-white);
+
+    box-shadow: var(--themes-shadow);
 }
 
 .table-wrapper table {
     width: 100%;
+
     min-width: 650px;
+
     border-collapse: collapse;
 }
 
 .table-wrapper caption {
     padding: 15px 18px;
-    color: var(--text);
+
+    color: var(--themes-text);
+
     background: #f5eff9;
+
     font-size: 12px;
     font-weight: 700;
+
     text-align: left;
 }
 
 .table-wrapper th,
 .table-wrapper td {
     padding: 15px 17px;
-    border-bottom: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--themes-border);
+
     font-size: 12px;
+
     text-align: left;
 }
 
 .table-wrapper th {
-    color: var(--white);
-    background: var(--purple-dark);
+    color: var(--themes-white);
+
+    background: var(--themes-purple-dark);
+
     font-weight: 800;
 }
 
 .table-wrapper td {
-    color: var(--text);
+    color: var(--themes-text);
 }
 
 .table-wrapper tbody tr:last-child td {
@@ -560,88 +736,111 @@ a {
 
 
 /* =========================================================
-   GÉNÉRATEUR
+   CARTE OUTILS
 ========================================================= */
 
-.themes-generator {
+.themes-tool-cta {
     width: min(100% - 48px, 900px);
+
     margin: 0 auto 85px;
-    padding: 48px 35px;
+
+    padding: 50px 35px;
+
     border-radius: 22px;
+
     background:
         linear-gradient(
             135deg,
-            var(--purple-dark),
-            var(--purple)
+            var(--themes-purple-dark),
+            var(--themes-purple)
         );
-    box-shadow: 0 12px 32px rgba(65, 16, 120, 0.22);
+
+    box-shadow:
+        0 12px 32px rgba(65, 16, 120, 0.22);
+
     text-align: center;
 }
 
-.themes-generator .section-kicker {
+.themes-tool-cta-content {
+    width: min(100%, 680px);
+
+    margin: 0 auto;
+}
+
+.themes-tool-cta .section-kicker {
     color: #d9c4ec;
 }
 
-.themes-generator h2 {
-    color: var(--white);
+.themes-tool-cta h2 {
+    color: var(--themes-white);
 }
 
-.themes-generator > .generator-content > p:not(.section-kicker) {
-    max-width: 650px;
-    margin: 0 auto;
+.themes-tool-cta p:not(.section-kicker) {
+    margin: 0;
+
     color: #eee6f5;
+
     font-size: 14px;
     line-height: 1.75;
 }
 
-.generator-button {
+.tool-cta-button {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     min-height: 48px;
+
     margin-top: 25px;
     padding: 0 26px;
-    border: 0;
+
     border-radius: 8px;
-    color: var(--purple-dark);
-    background: var(--white);
+
+    color: var(--themes-purple-dark);
+    background: var(--themes-white);
+
     font-size: 12px;
     font-weight: 800;
-    cursor: pointer;
+
+    text-decoration: none;
+
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
 
-.generator-button:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-}
+.tool-cta-button:hover {
+    color: var(--themes-purple-dark);
 
-.generated-theme {
-    min-height: 24px;
-    margin: 25px 0 0;
-    color: var(--white);
-    font-size: 18px;
-    font-weight: 800;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+
+    transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   CONSEIL
+   CONSEIL FINAL
 ========================================================= */
 
 .themes-advice {
     width: min(100% - 48px, 1180px);
+
     margin: 0 auto 90px;
+
     padding: 50px 35px;
+
     border-radius: 20px;
+
     background: #17131d;
+
     text-align: center;
 }
 
 .themes-advice > div {
     width: min(100%, 760px);
+
     margin: 0 auto;
 }
 
@@ -650,12 +849,14 @@ a {
 }
 
 .themes-advice h2 {
-    color: var(--white);
+    color: var(--themes-white);
 }
 
 .themes-advice p:last-child {
     margin: 0;
+
     color: #d9d3df;
+
     font-size: 14px;
     line-height: 1.8;
 }
@@ -666,29 +867,38 @@ a {
 ========================================================= */
 
 .site-footer {
-    background: var(--black);
     color: #dcd7e1;
+
+    background: var(--themes-black);
 }
 
 .site-footer-inner {
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 18px;
+
     width: min(100% - 48px, 1180px);
+
     min-height: 120px;
+
     margin: 0 auto;
+
     text-align: left;
 }
 
 .site-footer img {
     width: 55px;
     height: 55px;
+
     object-fit: contain;
 }
 
 .site-footer p {
     margin: 2px 0;
+
     font-size: 11px;
 }
 
@@ -699,25 +909,38 @@ a {
 
 .back-to-top {
     position: fixed;
+
     right: 20px;
     bottom: 20px;
+
     z-index: 90;
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 6px;
+
     padding: 10px 14px;
+
     border-radius: 999px;
-    color: var(--white);
-    background: var(--purple);
-    box-shadow: 0 6px 18px rgba(25, 10, 38, 0.2);
+
+    color: var(--themes-white);
+    background: var(--themes-purple);
+
+    box-shadow:
+        0 6px 18px rgba(25, 10, 38, 0.2);
+
     font-size: 11px;
     font-weight: 800;
+
     text-decoration: none;
 }
 
 .back-to-top:hover {
-    color: var(--white);
-    background: var(--purple-dark);
+    color: var(--themes-white);
+
+    background: var(--themes-purple-dark);
 }
 
 
@@ -741,11 +964,13 @@ a {
     }
 
     .theme-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 
     .univers-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -758,8 +983,11 @@ a {
 
     .site-header-inner {
         position: relative;
+
         justify-content: space-between;
+
         width: calc(100% - 32px);
+
         min-height: 72px;
     }
 
@@ -775,19 +1003,32 @@ a {
         display: block;
     }
 
-    .main-menu {
+    .site-nav {
         position: absolute;
-        top: calc(100% + 1px);
+
+        top: 100%;
         right: 0;
         left: 0;
+    }
+
+    .main-menu {
         display: none;
+
         flex-direction: column;
+
         align-items: stretch;
+
         gap: 0;
+
         padding: 10px 18px 15px;
-        background: var(--black);
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 14px 25px rgba(0, 0, 0, 0.25);
+
+        background: var(--themes-black);
+
+        border-top:
+            1px solid rgba(255, 255, 255, 0.08);
+
+        box-shadow:
+            0 14px 25px rgba(0, 0, 0, 0.25);
     }
 
     .main-menu.is-open {
@@ -797,26 +1038,34 @@ a {
     .main-menu a,
     .dropdown-button {
         width: 100%;
+
         padding: 13px 0;
+
         text-align: left;
     }
 
     .main-menu a.active::after {
         right: auto;
+
         bottom: 7px;
         left: 0;
+
         width: 55px;
     }
 
     .menu-dropdown .dropdown-menu {
         position: static;
+
         width: 100%;
+
         margin: 0;
+
         box-shadow: none;
     }
 
     .themes-hero {
         min-height: 240px;
+
         padding: 55px 20px;
     }
 
@@ -826,17 +1075,20 @@ a {
 
     .themes-section {
         width: min(100% - 32px, 700px);
+
         padding: 60px 0;
     }
 
     .themes-text-section-alt {
         width: 100%;
+
         padding-right: 16px;
         padding-left: 16px;
     }
 
     .theme-cards {
         grid-template-columns: 1fr;
+
         gap: 16px;
     }
 
@@ -852,15 +1104,18 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .themes-generator,
+    .themes-tool-cta,
     .themes-advice {
         width: calc(100% - 32px);
     }
 
     .site-footer-inner {
         flex-direction: column;
+
         min-height: 160px;
+
         padding: 30px 0;
+
         text-align: center;
     }
 }
@@ -882,12 +1137,12 @@ a {
 
     .section-heading h2,
     .themes-text-section h2,
-    .themes-generator h2,
+    .themes-tool-cta h2,
     .themes-advice h2 {
         font-size: 27px;
     }
 
-    .themes-generator,
+    .themes-tool-cta,
     .themes-advice {
         padding: 35px 20px;
     }

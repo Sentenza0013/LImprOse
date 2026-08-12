@@ -1,142 +1,573 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catégories</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Catégories | L'ImprOse</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="./asset/css/style.css">
-    <link rel="icon" type="image/png" href="./asset/images/favicon.png">
+    <link rel="stylesheet" href="./asset/css/categories.css">
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="./asset/images/favicon.png"
+    >
 </head>
-<body>
-     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="./index.html">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./impro.html">Qu'est-ce que l'impro ?</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./bienfaits.html">Les bienfaits</a>
-        </li><li class="nav-item">
-          <a class="nav-link" href="./troupes.html">Trouver une troupe</a>
-        </li><li class="nav-item">
-          <a class="nav-link" href="./themes.html">Thèmes</a>
-        </li><li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./categories.html">
-    Catégories
-</a>
-        </li><li class="nav-item">
-          <a class="nav-link" href="./exercices.html">Exercices</a>
-        </li><li class="nav-item">
-          <a class="nav-link" href="./contact.html">Contacts</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button"
-   data-bs-toggle="dropdown" aria-expanded="false">
-   Outils
-</a>
-          <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Générateur de thèmes</a></li>
-    <li><a class="dropdown-item" href="#">Générateur de catégories</a></li>
-    <li><a class="dropdown-item" href="#">Chronomètre</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Tableau de match</a></li>
-</ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<section>
 
-<h1>Catégories d'improvisation</h1>
+<body class="categories-page">
 
-<p>
-Les catégories définissent la manière dont une improvisation doit être jouée. Elles apportent une contrainte qui influence le style, le rythme ou la façon de raconter une histoire. Une même idée peut ainsi donner naissance à des scènes totalement différentes selon la catégorie choisie.
-</p>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-<h2>Qu'est-ce qu'une catégorie ?</h2>
+    <header class="categories-header">
 
-<p>
-Contrairement au thème, qui donne le sujet de l'improvisation, la catégorie indique comment la scène doit être jouée. Certaines catégories demandent de chanter, d'autres de jouer sans paroles, en rimes ou dans un style particulier.
-</p>
+        <nav class="navbar navbar-expand-lg">
 
-<table>
-<thead>
-<tr><th>Catégorie</th><th>Description</th></tr>
-</thead>
-<tbody>
-<tr><td>Comédie</td><td>Humour et situations amusantes.</td></tr>
-<tr><td>Drame</td><td>Émotions et conflits.</td></tr>
-<tr><td>Absurde</td><td>Logique décalée.</td></tr>
-<tr><td>Sans parole</td><td>Communication par le corps.</td></tr>
-<tr><td>Comédie musicale</td><td>Scènes chantées.</td></tr>
-<tr><td>Narrée</td><td>Présence d'un narrateur.</td></tr>
-<tr><td>Tragédie</td><td>Destin difficile.</td></tr>
-<tr><td>Rimée</td><td>Dialogues en rimes.</td></tr>
-<tr><td>Cinéma muet</td><td>Jeu sans paroles inspiré du cinéma muet.</td></tr>
-<tr><td>Western</td><td>Univers du Far West.</td></tr>
-</tbody>
-</table>
+            <div class="container-fluid categories-navbar">
 
-<h2>Pourquoi varier les catégories ?</h2>
+                <a
+                    class="navbar-brand categories-logo"
+                    href="./index.html"
+                >
+                    <img
+                        src="./asset/images/logo-vectoriel.png"
+                        alt="L'ImprOse"
+                    >
+                </a>
 
-<p>
-Changer de catégorie développe la créativité, pousse les joueurs à s'adapter et renouvelle chaque improvisation.
-</p>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#categoriesNavigation"
+                    aria-controls="categoriesNavigation"
+                    aria-expanded="false"
+                    aria-label="Ouvrir le menu"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-<h2>Les fautes fréquentes en improvisation</h2>
+                <div
+                    class="collapse navbar-collapse"
+                    id="categoriesNavigation"
+                >
+                    <ul class="navbar-nav ms-auto categories-menu">
 
-<table>
-<thead>
-<tr><th>Faute</th><th>Description</th></tr>
-</thead>
-<tbody>
-<tr><td>Manque d'écoute</td><td>Ne pas tenir compte de ses partenaires.</td></tr>
-<tr><td>Refus de proposition</td><td>Bloquer une idée.</td></tr>
-<tr><td>Cabotinage</td><td>Chercher à se mettre seul en avant.</td></tr>
-<tr><td>Décrochage</td><td>Quitter son personnage.</td></tr>
-<tr><td>Confusion</td><td>Rendre l'histoire difficile à suivre.</td></tr>
-<tr><td>Hors catégorie</td><td>Ne pas respecter la catégorie annoncée.</td></tr>
-</tbody>
-</table>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Accueil</a>
+                        </li>
 
-<h2>Catégorie aléatoire</h2>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./impro.html">L'ImprO</a>
+                        </li>
 
-<button onclick="genererCategorie()">Générer une catégorie</button>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="./categories.html"
+                            >
+                                Catégories
+                            </a>
+                        </li>
 
-<p id="categorie">Cliquez sur le bouton.</p>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./themes.html">Thèmes</a>
+                        </li>
 
-<h2>Le conseil de L'ImprOse</h2>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./exercices.html">Exercices</a>
+                        </li>
 
-<p>
-Les catégories sont des défis créatifs. Plus vous en essayez, plus vous développez votre imagination et votre capacité d'adaptation.
-</p>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./outils.html">Outils</a>
+                        </li>
 
-<h2>Conclusion</h2>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./troupes.html">Troupes</a>
+                        </li>
 
-<p>
-Les catégories permettent de renouveler les improvisations et d'explorer de nouvelles façons de raconter une histoire. Elles rendent chaque scène unique.
-</p>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Contact</a>
+                        </li>
 
-</section>
-    
-<footer>
-            <img src="./asset/images/logo-vectoriel.png" alt="Logo de L'ImprOse">
-    <p>L'ImprOse - Votre cerveau aux commandes</p>
-    <p>&copy; 2024 L'ImprOse. Tous droits réservés.</p>
-</footer>
-<a href="#" class="retour-haut">⬆ Retour en haut</a>   
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> 
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTENU PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="categories-hero">
+
+            <div class="categories-hero-content">
+
+                <span class="categories-kicker">
+                    L'IMPROSE
+                </span>
+
+                <h1>CATÉGORIES</h1>
+
+                <p>
+                    Les différentes catégories d'improvisation
+                </p>
+
+                <span class="categories-title-line"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUCTION + CARTES -->
+
+        <section class="categories-introduction">
+
+            <div class="categories-container">
+
+                <div class="categories-section-heading">
+
+                    <span class="categories-kicker">
+                        POUR COMMENCER
+                    </span>
+
+                    <h2>
+                        Les différentes catégories
+                    </h2>
+
+                    <p>
+                        Une catégorie impose une manière particulière
+                        de jouer une improvisation. Elle peut modifier
+                        le rythme, le style, les règles ou encore la
+                        façon de raconter l'histoire.
+                    </p>
+
+                </div>
+
+
+                <div class="category-cards">
+
+                    <!-- MATCH -->
+
+                    <article class="category-card">
+
+                        <div class="category-icon category-icon-purple">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M16 18h32v19c0 10-7 17-16 21-9-4-16-11-16-21V18Z"/>
+                                <circle cx="25" cy="30" r="3"/>
+                                <circle cx="39" cy="30" r="3"/>
+                                <path d="M25 40c5 4 9 4 14 0"/>
+                            </svg>
+                        </div>
+
+                        <h3>MATCH</h3>
+
+                        <p>
+                            Improvisation opposant
+                            deux équipes ou joueurs
+                            devant un public.
+                        </p>
+
+                    </article>
+
+
+                    <!-- LONGUE FORME -->
+
+                    <article class="category-card">
+
+                        <div class="category-icon category-icon-orange">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M18 10h28"/>
+                                <path d="M18 54h28"/>
+                                <path d="M22 10c0 12 8 13 10 22-2 9-10 10-10 22"/>
+                                <path d="M42 10c0 12-8 13-10 22 2 9 10 10 10 22"/>
+                            </svg>
+                        </div>
+
+                        <h3>LONGUE FORME</h3>
+
+                        <p>
+                            Histoires construites
+                            sur la durée avec
+                            plusieurs scènes.
+                        </p>
+
+                    </article>
+
+
+                    <!-- COURTE FORME -->
+
+                    <article class="category-card">
+
+                        <div class="category-icon category-icon-purple">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M36 4 14 34h15l-3 26 24-34H35Z"/>
+                            </svg>
+                        </div>
+
+                        <h3>COURTE FORME</h3>
+
+                        <p>
+                            Formats courts,
+                            dynamiques et
+                            percutants.
+                        </p>
+
+                    </article>
+
+
+                    <!-- FORMAT LIBRE -->
+
+                    <article class="category-card">
+
+                        <div class="category-icon category-icon-orange">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M32 7 38 24h18L41 35l6 18-15-11-15 11 6-18L8 24h18Z"/>
+                            </svg>
+                        </div>
+
+                        <h3>FORMAT LIBRE</h3>
+
+                        <p>
+                            Sans structure imposée,
+                            laissez place à la
+                            créativité.
+                        </p>
+
+                    </article>
+
+
+                    <!-- CABARET -->
+
+                    <article class="category-card">
+
+                        <div class="category-icon category-icon-orange">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M17 18h30l-3 10H20Z"/>
+                                <path d="M24 28c0 10-2 17-8 22"/>
+                                <path d="M40 28c0 10 2 17 8 22"/>
+                                <path d="M14 52h36"/>
+                            </svg>
+                        </div>
+
+                        <h3>CABARET</h3>
+
+                        <p>
+                            Numéros variés et
+                            enchaînements de styles.
+                        </p>
+
+                    </article>
+
+
+                    <!-- DUO / TRIO -->
+
+                    <article class="category-card">
+
+                        <div class="category-icon category-icon-purple">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <circle cx="32" cy="18" r="8"/>
+                                <circle cx="14" cy="27" r="7"/>
+                                <circle cx="50" cy="27" r="7"/>
+                                <path d="M18 52c0-10 6-17 14-17s14 7 14 17"/>
+                                <path d="M2 52c0-8 5-14 12-14"/>
+                                <path d="M62 52c0-8-5-14-12-14"/>
+                            </svg>
+                        </div>
+
+                        <h3>DUO / TRIO</h3>
+
+                        <p>
+                            Improviser à deux ou trois,
+                            avec une dynamique
+                            différente.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <!-- LIEN UNIQUE VERS LES EXERCICES -->
+
+                <div class="categories-exercises-link">
+                    <a href="./exercices.html">
+                        DÉCOUVRIR LES EXERCICES
+                        <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QU'EST-CE QU'UNE CATÉGORIE ? -->
+
+        <section class="categories-text-section">
+
+            <div class="categories-container categories-text-inner">
+
+                <span class="categories-kicker">
+                    COMPRENDRE
+                </span>
+
+                <h2>
+                    Qu'est-ce qu'une catégorie ?
+                </h2>
+
+                <p>
+                    Contrairement au thème, qui donne le sujet de
+                    l'improvisation, la catégorie indique comment
+                    la scène doit être jouée.
+                </p>
+
+                <p>
+                    Certaines catégories demandent de chanter,
+                    d'autres de jouer sans paroles, en rimes ou
+                    dans un style particulier.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- POURQUOI VARIER -->
+
+        <section class="categories-text-section categories-text-section-light">
+
+            <div class="categories-container categories-text-inner">
+
+                <span class="categories-kicker">
+                    CRÉATIVITÉ
+                </span>
+
+                <h2>
+                    Pourquoi varier les catégories ?
+                </h2>
+
+                <p>
+                    Changer de catégorie développe la créativité,
+                    pousse les joueurs à s'adapter et renouvelle
+                    chaque improvisation.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAUTES FRÉQUENTES -->
+
+        <section class="categories-faults">
+
+            <div class="categories-container">
+
+                <div class="categories-section-heading">
+
+                    <span class="categories-kicker">
+                        À ÉVITER
+                    </span>
+
+                    <h2>
+                        Les fautes fréquentes
+                    </h2>
+
+                    <p>
+                        Dans un match d'improvisation, certaines
+                        erreurs peuvent être sanctionnées.
+                    </p>
+
+                </div>
+
+
+                <div class="fault-grid">
+
+                    <article class="fault-card">
+                        <h3>Manque d'écoute</h3>
+                        <p>
+                            Ne pas tenir compte de ses partenaires.
+                        </p>
+                    </article>
+
+                    <article class="fault-card">
+                        <h3>Refus de proposition</h3>
+                        <p>
+                            Bloquer ou refuser une idée proposée.
+                        </p>
+                    </article>
+
+                    <article class="fault-card">
+                        <h3>Cabotinage</h3>
+                        <p>
+                            Chercher à se mettre seul en avant.
+                        </p>
+                    </article>
+
+                    <article class="fault-card">
+                        <h3>Décrochage</h3>
+                        <p>
+                            Quitter son personnage ou la scène.
+                        </p>
+                    </article>
+
+                    <article class="fault-card">
+                        <h3>Confusion</h3>
+                        <p>
+                            Rendre l'histoire difficile à suivre.
+                        </p>
+                    </article>
+
+                    <article class="fault-card">
+                        <h3>Hors catégorie</h3>
+                        <p>
+                            Ne pas respecter la catégorie annoncée.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GÉNÉRATEUR -->
+
+        <section class="categories-generator">
+
+            <div class="categories-container">
+
+                <div class="generator-box">
+
+                    <div class="generator-icon" aria-hidden="true">
+                        🎭
+                    </div>
+
+                    <div class="generator-content">
+
+                        <h2>
+                            Vous hésitez sur la catégorie ?
+                        </h2>
+
+                        <p>
+                            Découvrez une catégorie au hasard
+                            pour choisir une nouvelle façon
+                            d'improviser.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="./outils.html"
+                        class="generator-button"
+                    >
+                        VOIR LES OUTILS
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONSEIL -->
+
+        <section class="categories-advice">
+
+            <div class="categories-container">
+
+                <div class="advice-box">
+
+                    <span class="categories-kicker">
+                        LE CONSEIL DE L'IMPROSE
+                    </span>
+
+                    <h2>
+                        Osez sortir de votre zone de confort.
+                    </h2>
+
+                    <p>
+                        Les catégories sont des défis créatifs.
+                        Plus vous en essayez, plus vous développez
+                        votre imagination et votre capacité
+                        d'adaptation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="categories-footer">
+
+        <div class="categories-footer-inner">
+
+            <img
+                src="./asset/images/logo-vectoriel.png"
+                alt="Logo de L'ImprOse"
+            >
+
+            <div>
+                <p>
+                    L'ImprOse - Votre cerveau aux commandes
+                </p>
+
+                <p>
+                    &copy; 2024 L'ImprOse. Tous droits réservés.
+                </p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- RETOUR EN HAUT -->
+
+    <a
+        href="#"
+        class="retour-haut"
+        aria-label="Retour en haut"
+    >
+        ↑
+    </a>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
+    <script src="./asset/js/categories.js"></script>
+
 </body>
 
 </html>

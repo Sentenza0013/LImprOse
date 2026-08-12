@@ -1,0 +1,974 @@
+/* =========================================================
+   L'IMPROSE — TROUPES
+   CSS COMPLET ET AUTONOME
+   ========================================================= */
+
+:root {
+    --purple: #5b16d9;
+    --purple-dark: #260047;
+    --purple-light: #f1eafb;
+    --orange: #f27b21;
+    --black: #09070e;
+    --text: #18131d;
+    --muted: #706877;
+    --white: #ffffff;
+    --page: #faf8fb;
+    --border: #e4dce9;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.troupes-page {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
+    color: var(--text);
+    background: var(--page);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.troupes-page img {
+    display: block;
+    max-width: 100%;
+}
+
+.troupes-page button,
+.troupes-page input,
+.troupes-page select {
+    font: inherit;
+}
+
+.troupes-page button {
+    cursor: pointer;
+}
+
+.troupes-page .container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.troupes-page .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--black);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.troupes-page .main-nav {
+    position: relative;
+    width: min(1380px, calc(100% - 40px));
+    min-height: 76px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+.troupes-page .logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: auto;
+}
+
+.troupes-page .logo img {
+    width: 145px;
+    height: auto;
+}
+
+.troupes-page .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+}
+
+.troupes-page .nav-menu a {
+    position: relative;
+    display: block;
+    padding: 30px 0 27px;
+
+    color: #eeeaf0;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.troupes-page .nav-menu a::after {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    left: 0;
+    height: 3px;
+    content: "";
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--orange));
+    transform: scaleX(0);
+    transition: transform .2s ease;
+}
+
+.troupes-page .nav-menu a:hover::after,
+.troupes-page .nav-menu a.active::after {
+    transform: scaleX(1);
+}
+
+.troupes-page .theme-toggle,
+.troupes-page .menu-toggle {
+    color: #fff;
+    background: transparent;
+}
+
+.troupes-page .theme-toggle {
+    width: 35px;
+    height: 35px;
+    margin-left: 15px;
+    padding: 0;
+    border: 0;
+    font-size: 18px;
+}
+
+.troupes-page .menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    margin-left: 15px;
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 8px;
+}
+
+.troupes-page .menu-toggle span {
+    display: block;
+    height: 2px;
+    margin: 5px 0;
+    background: #fff;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.troupes-page .hero {
+    position: relative;
+    min-height: 320px;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+
+    background:
+        radial-gradient(circle at 50% 25%, rgba(124,29,226,.55), transparent 32%),
+        radial-gradient(circle at 12% 65%, rgba(242,123,33,.22), transparent 25%),
+        radial-gradient(circle at 88% 65%, rgba(242,123,33,.2), transparent 25%),
+        linear-gradient(135deg, #0c0015, #28004e 55%, #09000f);
+}
+
+.troupes-page .hero::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    opacity: .2;
+
+    background:
+        linear-gradient(115deg, transparent 47%, #fff 48%, transparent 49%),
+        linear-gradient(65deg, transparent 47%, #fff 48%, transparent 49%);
+
+    pointer-events: none;
+}
+
+.troupes-page .hero-content {
+    position: relative;
+    z-index: 1;
+
+    width: min(850px, calc(100% - 40px));
+    padding: 65px 0;
+}
+
+.troupes-page .hero h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(40px, 6vw, 68px);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -.045em;
+}
+
+.troupes-page .hero p:last-child {
+    max-width: 700px;
+    margin: 18px auto 0;
+    color: rgba(255,255,255,.85);
+    font-size: 15px;
+}
+
+/* =========================================================
+   TEXTES COMMUNS
+   ========================================================= */
+
+.troupes-page .eyebrow {
+    margin: 0 0 9px;
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.troupes-page .hero .eyebrow {
+    color: #f5a05d;
+}
+
+.troupes-page .section-intro {
+    max-width: 760px;
+    margin-bottom: 30px;
+}
+
+.troupes-page h2 {
+    margin: 0;
+    font-size: clamp(27px, 3vw, 38px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -.03em;
+}
+
+.troupes-page .section-intro > p:last-child {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================================================
+   RECHERCHE
+   ========================================================= */
+
+.troupes-page .search-section {
+    padding: 70px 0 40px;
+}
+
+.troupes-page .search-box {
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr) 150px auto auto;
+    gap: 12px;
+    align-items: end;
+
+    padding: 20px;
+
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(42,20,55,.08);
+}
+
+.troupes-page .field {
+    min-width: 0;
+}
+
+.troupes-page .field label {
+    display: block;
+    margin-bottom: 7px;
+    color: #302a35;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.troupes-page .field input,
+.troupes-page .field select {
+    width: 100%;
+    height: 45px;
+    padding: 0 12px;
+
+    color: var(--text);
+    background: #fff;
+
+    border: 1px solid #d9d1df;
+    border-radius: 8px;
+    outline: 0;
+}
+
+.troupes-page .field input:focus,
+.troupes-page .field select:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px rgba(91,22,217,.1);
+}
+
+.troupes-page .primary-button,
+.troupes-page .light-button,
+.troupes-page .secondary-button {
+    min-height: 45px;
+    padding: 0 19px;
+    border: 0;
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.troupes-page .primary-button {
+    color: #fff;
+    background: linear-gradient(135deg, #7015c5, #461077);
+    box-shadow: 0 7px 16px rgba(93,22,200,.18);
+}
+
+.troupes-page .light-button {
+    color: #5b3180;
+    background: var(--purple-light);
+}
+
+.troupes-page .primary-button:hover,
+.troupes-page .light-button:hover,
+.troupes-page .secondary-button:hover {
+    transform: translateY(-2px);
+}
+
+.troupes-page .status {
+    min-height: 22px;
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================================================
+   TROUPES
+   ========================================================= */
+
+.troupes-page .results {
+    padding: 35px 0 75px;
+}
+
+.troupes-page .section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.troupes-page .results-count {
+    flex: 0 0 auto;
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.troupes-page .cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.troupes-page .troupe-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 7px 22px rgba(42,20,55,.06);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.troupes-page .troupe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(42,20,55,.12);
+}
+
+.troupes-page .troupe-image {
+    height: 150px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f27b21, #48007d 55%, #0b0014);
+}
+
+.troupes-page .troupe-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.troupes-page .troupe-body {
+    padding: 16px;
+}
+
+.troupes-page .troupe-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.troupes-page .troupe-city {
+    margin: 5px 0 10px;
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.troupes-page .troupe-description {
+    min-height: 54px;
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.troupes-page .troupe-link {
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.troupes-page .troupe-link:hover {
+    color: var(--orange);
+}
+
+.troupes-page .empty {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f5f0f7;
+    border: 1px dashed #cfc3d7;
+    border-radius: 12px;
+}
+
+.troupes-page .empty strong {
+    display: block;
+    font-size: 16px;
+}
+
+.troupes-page .empty span {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.troupes-page #show-more-troupes {
+    display: block;
+    margin: 27px auto 0;
+    color: #fff;
+    background: var(--purple-dark);
+}
+
+/* =========================================================
+   SPECTACLES
+   ========================================================= */
+
+.troupes-page .events {
+    padding: 78px 0;
+    border-top: 1px solid var(--border);
+}
+
+.troupes-page .event-filter {
+    display: grid;
+    grid-template-columns: 190px minmax(240px, 1fr) auto auto;
+    gap: 12px;
+    align-items: end;
+
+    margin-bottom: 24px;
+    padding: 20px;
+
+    background: #f5f0f8;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.troupes-page .event-list {
+    display: grid;
+    gap: 10px;
+}
+
+.troupes-page .event-card {
+    display: grid;
+    grid-template-columns: 78px minmax(0,1fr) auto;
+    align-items: center;
+    gap: 20px;
+
+    padding: 14px 17px;
+
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+}
+
+.troupes-page .event-date {
+    padding: 9px;
+    text-align: center;
+    color: var(--purple);
+    background: var(--purple-light);
+    border-radius: 8px;
+}
+
+.troupes-page .event-date strong {
+    display: block;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.troupes-page .event-date span {
+    display: block;
+    margin-top: 4px;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.troupes-page .event-info h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.troupes-page .event-info p {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.troupes-page .event-tag {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 3px 8px;
+    color: var(--purple);
+    background: var(--purple-light);
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.troupes-page .event-link {
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* =========================================================
+   CRITÈRES
+   ========================================================= */
+
+.troupes-page .info-section {
+    padding: 78px 0;
+    border-top: 1px solid var(--border);
+}
+
+.troupes-page .criteria {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.troupes-page .criteria article {
+    padding: 22px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.troupes-page .criteria article > span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.troupes-page .criteria h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+
+.troupes-page .criteria p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+/* =========================================================
+   CONSEIL
+   ========================================================= */
+
+.troupes-page .advice {
+    padding: 0 0 75px;
+}
+
+.troupes-page .advice-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    padding: 36px;
+
+    color: #fff;
+    border-radius: 17px;
+
+    background:
+        radial-gradient(circle at 85% 30%, rgba(140,40,255,.58), transparent 28%),
+        linear-gradient(135deg, #1c0035, #4c0b92);
+}
+
+.troupes-page .advice .eyebrow {
+    color: #cda8ff;
+}
+
+.troupes-page .advice h2 {
+    color: #fff;
+}
+
+.troupes-page .advice p:last-child {
+    max-width: 700px;
+    margin: 11px 0 0;
+    color: rgba(255,255,255,.82);
+    font-size: 12px;
+}
+
+.troupes-page .advice-badge {
+    flex: 0 0 138px;
+    width: 138px;
+    height: 138px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 50%;
+}
+
+.troupes-page .advice-badge span {
+    margin-bottom: 4px;
+    font-size: 24px;
+}
+
+.troupes-page .advice-badge strong {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   AJOUTER UNE TROUPE
+   ========================================================= */
+
+.troupes-page .add-team {
+    padding: 0 0 75px;
+}
+
+.troupes-page .add-team-inner {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+
+    padding: 24px 27px;
+
+    color: #fff;
+    border-radius: 14px;
+    background: linear-gradient(110deg, #250052, #4f0d91);
+}
+
+.troupes-page .add-team-icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+    background: rgba(255,255,255,.12);
+    font-size: 26px;
+}
+
+.troupes-page .add-team-content {
+    flex: 1;
+}
+
+.troupes-page .add-team-content h2 {
+    color: #fff;
+    font-size: 18px;
+}
+
+.troupes-page .add-team-content p {
+    margin: 3px 0 0;
+    color: rgba(255,255,255,.8);
+    font-size: 12px;
+}
+
+.troupes-page .add-team-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 0 20px;
+
+    color: #fff;
+    background: #110019;
+    border-radius: 9px;
+
+    font-size: 10px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.troupes-page .add-team-button:hover {
+    background: #000;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.troupes-page .site-footer {
+    padding: 40px 20px;
+    text-align: center;
+    color: rgba(255,255,255,.72);
+    background: var(--black);
+}
+
+.troupes-page .site-footer img {
+    width: 105px;
+    margin: 0 auto 10px;
+}
+
+.troupes-page .site-footer p {
+    margin: 4px 0;
+    font-size: 10px;
+}
+
+/* =========================================================
+   RETOUR HAUT
+   ========================================================= */
+
+.troupes-page .back-to-top {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 900;
+
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    color: #fff;
+    background: var(--purple);
+    border-radius: 50%;
+
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .troupes-page .nav-menu {
+        gap: 14px;
+    }
+
+    .troupes-page .nav-menu a {
+        font-size: 9px;
+    }
+
+    .troupes-page .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .troupes-page .search-box {
+        grid-template-columns: 1fr 150px;
+    }
+
+    .troupes-page .event-filter {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================================================
+   TABLETTE / MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .troupes-page .main-nav {
+        min-height: 68px;
+    }
+
+    .troupes-page .logo img {
+        width: 125px;
+    }
+
+    .troupes-page .menu-toggle {
+        display: block;
+    }
+
+    .troupes-page .theme-toggle {
+        display: none;
+    }
+
+    .troupes-page .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 8px 20px 15px;
+
+        background: var(--black);
+        border-top: 1px solid rgba(255,255,255,.1);
+    }
+
+    .troupes-page .nav-menu.open {
+        display: flex;
+    }
+
+    .troupes-page .nav-menu a {
+        padding: 12px 0;
+        font-size: 10px;
+    }
+
+    .troupes-page .nav-menu a::after {
+        right: auto;
+        bottom: 5px;
+        width: 55px;
+    }
+
+    .troupes-page .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .troupes-page .criteria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .troupes-page .container {
+        width: calc(100% - 24px);
+    }
+
+    .troupes-page .main-nav {
+        width: calc(100% - 24px);
+    }
+
+    .troupes-page .hero {
+        min-height: 270px;
+    }
+
+    .troupes-page .hero-content {
+        width: calc(100% - 24px);
+        padding: 50px 0;
+    }
+
+    .troupes-page .hero h1 {
+        font-size: 37px;
+    }
+
+    .troupes-page .search-section,
+    .troupes-page .events,
+    .troupes-page .info-section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .troupes-page .search-box,
+    .troupes-page .event-filter {
+        grid-template-columns: 1fr;
+    }
+
+    .troupes-page .section-heading {
+        display: block;
+    }
+
+    .troupes-page .results-count {
+        display: block;
+        margin-top: 7px;
+    }
+
+    .troupes-page .cards,
+    .troupes-page .criteria {
+        grid-template-columns: 1fr;
+    }
+
+    .troupes-page .troupe-image {
+        height: 180px;
+    }
+
+    .troupes-page .event-card {
+        grid-template-columns: 66px minmax(0,1fr);
+        gap: 12px;
+    }
+
+    .troupes-page .event-link {
+        grid-column: 2;
+    }
+
+    .troupes-page .advice-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 27px;
+    }
+
+    .troupes-page .advice-badge {
+        align-self: center;
+    }
+
+    .troupes-page .add-team-inner {
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .troupes-page .add-team-content {
+        min-width: calc(100% - 72px);
+    }
+
+    .troupes-page .add-team-button {
+        width: 100%;
+    }
+
+    .troupes-page .back-to-top {
+        right: 12px;
+        bottom: 12px;
+    }
+}

@@ -9,11 +9,6 @@
 
     <link rel="icon" type="image/png" href="./asset/images/favicon.png">
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
     <link rel="stylesheet" href="./asset/css/style.css">
     <link rel="stylesheet" href="./asset/css/themes.css">
 </head>
@@ -21,14 +16,18 @@
 <body>
 
     <!-- =========================
-         HEADER / NAVIGATION
+         NAVIGATION
     ========================== -->
 
-    <nav class="site-header">
+    <header class="site-header">
 
         <div class="site-header-inner">
 
-            <a class="site-logo" href="./index.html">
+            <a
+                href="./index.html"
+                class="site-logo"
+                aria-label="Retour à l'accueil"
+            >
                 <img
                     src="./asset/images/banniereoff.png"
                     alt="L'ImprOse"
@@ -36,8 +35,8 @@
             </a>
 
             <button
-                class="menu-toggle"
                 type="button"
+                class="menu-toggle"
                 aria-label="Ouvrir le menu"
                 aria-expanded="false"
                 aria-controls="main-menu"
@@ -47,69 +46,94 @@
                 <span></span>
             </button>
 
-            <ul class="main-menu" id="main-menu">
+            <nav
+                class="site-nav"
+                aria-label="Navigation principale"
+            >
 
-                <li>
-                    <a href="./index.html">Accueil</a>
-                </li>
+                <ul class="main-menu" id="main-menu">
 
-                <li>
-                    <a href="./impro.html">Qu'est-ce que l'impro ?</a>
-                </li>
+                    <li>
+                        <a href="./index.html">Accueil</a>
+                    </li>
 
-                <li>
-                    <a href="./bienfaits.html">Les bienfaits</a>
-                </li>
+                    <li>
+                        <a href="./impro.html">
+                            Qu'est-ce que l'impro ?
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="./troupes.html">Trouver une troupe</a>
-                </li>
+                    <li>
+                        <a href="./bienfaits.html">
+                            Les bienfaits
+                        </a>
+                    </li>
 
-                <li>
-                    <a class="active" href="./themes.html" aria-current="page">
-                        Thèmes
-                    </a>
-                </li>
+                    <li>
+                        <a href="./troupes.html">
+                            Trouver une troupe
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="./categories.html">Catégories</a>
-                </li>
+                    <li>
+                        <a
+                            href="./themes.html"
+                            class="active"
+                            aria-current="page"
+                        >
+                            Thèmes
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="./exercices.html">Exercices</a>
-                </li>
+                    <li>
+                        <a href="./categories.html">
+                            Catégories
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="./contact.html">Contact</a>
-                </li>
+                    <li>
+                        <a href="./exercices.html">
+                            Exercices
+                        </a>
+                    </li>
 
-                <li class="menu-dropdown">
+                    <li>
+                        <a href="./contact.html">
+                            Contact
+                        </a>
+                    </li>
 
-                    <button
-                        type="button"
-                        class="dropdown-button"
-                        aria-expanded="false"
-                    >
-                        Outils
-                    </button>
+                    <li class="menu-dropdown">
 
-                    <ul class="dropdown-menu">
+                        <button
+                            type="button"
+                            class="dropdown-button"
+                            aria-expanded="false"
+                            aria-controls="tools-menu"
+                        >
+                            Outils
+                        </button>
 
-                        <li>
-                            <a href="./outils.html">
-                                Outils d'impro
-                            </a>
-                        </li>
+                        <ul
+                            class="dropdown-menu"
+                            id="tools-menu"
+                        >
+                            <li>
+                                <a href="./outils.html">
+                                    Outils d'impro
+                                </a>
+                            </li>
+                        </ul>
 
-                    </ul>
+                    </li>
 
-                </li>
+                </ul>
 
-            </ul>
+            </nav>
 
         </div>
 
-    </nav>
+    </header>
 
 
     <main>
@@ -171,7 +195,6 @@
             <div class="theme-cards">
 
                 <article class="theme-card">
-
                     <img
                         src="./asset/images/voyagedansletemps.png"
                         alt="Voyage dans le temps"
@@ -182,12 +205,10 @@
                     <h3>
                         Voyage dans le temps
                     </h3>
-
                 </article>
 
 
                 <article class="theme-card">
-
                     <img
                         src="./asset/images/lemondedutravail.jpg"
                         alt="Le monde du travail"
@@ -198,12 +219,10 @@
                     <h3>
                         Le monde du travail
                     </h3>
-
                 </article>
 
 
                 <article class="theme-card">
-
                     <img
                         src="./asset/images/superhero.jpg"
                         alt="Les super-héros"
@@ -214,12 +233,10 @@
                     <h3>
                         Les super-héros
                     </h3>
-
                 </article>
 
 
                 <article class="theme-card">
-
                     <img
                         src="./asset/images/relationsfamiliales.png"
                         alt="Relations familiales"
@@ -230,12 +247,10 @@
                     <h3>
                         Relations familiales
                     </h3>
-
                 </article>
 
 
                 <article class="theme-card">
-
                     <img
                         src="./asset/images/universfantastiques.jpg"
                         alt="Univers fantastiques"
@@ -246,12 +261,10 @@
                     <h3>
                         Univers fantastiques
                     </h3>
-
                 </article>
 
 
                 <article class="theme-card">
-
                     <img
                         src="./asset/images/viequotidienne.jpg"
                         alt="Vie quotidienne"
@@ -262,7 +275,6 @@
                     <h3>
                         Vie quotidienne
                     </h3>
-
                 </article>
 
             </div>
@@ -290,17 +302,17 @@
                 </h2>
 
                 <p>
-                    En improvisation, un thème est le sujet ou l'idée de
-                    départ d'une scène. Il peut s'agir d'un lieu, d'un objet,
-                    d'un métier, d'un événement, d'une émotion ou encore
-                    d'un univers imaginaire.
+                    En improvisation, un thème est le sujet ou l'idée
+                    de départ d'une scène. Il peut s'agir d'un lieu,
+                    d'un objet, d'un métier, d'un événement, d'une
+                    émotion ou encore d'un univers imaginaire.
                 </p>
 
                 <p>
-                    Le thème donne une direction aux improvisateurs sans
-                    imposer le déroulement de l'histoire. Il laisse aux
-                    joueurs la liberté de construire leurs personnages,
-                    leurs relations et leur récit.
+                    Le thème donne une direction aux improvisateurs
+                    sans imposer le déroulement de l'histoire. Il laisse
+                    aux joueurs la liberté de construire leurs
+                    personnages, leurs relations et leur récit.
                 </p>
 
             </div>
@@ -483,7 +495,6 @@
                     </p>
                 </article>
 
-
                 <article class="universe-card">
                     <span>🏰</span>
                     <h3>Fantastique</h3>
@@ -491,7 +502,6 @@
                         Magie, créatures légendaires et royaumes imaginaires.
                     </p>
                 </article>
-
 
                 <article class="universe-card">
                     <span>😂</span>
@@ -502,7 +512,6 @@
                     </p>
                 </article>
 
-
                 <article class="universe-card">
                     <span>🕵️</span>
                     <h3>Enquête</h3>
@@ -510,7 +519,6 @@
                         Mystères, indices, détectives et affaires à résoudre.
                     </p>
                 </article>
-
 
                 <article class="universe-card">
                     <span>❤️</span>
@@ -520,7 +528,6 @@
                     </p>
                 </article>
 
-
                 <article class="universe-card">
                     <span>👻</span>
                     <h3>Horreur</h3>
@@ -529,7 +536,6 @@
                     </p>
                 </article>
 
-
                 <article class="universe-card">
                     <span>🏴‍☠️</span>
                     <h3>Aventure</h3>
@@ -537,7 +543,6 @@
                         Explorations, trésors cachés et expéditions extraordinaires.
                     </p>
                 </article>
-
 
                 <article class="universe-card">
                     <span>🏛️</span>
@@ -587,13 +592,11 @@
                     </caption>
 
                     <thead>
-
                         <tr>
                             <th>Univers</th>
                             <th>Thème</th>
                             <th>Niveau</th>
                         </tr>
-
                     </thead>
 
                     <tbody>
@@ -618,13 +621,17 @@
 
                         <tr>
                             <td>Comédie</td>
-                            <td>Le restaurant qui sert des plats invisibles</td>
+                            <td>
+                                Le restaurant qui sert des plats invisibles
+                            </td>
                             <td>Débutant</td>
                         </tr>
 
                         <tr>
                             <td>Fantastique</td>
-                            <td>Le village où il pleut des bonbons</td>
+                            <td>
+                                Le village où il pleut des bonbons
+                            </td>
                             <td>Intermédiaire</td>
                         </tr>
 
@@ -638,57 +645,36 @@
 
 
         <!-- =========================
-             GÉNÉRATEUR
+             ACCÈS À L'OUTIL
         ========================== -->
 
         <section
-            class="themes-generator"
-            aria-labelledby="generator-title"
+            class="themes-tool-cta"
+            aria-labelledby="tool-title"
         >
 
-            <div class="generator-content">
+            <div class="themes-tool-cta-content">
 
                 <p class="section-kicker">
-                    OUTIL
+                    BESOIN D'INSPIRATION ?
                 </p>
 
-                <h2 id="generator-title">
-                    Besoin d'inspiration ?
+                <h2 id="tool-title">
+                    Générez un thème aléatoire
                 </h2>
 
                 <p>
-                    Génère un thème aléatoire pour lancer immédiatement
-                    une nouvelle improvisation.
+                    Vous manquez d'idée pour commencer une improvisation ?
+                    L'ImprOse propose un générateur de thèmes dans la
+                    rubrique Outils.
                 </p>
 
-                <input
-    type="file"
-    id="excelFile"
-    accept=".xlsx,.xls"
->
-
-<button
-    type="button"
-    class="generator-button"
-    id="generateTheme"
->
-    Générer un thème
-</button>
-
-<p
-    id="theme"
-    class="generated-theme"
->
-    Sélectionnez votre fichier Excel.
-</p>
-
-                <p
-                    id="theme"
-                    class="generated-theme"
-                    aria-live="polite"
+                <a
+                    href="./outils.html"
+                    class="tool-cta-button"
                 >
-                    Cliquez sur le bouton pour obtenir un thème.
-                </p>
+                    Découvrir les outils
+                </a>
 
             </div>
 
@@ -748,7 +734,7 @@
                 </p>
 
                 <p>
-                    &copy; 2024 L'ImprOse. Tous droits réservés.
+                    &copy; 2026 L'ImprOse. Tous droits réservés.
                 </p>
 
             </div>
@@ -761,6 +747,7 @@
     <a
         href="#"
         class="back-to-top"
+        aria-label="Retour en haut de la page"
     >
         ↑
         <span>Retour en haut</span>
@@ -768,37 +755,8 @@
 
 
     <script src="./js/script.js"></script>
-
-    <script>
-        const menuToggle = document.querySelector(".menu-toggle");
-        const mainMenu = document.querySelector(".main-menu");
-
-        if (menuToggle && mainMenu) {
-            menuToggle.addEventListener("click", () => {
-                const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-
-                menuToggle.setAttribute("aria-expanded", String(!isOpen));
-                mainMenu.classList.toggle("is-open");
-            });
-        }
-
-        const dropdownButton = document.querySelector(".dropdown-button");
-        const dropdown = document.querySelector(".menu-dropdown");
-
-        if (dropdownButton && dropdown) {
-            dropdownButton.addEventListener("click", () => {
-                const isOpen = dropdownButton.getAttribute("aria-expanded") === "true";
-
-                dropdownButton.setAttribute("aria-expanded", String(!isOpen));
-                dropdown.classList.toggle("is-open");
-            });
-        }
-    </script>
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    ></script>
-
+    <script src="./js/themes.js"></script>
 
 </body>
+
 </html>
