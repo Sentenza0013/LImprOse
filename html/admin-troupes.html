@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administration — Troupes | L'ImprOse</title>
+
+    <link rel="stylesheet" href="./asset/css/admin-troupes.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+
+        <div>
+            <h1>Administration des troupes</h1>
+            <p>L'ImprOse</p>
+        </div>
+
+        <a href="./troupes.html" class="back-link">
+            ← Voir les troupes
+        </a>
+
+    </header>
+
+
+    <main class="admin-container">
+
+        <!-- =====================================================
+             LISTE DES TROUPES
+             ===================================================== -->
+
+        <section class="admin-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Troupes</h2>
+                    <p id="troupes-count">
+                        0 troupe
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="new-troupe-button"
+                    class="primary-button">
+                    + Ajouter une troupe
+                </button>
+
+            </div>
+
+
+            <div
+                id="admin-message"
+                class="admin-message"
+                hidden>
+            </div>
+
+
+            <div
+                id="troupes-admin-list"
+                class="troupes-admin-list">
+            </div>
+
+
+            <p
+                id="troupes-empty"
+                class="empty-message"
+                hidden>
+                Aucune troupe enregistrée.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             FORMULAIRE
+             ===================================================== -->
+
+        <section
+            id="troupe-form-section"
+            class="admin-section form-section"
+            hidden>
+
+            <div class="section-header">
+
+                <div>
+                    <h2 id="form-title">
+                        Ajouter une troupe
+                    </h2>
+
+                    <p>
+                        Informations de la troupe
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="troupe-form">
+
+                <input
+                    type="hidden"
+                    id="troupe-id">
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="nom">
+                            Nom *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nom"
+                            name="nom"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="ville">
+                            Ville *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="ville"
+                            name="ville"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="code_postal">
+                            Code postal
+                        </label>
+
+                        <input
+                            type="text"
+                            id="code_postal"
+                            name="code_postal">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="departement">
+                            Département
+                        </label>
+
+                        <input
+                            type="text"
+                            id="departement"
+                            name="departement"
+                            placeholder="59">
+
+                    </div>
+
+
+                    <div class="form-group form-group-full">
+
+                        <label for="adresse">
+                            Adresse
+                        </label>
+
+                        <input
+                            type="text"
+                            id="adresse"
+                            name="adresse">
+
+                    </div>
+
+
+                    <div class="form-group form-group-full">
+
+                        <label for="description">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="6"></textarea>
+
+                    </div>
+
+
+                    <div class="form-group form-group-full">
+
+                        <label for="image">
+                            Logo / image
+                        </label>
+
+                        <input
+                            type="text"
+                            id="image"
+                            name="image"
+                            placeholder="chemin ou URL de l'image">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="latitude">
+                            Latitude
+                        </label>
+
+                        <input
+                            type="number"
+                            id="latitude"
+                            name="latitude"
+                            step="any">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="longitude">
+                            Longitude
+                        </label>
+
+                        <input
+                            type="number"
+                            id="longitude"
+                            name="longitude"
+                            step="any">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+                        Enregistrer
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancel-button"
+                        class="secondary-button">
+                        Annuler
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="./asset/js/admin-troupes.js"></script>
+
+</body>
+
+</html>

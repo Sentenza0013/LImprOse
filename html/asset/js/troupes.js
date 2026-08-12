@@ -1,100 +1,21 @@
 "use strict";
 
 /* =========================================================
-   L'IMPROSE — TROUPES.JS
+   API
    ========================================================= */
+
+const API_URL = "http://localhost:3000/api/troupes";
 
 
 /* =========================================================
-   DONNÉES DE DÉMONSTRATION
+   DONNÉES DES TROUPES
    ========================================================= */
 
-const troupes = [
-    {
-        id: 1,
-        nom: "Les Improvisibles",
-        ville: "Paris",
-        departement: "75",
-        description: "Matchs et créations d'improvisation pour tous les publics.",
-        image: "./asset/images/troupes/improvisibles.jpg",
-        lat: 48.8566,
-        lon: 2.3522
-    },
-    {
-        id: 2,
-        nom: "La Lune Rousse",
-        ville: "Lyon",
-        departement: "69",
-        description: "Théâtre d'improvisation engagé et plein d'énergie.",
-        image: "./asset/images/troupes/lune-rousse.jpg",
-        lat: 45.7640,
-        lon: 4.8357
-    },
-    {
-        id: 3,
-        nom: "Improlition",
-        ville: "Nantes",
-        departement: "44",
-        description: "Formats longs et créations originales.",
-        image: "./asset/images/troupes/improlition.jpg",
-        lat: 47.2184,
-        lon: -1.5536
-    },
-    {
-        id: 4,
-        nom: "Les Trois Temps",
-        ville: "Toulouse",
-        departement: "31",
-        description: "Impro, musique et belles histoires.",
-        image: "./asset/images/troupes/trois-temps.jpg",
-        lat: 43.6047,
-        lon: 1.4442
-    },
-    {
-        id: 5,
-        nom: "La Clique",
-        ville: "Lille",
-        departement: "59",
-        description: "Une troupe conviviale qui partage l'improvisation sous toutes ses formes.",
-        image: "./asset/images/troupes/la-clique.jpg",
-        lat: 50.6292,
-        lon: 3.0573
-    },
-    {
-        id: 6,
-        nom: "Les Improvisateurs du Nord",
-        ville: "Roubaix",
-        departement: "59",
-        description: "Matchs, ateliers et spectacles d'improvisation dans la métropole lilloise.",
-        image: "./asset/images/troupes/improvisateurs-nord.jpg",
-        lat: 50.6942,
-        lon: 3.1746
-    },
-    {
-        id: 7,
-        nom: "Les Improvisés",
-        ville: "Bordeaux",
-        departement: "33",
-        description: "Une troupe bordelaise entre théâtre, humour et improvisation.",
-        image: "./asset/images/troupes/improvises.jpg",
-        lat: 44.8378,
-        lon: -0.5792
-    },
-    {
-        id: 8,
-        nom: "Impro Libre",
-        ville: "Marseille",
-        departement: "13",
-        description: "Des histoires improvisées et des rencontres sur scène.",
-        image: "./asset/images/troupes/impro-libre.jpg",
-        lat: 43.2965,
-        lon: 5.3698
-    }
-];
+let troupes = [];
 
 
 /* =========================================================
-   SPECTACLES / ÉVÉNEMENTS
+   SPECTACLES / ÉVÉNEMENTS DE DÉMONSTRATION
    ========================================================= */
 
 const evenements = [
@@ -152,7 +73,7 @@ const evenements = [
 
 
 /* =========================================================
-   ÉLÉMENTS HTML
+   RÉCUPÉRATION DES ÉLÉMENTS HTML
    ========================================================= */
 
 const searchForm = document.querySelector("#search-form");
@@ -176,8 +97,6 @@ const clearEventsButton = document.querySelector("#clear-events");
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
 
-const backToTop = document.querySelector(".back-to-top");
-
 
 /* =========================================================
    VARIABLES
@@ -186,6 +105,7 @@ const backToTop = document.querySelector(".back-to-top");
 let troupesVisibles = 4;
 
 let derniereRecherche = {
+    ville: "",
     latitude: null,
     longitude: null,
     rayon: 10
@@ -193,14 +113,47 @@ let derniereRecherche = {
 
 
 /* =========================================================
+   CHARGER LES TROUPES DEPUIS LE BACKEND
+   ========================================================= */
+
+async function chargerTroupes() {
+    try {
+        const response = await fetch(API_URL);
+
+        if (!response.ok) {
+            throw new Error(
+                `Erreur HTTP ${response.status}`
+            );
+        }
+
+        troupes = await response.json();
+
+        afficherTroupes(troupes);
+
+        searchStatus.textContent =
+            `${troupes.length} troupe${troupes.length > 1 ? "s" : ""} disponible${troupes.length > 1 ? "s" : ""}.`;
+
+    } catch (error) {
+        console.error(
+            "Erreur lors du chargement des troupes :",
+            error
+        );
+
+        troupes = [];
+
+        afficherTroupes([]);
+
+        searchStatus.textContent =
+            "Impossible de charger les troupes.";
+    }
+}
+
+
+/* =========================================================
    AFFICHER LES TROUPES
    ========================================================= */
 
 function afficherTroupes(liste) {
-
-    if (!troupesList) {
-        return;
-    }
 
     troupesList.innerHTML = "";
 
@@ -214,11 +167,20 @@ function afficherTroupes(liste) {
 
         article.innerHTML = `
             <div class="troupe-image">
-                <img
-                    src="${troupe.image}"
-                    alt="Troupe ${troupe.nom}"
-                    loading="lazy"
-                >
+
+                ${
+                    troupe.image
+                        ? `
+                            <img
+                                src="${troupe.image}"
+                                alt="Troupe ${troupe.nom}"
+                                loading="lazy"
+                                onerror="this.style.display='none'"
+                            >
+                        `
+                        : ""
+                }
+
             </div>
 
             <div class="troupe-body">
@@ -228,57 +190,42 @@ function afficherTroupes(liste) {
                 </h3>
 
                 <p class="troupe-city">
-                    ${troupe.ville} · ${troupe.departement}
+                    ${troupe.ville} · ${troupe.departement ?? ""}
                 </p>
 
                 <p class="troupe-description">
-                    ${troupe.description}
+                    ${troupe.description ?? ""}
                 </p>
 
                 <a
                     class="troupe-link"
-                    href="./contact.html"
-                >
+                    href="./contact.html">
                     DÉCOUVRIR →
                 </a>
 
             </div>
         `;
 
-        const image = article.querySelector("img");
-
-        image.addEventListener("error", () => {
-            image.style.display = "none";
-        });
-
         troupesList.appendChild(article);
     });
 
-    if (troupesCount) {
-        troupesCount.textContent =
-            `${liste.length} troupe${liste.length > 1 ? "s" : ""}`;
-    }
 
-    if (troupesEmpty) {
-        troupesEmpty.hidden = liste.length !== 0;
-    }
+    troupesCount.textContent =
+        `${liste.length} troupe${liste.length > 1 ? "s" : ""}`;
 
-    if (showMoreButton) {
-        showMoreButton.hidden =
-            liste.length <= troupesVisibles;
-    }
+    troupesEmpty.hidden =
+        liste.length !== 0;
+
+    showMoreButton.hidden =
+        liste.length <= troupesVisibles;
 }
 
 
 /* =========================================================
-   RECHERCHER LES TROUPES
+   RECHERCHE DES TROUPES
    ========================================================= */
 
 function rechercherTroupes() {
-
-    if (!locationInput || !radiusSelect) {
-        return;
-    }
 
     const recherche =
         locationInput.value.trim().toLowerCase();
@@ -288,29 +235,25 @@ function rechercherTroupes() {
 
     derniereRecherche.rayon = rayon;
 
-    let resultats = [...troupes];
+    let resultats = troupes;
 
 
     /*
-     * Recherche par :
-     * - nom
-     * - ville
-     * - département
-     * - description
+     * Recherche par ville, département,
+     * nom de troupe ou description.
      */
 
-    if (
-        recherche &&
-        recherche !== "ma position"
-    ) {
+    if (recherche) {
 
         resultats = resultats.filter((troupe) => {
 
             const texte = `
-                ${troupe.nom}
-                ${troupe.ville}
-                ${troupe.departement}
-                ${troupe.description}
+                ${troupe.nom ?? ""}
+                ${troupe.ville ?? ""}
+                ${troupe.code_postal ?? ""}
+                ${troupe.departement ?? ""}
+                ${troupe.adresse ?? ""}
+                ${troupe.description ?? ""}
             `.toLowerCase();
 
             return texte.includes(recherche);
@@ -319,8 +262,8 @@ function rechercherTroupes() {
 
 
     /*
-     * Si une position GPS est disponible,
-     * filtrage selon le rayon choisi.
+     * Si l'utilisateur utilise sa position,
+     * on filtre également selon le rayon.
      */
 
     if (
@@ -330,12 +273,19 @@ function rechercherTroupes() {
 
         resultats = resultats.filter((troupe) => {
 
+            if (
+                troupe.latitude === null ||
+                troupe.longitude === null
+            ) {
+                return false;
+            }
+
             const distance =
                 calculerDistanceKm(
                     derniereRecherche.latitude,
                     derniereRecherche.longitude,
-                    troupe.lat,
-                    troupe.lon
+                    Number(troupe.latitude),
+                    Number(troupe.longitude)
                 );
 
             return distance <= rayon;
@@ -346,52 +296,45 @@ function rechercherTroupes() {
     afficherTroupes(resultats);
 
 
-    if (searchStatus) {
+    if (recherche) {
 
-        const nombre = resultats.length;
+        searchStatus.textContent =
+            `${resultats.length} troupe${
+                resultats.length > 1 ? "s" : ""
+            } trouvée${
+                resultats.length > 1 ? "s" : ""
+            } pour « ${locationInput.value.trim()} ».`;
 
-        if (
-            derniereRecherche.latitude !== null &&
-            derniereRecherche.longitude !== null
-        ) {
+    } else {
 
-            searchStatus.textContent =
-                `${nombre} troupe${nombre > 1 ? "s" : ""} trouvée${nombre > 1 ? "s" : ""} dans un rayon de ${rayon} km.`;
-
-        } else if (recherche) {
-
-            searchStatus.textContent =
-                `${nombre} troupe${nombre > 1 ? "s" : ""} trouvée${nombre > 1 ? "s" : ""} pour « ${locationInput.value.trim()} ».`;
-
-        } else {
-
-            searchStatus.textContent =
-                `${nombre} troupe${nombre > 1 ? "s" : ""} disponible${nombre > 1 ? "s" : ""}.`;
-        }
+        searchStatus.textContent =
+            `${resultats.length} troupe${
+                resultats.length > 1 ? "s" : ""
+            } disponible${
+                resultats.length > 1 ? "s" : ""
+            }.`;
     }
 }
 
 
 /* =========================================================
-   GÉOLOCALISATION
+   UTILISER LA POSITION GPS
    ========================================================= */
 
 function utiliserPosition() {
 
     if (!navigator.geolocation) {
 
-        if (searchStatus) {
-            searchStatus.textContent =
-                "La géolocalisation n'est pas disponible sur ce navigateur.";
-        }
+        searchStatus.textContent =
+            "La géolocalisation n'est pas disponible sur ce navigateur.";
 
         return;
     }
 
-    if (searchStatus) {
-        searchStatus.textContent =
-            "Recherche de votre position...";
-    }
+
+    searchStatus.textContent =
+        "Recherche de votre position...";
+
 
     navigator.geolocation.getCurrentPosition(
 
@@ -403,29 +346,19 @@ function utiliserPosition() {
             derniereRecherche.longitude =
                 position.coords.longitude;
 
-            if (locationInput) {
-                locationInput.value = "Ma position";
-            }
+            locationInput.value =
+                "Ma position";
 
             rechercherTroupes();
 
-            if (searchStatus) {
-                searchStatus.textContent =
-                    "Recherche effectuée autour de votre position.";
-            }
+            searchStatus.textContent =
+                "Recherche effectuée autour de votre position.";
         },
 
-        (error) => {
+        () => {
 
-            console.error(
-                "Erreur de géolocalisation :",
-                error
-            );
-
-            if (searchStatus) {
-                searchStatus.textContent =
-                    "Impossible d'obtenir votre position. Vous pouvez rechercher une ville manuellement.";
-            }
+            searchStatus.textContent =
+                "Impossible d'obtenir votre position. Vous pouvez rechercher une ville manuellement.";
         },
 
         {
@@ -438,7 +371,7 @@ function utiliserPosition() {
 
 
 /* =========================================================
-   CALCUL DE DISTANCE
+   CALCUL DE DISTANCE GPS
    ========================================================= */
 
 function calculerDistanceKm(
@@ -480,14 +413,10 @@ function convertirRadians(degres) {
 
 
 /* =========================================================
-   AFFICHER LES SPECTACLES
+   AFFICHER LES ÉVÉNEMENTS
    ========================================================= */
 
 function afficherEvenements(liste) {
-
-    if (!eventsList) {
-        return;
-    }
 
     eventsList.innerHTML = "";
 
@@ -519,11 +448,21 @@ function afficherEvenements(liste) {
         article.className =
             "event-card";
 
+
         article.innerHTML = `
+
             <div class="event-date">
-                <strong>${jour}</strong>
-                <span>${mois}</span>
+
+                <strong>
+                    ${jour}
+                </strong>
+
+                <span>
+                    ${mois}
+                </span>
+
             </div>
+
 
             <div class="event-info">
 
@@ -537,8 +476,6 @@ function afficherEvenements(liste) {
                     ${event.ville}
                     ·
                     ${event.heure}
-                    ·
-                    ${event.lieu}
                 </p>
 
                 <span class="event-tag">
@@ -547,32 +484,29 @@ function afficherEvenements(liste) {
 
             </div>
 
+
             <a
                 class="event-link"
-                href="./contact.html"
-            >
+                href="./contact.html">
                 DÉTAILS →
             </a>
         `;
 
+
         eventsList.appendChild(article);
     });
 
-    if (eventsEmpty) {
-        eventsEmpty.hidden = liste.length !== 0;
-    }
+
+    eventsEmpty.hidden =
+        liste.length !== 0;
 }
 
 
 /* =========================================================
-   RECHERCHER LES SPECTACLES
+   RECHERCHE DES ÉVÉNEMENTS
    ========================================================= */
 
 function rechercherEvenements() {
-
-    if (!eventDate || !eventCity) {
-        return;
-    }
 
     const dateRecherchee =
         eventDate.value;
@@ -581,6 +515,7 @@ function rechercherEvenements() {
         eventCity.value
             .trim()
             .toLowerCase();
+
 
     let resultats =
         [...evenements];
@@ -641,7 +576,9 @@ if (menuToggle && navMenu) {
                 "click",
                 () => {
 
-                    navMenu.classList.remove("open");
+                    navMenu.classList.remove(
+                        "open"
+                    );
 
                     menuToggle.setAttribute(
                         "aria-expanded",
@@ -655,129 +592,72 @@ if (menuToggle && navMenu) {
 
 
 /* =========================================================
-   FORMULAIRE DE RECHERCHE
+   ÉVÉNEMENTS DES FORMULAIRES
    ========================================================= */
 
-if (searchForm) {
+searchForm.addEventListener(
+    "submit",
+    (event) => {
 
-    searchForm.addEventListener(
-        "submit",
-        (event) => {
+        event.preventDefault();
 
-            event.preventDefault();
+        /*
+         * Une recherche manuelle annule
+         * la recherche GPS précédente.
+         */
 
-            /*
-             * Une recherche manuelle annule
-             * la recherche GPS précédente.
-             */
+        derniereRecherche.latitude = null;
+        derniereRecherche.longitude = null;
 
-            derniereRecherche.latitude = null;
-            derniereRecherche.longitude = null;
-
-            rechercherTroupes();
-        }
-    );
-}
+        rechercherTroupes();
+    }
+);
 
 
-/* =========================================================
-   BOUTON MA POSITION
-   ========================================================= */
-
-if (useLocationButton) {
-
-    useLocationButton.addEventListener(
-        "click",
-        utiliserPosition
-    );
-}
+useLocationButton.addEventListener(
+    "click",
+    utiliserPosition
+);
 
 
-/* =========================================================
-   VOIR PLUS
-   ========================================================= */
+showMoreButton.addEventListener(
+    "click",
+    () => {
 
-if (showMoreButton) {
+        troupesVisibles += 4;
 
-    showMoreButton.addEventListener(
-        "click",
-        () => {
-
-            troupesVisibles += 4;
-
-            rechercherTroupes();
-        }
-    );
-}
+        rechercherTroupes();
+    }
+);
 
 
-/* =========================================================
-   FORMULAIRE DES SPECTACLES
-   ========================================================= */
+eventsForm.addEventListener(
+    "submit",
+    (event) => {
 
-if (eventsForm) {
+        event.preventDefault();
 
-    eventsForm.addEventListener(
-        "submit",
-        (event) => {
-
-            event.preventDefault();
-
-            rechercherEvenements();
-        }
-    );
-}
+        rechercherEvenements();
+    }
+);
 
 
-/* =========================================================
-   RÉINITIALISER LES SPECTACLES
-   ========================================================= */
+clearEventsButton.addEventListener(
+    "click",
+    () => {
 
-if (clearEventsButton) {
+        eventDate.value = "";
+        eventCity.value = "";
 
-    clearEventsButton.addEventListener(
-        "click",
-        () => {
-
-            if (eventDate) {
-                eventDate.value = "";
-            }
-
-            if (eventCity) {
-                eventCity.value = "";
-            }
-
-            afficherEvenements(evenements);
-        }
-    );
-}
-
-
-/* =========================================================
-   RETOUR EN HAUT
-   ========================================================= */
-
-if (backToTop) {
-
-    backToTop.addEventListener(
-        "click",
-        (event) => {
-
-            event.preventDefault();
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        }
-    );
-}
+        afficherEvenements(evenements);
+    }
+);
 
 
 /* =========================================================
    INITIALISATION
    ========================================================= */
 
-afficherTroupes(troupes);
+chargerTroupes();
 
 afficherEvenements(evenements);
